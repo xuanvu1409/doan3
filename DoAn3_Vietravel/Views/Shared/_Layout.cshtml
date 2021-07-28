@@ -1,0 +1,594 @@
+﻿@using DoAn3_Vietravel.Areas.Admin.Models;
+@{
+    LoaiVeModel lv = new LoaiVeModel();
+    List<LoaiVe> dslv = lv.LayDanhSach();
+
+    KhachHang user = null;
+    if (Session["TaiKhoan"] != null)
+    {
+        user = (KhachHang)Session["TaiKhoan"];
+    }
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" , initial-scale="1" />
+    <title>Mạng bán tour trực tuyến số 1 tại Việt Nam | Du lịch Vietravel</title>
+    <link rel="Shortcut icon" type="image/x-icon" href="~/Assets/favicon.ico">
+    @*font*@
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c034435a70.js"></script>
+    @*Css*@
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Assets/css/layout.css" rel="stylesheet" />
+
+    @*Bootstrap, JavaScript, jQuery*@
+    <script src="~/Scripts/jquery-3.3.1.slim.min.js"></script>
+
+    <script src="~/Areas/Admin/vendors/jquery/dist/jquery.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="header">
+        <nav class="header-top navbar navbar-expand-lg navbar-light">
+            <div class="header-top">
+                <div class="row">
+                    <div class="col-md-4 col-4 col-sm-4">
+                        <div class="area-info">
+                            <div class="hotline">
+                                <span style="font-size:14px;">Hotline:</span>
+                                <span class="num-color" style="font-size:14px; color:red; font-weight:bold;">1900 1839</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-8">
+                        <div class="area-info">
+                            <div class="float-right">
+                                <form method="post" action="/Home/TimKiem" class="seach float-left d-none d-sm-block">
+                                    <input type="text" name="find" class="text-input form-control-plaintext" placeholder="Tour du lịch, điểm đến ..." required />
+                                    <button type="submit" class="btn-seach">
+                                        <i class="fa fa-search mt-1"></i>
+                                    </button>
+                                </form>
+                                <div class="float-left">
+                                    <img src="~/Assets/img/h-line.png" />
+                                </div>
+                                <div class="user float-left">
+                                    <div data-toggle="dropdown" aria-expanded="true">
+                                        @if (user != null)
+                                        {
+                                            <div class="pt-1 text-danger">
+                                                @user.TaiKhoan
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <i class="fas fa-user-circle"></i>
+                                        }
+                                    </div>
+
+                                    <ul class="user-menu dropdown-menu">
+                                        @if (user != null)
+                                        {
+                                            <li style="border-bottom: 1px dashed #ccc; width:180px;">
+                                                <a href="#">Danh sách yêu thích</a>
+                                            </li>
+                                            <a href="/TaiKhoan/DangXuat">
+                                                <li>
+                                                    Đăng xuất
+                                                </li>
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            <li style="border-bottom: 1px dashed #ccc;" data-toggle="modal" data-target="#dangnhap">
+                                                <a href="#">Đăng nhập</a>
+                                            </li>
+                                            <li data-toggle="modal" data-target="#dangky">
+                                                <a href="#">Đăng ký</a>
+                                            </li>
+                                        }
+                                    </ul>
+                                </div>
+                                <div class="float-left">
+                                    <img src="~/Assets/img/h-line.png" />
+                                </div>
+                                <div class="language float-left">
+                                    <div data-toggle="dropdown" aria-expanded="true">
+                                        <img src="~/Assets/img/vn.png" />
+                                        <span style="padding-left: 5px;">VN</span>
+                                    </div>
+                                    <ul class="lang-menu dropdown-menu">
+                                        <li style="border-bottom: 1px dashed #ccc;">
+                                            <a><strong class="mauchudao">VN</strong> - Tiếng Việt</a>
+                                        </li>
+                                        <li>
+                                            <a><strong class="mauchudao">EN</strong> - Tiếng Anh</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="header-bot">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-12 col-12">
+                        <a href="/Home/Index">
+                            <img src="~/Assets/img/logo.png" />
+                        </a>
+                    </div>
+                    <div class="col-md-8 col-sm-12 col-12">
+                        <nav class="menu-header navbar-expand-lg">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="dropbtn nav-item">
+                                    <a class="nav-link" href="#">Du Lịch</a>
+                                    <ul class="sub-menu">
+                                        @foreach (var item in dslv)
+                                        {
+                                            <li><a href="/DanhSachVe/Index/@item.IDLoaiVe">@item.TenLoaiVe</a></li>
+                                        }
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Khách Sạn</a>
+                                </li>
+                                <li class="dropbtn nav-item">
+                                    <a class="nav-link" href="#">Vận chuyển</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="#">Thuê xe</a></li>
+                                        <li><a href="#">Vé máy bay</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropbtn nav-item">
+                                    <a class="nav-link" href="/TinTuc/Index">Tin Tức</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="/TinTuc/Index">Tin tức</a></li>
+                                        <li><a href="#">Cẩm nang du lịch</a></li>
+                                        <li><a href="#">Kinh nghiệm du lịch</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/LienHe/Index">Liên Hệ</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @Html.Partial("~/Views/Partials/TaiKhoan.cshtml")
+    <div class="content">
+        @RenderBody()
+    </div>
+    <div class="footer">
+        <div class="orther container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="frame-orther">
+                        <img src="~/Assets/img/o-d1.jpg" class="d-block w-100" alt="domestic" />
+                        <p class="orther-name">Du lịch trong nước</p>
+                        <div class="list-location">
+                            <ul class="list-city row">
+                                <li class="col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <a href="#">Hà Nội</a>
+                                </li>
+                                <li class="col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <a href="#">Hạ Long</a>
+                                </li>
+                                <li class="col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <a href="#">Ninh Bình</a>
+                                </li>
+                                <li class="col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <a href="#">Quảng Bình</a>
+                                </li>
+                                <li class="col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <a href="#">Lào Cai</a>
+                                </li>
+                                <li class="col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <a href="#">Đà Nẵng</a>
+                                </li>
+                                <li class="col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <a href="#">Qui Nhơn</a>
+                                </li>
+                                <li class="col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <a href="#">Nha Trang</a>
+                                </li>
+                                <li class="col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <a href="#">Phan Thiết</a>
+                                </li>
+                                <li class="col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <a href="#">Đà Lạt</a>
+                                </li>
+                                <li class="col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <a href="#">Vũng Tàu</a>
+                                </li>
+                                <li class="col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <a href="#">Cần Thơ</a>
+                                </li>
+                                <li class="col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <a href="#">Phú Quốc</a>
+                                </li>
+                                <li class="col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <a href="#">Cà Mau</a>
+                                </li>
+                                <li class="col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <a href="#">Kiên Giang</a>
+                                </li>
+                                <li class="col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <a href="#">Huế</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="frame-orther">
+                        <img src="~/Assets/img/o-d2.jpg" class="d-block w-100" alt="domestic" />
+                        <p class="orther-name">Du lịch nước ngoài</p>
+                        <div class="list-location">
+                            <ul class="list-city row">
+                                <li class="col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <a href="#">Pháp</a>
+                                </li>
+                                <li class="col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <a href="#">Nga</a>
+                                </li>
+                                <li class="col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <a href="#">Mỹ</a>
+                                </li>
+                                <li class="col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <a href="#">Brazil</a>
+                                </li>
+                                <li class="col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <a href="#">Úc</a>
+                                </li>
+                                <li class="col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <a href="#">New Zealand</a>
+                                </li>
+                                <li class="col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <a href="#">Nam Phi</a>
+                                </li>
+                                <li class="col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <a href="#">Kenya</a>
+                                </li>
+                                <li class="col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <a href="#">Campuchia</a>
+                                </li>
+                                <li class="col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <a href="#">Singapore</a>
+                                </li>
+                                <li class="col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <a href="#">Thái Lan</a>
+                                </li>
+                                <li class="col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <a href="#">Nhật Bản</a>
+                                </li>
+                                <li class="col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <a href="#">Hàn Quốc</a>
+                                </li>
+                                <li class="col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <a href="#">Trung Quốc</a>
+                                </li>
+                                <li class="col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <a href="#">Hồng Kông</a>
+                                </li>
+                                <li class="col-lg-6 col-md-4 col-sm-6 col-12">
+                                    <a href="#">Dubai</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                    <div class="frame-orther">
+                        <p class="orther-name">Dòng tour</p>
+                        <div class="list-tour-type">
+                            <ul class="row">
+                                <li class="col-lg-4 col-md-3 col-sm-3 col-12">
+                                    <a href="#" title="Cao Cấp">
+                                        <div class="float-left">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="float-left ml-2">
+                                            Cao cấp
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="col-lg-4 col-md-3 col-sm-3 col-12">
+                                    <a href="#" title="Tiêu chuẩn">
+                                        <div class="float-left">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="float-left ml-2">
+                                            Tiêu chuẩn
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="col-lg-4 col-md-3 col-sm-3 col-12">
+                                    <a href="#" title="Tiết kiệm">
+                                        <div class="float-left">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="float-left ml-2">
+                                            Tiết kiệm
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="col-lg-4 col-md-3 col-sm-3 col-12">
+                                    <a href="#" title="Giá tốt">
+                                        <div class="float-left">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="float-left ml-2">
+                                            Giá tốt
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <p class="orther-name">Ứng dụng di động</p>
+                        <div class="app-info">
+                            <p class="pl-3">Tải ứng dụng</p>
+                            <div class="mb-3">
+                                <div class="icon-store float-left pl-3">
+                                    <a href="#" target="_blank">
+                                        <img src="~/Assets/img/gp.png" />
+                                    </a>
+                                </div>
+                                <div class="float-left ml-3 mr-3">
+                                    <img src="~/Assets/img/h-line.png" />
+                                </div>
+                                <div class="icon-store float-left">
+                                    <a href="#" target="_blank">
+                                        <img src="~/Assets/img/as.png" />
+                                    </a>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                        <div class="pl-3 mb-3">
+                            Hoặc quét QR code
+                        </div>
+                        <div class="qr-code pl-3">
+                            <div class="float-left">
+                                <a>
+                                    <img src="~/Assets/img/q-gp.png" />
+                                    <p>Android</p>
+                                </a>
+                            </div>
+                            <div class="float-left ml-3 mr-3 pt-2">
+                                <img src="~/Assets/img/h-line.png" />
+                            </div>
+                            <div class="float-left">
+                                <a>
+                                    <img src="~/Assets/img/q-as.png" />
+                                    <p>IOS</p>
+                                </a>
+                            </div>
+                        </div>
+                        <img class="bg-app" src="~/Assets/img/bg-app.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="container">
+            <hr class="hr-bot mt-4 mb-5" />
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-12 mb-4">
+                    <h3 class="ft-bot mb-2">Liên hệ</h3>
+                    <div class="mg-bot10">190 Pasteur, Phường 6, Quận 3, TP HCM</div>
+                    <div class="mb-2">
+                        <div class="float-left">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="float-left ml-2">
+                            (+84 28) 3822 8898
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="mb-2">
+                        <div class="float-left">
+                            <i class="fas fa-fax"></i>
+                        </div>
+                        <div class="float-left ml-2">
+                            (+84 28) 3829 9142
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="pb-3">
+                        <div class="float-left">
+                            <i class="far fa-envelope"></i>
+                        </div>
+                        <div class="float-left ml-2">
+                            <a href="#">info@vietravel.com</a>
+                        </div>
+                    </div>
+                    <div class="mb-2 mt-4">
+                        <img src="~/Assets/img/map.png" alt="map" />
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-8 col-sm-12 col-12 mb-4">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-4">
+                            <h3 class="ft-bot mb-2">Thông tin</h3>
+                            <div class="row">
+                                <div class="col-lg-7 col-md-7 col-sm-7 col-12">
+                                    <ul class="list-info">
+                                        <li>
+                                            <a href="#">
+                                                Tạp chí du lịch
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Cẩm nang du lịch
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Kinh nghiệm du lịch
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-5 col-md-5 col-sm-5 col-12">
+                                    <ul class="list-info">
+                                        <li>
+                                            <a href="#">
+                                                Tin tức
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Sitemap
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                FAQ
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <hr class="hr-bot" />
+                            <ul class="list-info">
+                                <li>
+                                    <a href="#">
+                                        Vietravel toolbar
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Chính sách riêng tư
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Thỏa thuận sử dụng
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-4">
+                            <h3 class="ft-bot">
+                                NEWSLETTER
+                            </h3>
+                            <div class="ft-input">
+                                <form method="post">
+                                    <input type="text" class="form-control" placeholder="Email của bạn" required="required">
+                                    <div class="btn-mail">
+                                        <button type="submit" class="bg-btn pos-absolute" style="border:none;">
+                                            <i class="far fa-envelope fa-lg"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                            <h3 class="ft-bot mt-4">
+                                TÌM KIẾM THÔNG TIN
+                            </h3>
+                            <div class="ft-input">
+                                <form method="post">
+                                    <input type="text" class="form-control" placeholder="Tour du lịch, Điểm đến..." required="required">
+                                    <div class="btn-mail">
+                                        <button type="submit" class="bg-btn" style="border:none;padding-top: 9px;padding-bottom: 6px;">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <h3 class="ft-bot">Chấp nhận thanh toán</h3>
+                            <div>
+                                <div class="float-left mr-2">
+                                    <img src="~/Assets/img/123pay.jpg" />
+                                </div>
+                                <div class="float-left mr-2">
+                                    <img src="~/Assets/img/visa.jpg" />
+                                </div>
+                                <div class="float-left mr-2">
+                                    <img src="~/Assets/img/master.jpg" />
+                                </div>
+                                <div class="float-left mr-2">
+                                    <img src="~/Assets/img/jcb.jpg" />
+                                </div>
+                                <div class="float-left mr-2">
+                                    <img src="~/Assets/img/vnpay.jpg" />
+                                </div>
+                                <div class="float-left mr-2">
+                                    <img src="~/Assets/img/v-visa.jpg" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-lg-2 col-md-12 col-sm-12 col-12 mb-4">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-6 col-sm-6 col-12">
+                            <h3 class="ft-bot">
+                                Mạng xã hội
+                            </h3>
+                            <div class="mb-3">
+                                <div class="float-left">
+                                    <a href="#">
+                                        <i class="fab fa-facebook"></i>
+                                    </a>
+                                </div>
+                                <div class="float-left ml-2">
+                                    <a href="#">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                </div>
+                                <div class="float-left ml-2">
+                                    <a href="#">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                </div>
+                                <div class="float-left ml-2">
+                                    <a href="#">
+                                        <i class="fab fa-youtube"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-6 col-sm-6 col-12">
+                            <h3 class="ft-bot mt-4">
+                                Hotline
+                            </h3>
+                            <div class="mb-4 ">
+                                <div class="float-left">
+                                    <i class="fas fa-phone-volume"></i>
+                                </div>
+                                <div class="float-left ml-2">
+                                    <div class="hl-num"><a href="tel:1900 1839">1900 1839</a></div>
+                                    <div class="hl-hour">Từ 08h00 - 23h00</div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+        <div class="info container">
+            <p class="text-center">Bản quyền của Vietravel ® 2016. Bảo lưu mọi quyền. <br>Ghi rõ nguồn "www.travel.com.vn" ® khi sử dụng lại thông tin từ website này. <br>Số giấy phép kinh doanh lữ hành Quốc tế: 79-234/2014/TCDL-GP LHQT</p>
+        </div>
+        <img src="~/Assets/img/bg-footer.png" class="bg-footer" />
+    </div>
+
+
+</body>
+</html>

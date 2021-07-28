@@ -1,0 +1,45 @@
+﻿@{
+    Layout = null;
+}
+
+<div id="divThongTinKhachSan">
+    <div class="title">
+        <span class="d-block  d-sm-none">
+            <img src="~/Assets/img/i-info.png" alt="info">&nbsp;&nbsp;
+        </span>
+        Thông tin khách sạn
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="bold">
+                        <td>Tên khách sạn</td>
+                        <td>Địa chỉ</td>
+                        <td>Điện thoại</td>
+                        <td>Website</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        if (Model == null)
+                        {
+                            <tr>
+                                <td colspan="4" class="text-center">Đang cập nhật</td>
+                            </tr>
+                        }
+                        else
+                        {
+                            <tr>
+                                <td>@Model.TenKhachSan</td>
+                                <td>@Model.DiaChi</td>
+                                <td>@Model.SoDienThoai</td>
+                                <td>@Model.Website</td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

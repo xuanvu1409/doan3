@@ -1,0 +1,288 @@
+﻿@model IEnumerable<DoAn3_Vietravel.Areas.Admin.Models.TinTuc>
+@using DoAn3_Vietravel.Areas.Admin.Models;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="breadcrumbs">
+    <div class="col-sm-4">
+        <div class="page-header float-left">
+            <div class="page-title">
+                <h1>Dashboard</h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-8">
+        <div class="page-header float-right">
+            <div class="page-title">
+                <ol class="breadcrumb text-right">
+                    <li><a href="#">Home</a></li>
+                    <li class="active">Tin tức</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content mt-3">
+    <div class="animated fadeIn">
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <strong class="card-title">Tin tức</strong>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-primary float-right bor-rd" onclick="ThemTinTuc()">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div id="bootstrap-data-table-export_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <table id="bootstrap-data-table-export" class="table table-striped table-bordered dataTable no-footer chunho" role="grid" aria-describedby="bootstrap-data-table-export_info">
+                                        <thead>
+                                            <tr role="row">
+                                                <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending">ID</th>
+                                                <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending">Tiêu đề</th>
+                                                <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending">Ảnh đại diện</th>
+                                                <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending">Tác giả</th>
+                                                <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending">Ngày viết</th>
+                                                <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending">Trạng thái</th>
+                                                <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending">Thao tác</th>
+
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in Model)
+                                            {
+                                                <tr role="row" class="odd">
+                                                    <td class="sorting_1">@item.IDTinTuc</td>
+                                                    <td>@item.TieuDe</td>
+                                                    <td>
+                                                        <img src="~/Assets/images/Tour/@item.AnhDaiDien" style="width:130px; height:70px;" />
+                                                    </td>
+                                                    <td>@item.TacGia</td>
+                                                    <td>@item.NgayViet</td>
+                                                    <td>@item.TrangThai</td>
+                                                    <td>
+                                                        <a class="btn bor-rd btn-primary" onclick="HienThiTin('@item.IDTinTuc')"><i class="fa fa-eye"></i></a>
+                                                        <button class="btn btn-info bor-rd" onclick="SuaTinTuc('@item.IDTinTuc')"><i class="fa fa-edit"></i></button>
+                                                        <a class="btn btn-danger bor-rd" onclick="return confirm('Bạn có chắc chắn muốn xoá khách hàng này không?')" href="~/Admin/TinTuc/Xoa1TinTuc/@item.IDTinTuc"><i class="fa fa-trash"></i></a>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- .animated -->
+</div>
+
+<div class="modal" id="ThemTin">
+    <div class="modal-content">
+        <div class="modal-header pt-0">
+            <div class="modal-title"></div>
+            <span class="close" data-dismiss="modal">&times;</span>
+        </div>
+        <form method="post" action="~/Admin/TinTuc/Them1TinTuc" enctype="multipart/form-data">
+            <input type="hidden" id="aoe" name="aoe" value="1" />
+            <input type="hidden" id="MTT" name="MTT" />
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-2 mb-3">Tiêu đề</div>
+                    <div class="col-md-10 mb-3">
+                        <input type="text" name="TD" id="TD" class="form-control" placeholder="Nhập tiêu đề" required />
+                    </div>
+                    <div class="col-md-2 mb-3">Mô Tả</div>
+                    <div class="col-md-10 mb-3">
+                        <input type="text" name="MT" id="MT" class="form-control" placeholder="Nhập mô tả" />
+                    </div>
+                    <div class="col-md-2 mb-3">Ảnh đại diện</div>
+                    <div class="col-md-10 mb-3">
+                        <input type="file" name="ADD" id="ADD" />
+                    </div>
+                    <div class="col-md-2 mb-3">Nội dung</div>
+                    <div class="col-md-10 mb-3">
+                        <textarea name="ND" id="ND" class="form-control" placeholder="Nhập nội dung" required></textarea>
+                    </div>
+                    <div class="col-md-2 mb-3">Tags</div>
+                    <div class="col-md-10 mb-3">
+                        <input type="text" name="TS" id="TS" class="form-control" placeholder="Nhập tags" />
+                    </div>
+                    <div class="col-md-2 mb-3">Tác giả</div>
+                    <div class="col-md-10 mb-3">
+                        <input type="text" name="TG" id="TG" class="form-control" placeholder="Nhập tác giả" />
+                    </div>
+                    <div class="col-md-2 mb-3">Lượt xem</div>
+                    <div class="col-md-10 mb-3">
+                        <input type="number" min="1" name="LX" id="LX" class="form-control" placeholder="Nhập lượt xem" />
+                    </div>
+                    <div class="col-md-2 mb-3">Loại tin</div>
+                    <div class="col-md-10 mb-3">
+                        <select name="MLT" id="MLT" class="form-control">
+                            <option disabled>Chọn loại tin</option>
+                            @{
+                                var dslt = ViewBag.IDLT as List<LoaiTinTuc>;
+                                foreach (var item in dslt)
+                                {
+                                    <option value="@item.IDLoaiTinTuc">@item.TenLoaiTin</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-2 mb-3">Trạng thái</div>
+                    <div class="col-md-10 mb-3">
+                        <select name="TT" id="TT" class="form-control">
+                            <option disabled>Chọn trạng thái</option>
+                            <option value="Hiển thị">Hiển thị</option>
+                            <option value="Ẩn">Ẩn</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2 mb-3">Nhân viên</div>
+                    <div class="col-md-10 mb-3">
+                        <select name="MNV" id="MNV" class="form-control">
+                            <option disabled>Chọn nhân viên</option>
+                            @{
+                                var dsnv = ViewBag.IDNV as List<NhanVien>;
+                                foreach (var item in dsnv)
+                                {
+                                    <option value="@item.IDNhanVien">@item.TenNhanVien</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="submit">Lưu</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="modal" id="HienThi">
+    <div class="modal-content">
+        <div class="modal-header pt-0">
+            <div class="modal-title"></div>
+            <span class="close" data-dismiss="modal">&times;</span>
+        </div>
+        <form method="post" action="~/Admin/TinTuc/Them1TinTuc" enctype="multipart/form-data">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-2 mb-3">Mã tin tức</div>
+                    <div class="col-md-10 mb-3" id="vMTT">
+                    </div>
+                    <div class="col-md-2 mb-3">Tiêu đề</div>
+                    <div class="col-md-10 mb-3" id="vTD">
+                    </div>
+                    <div class="col-md-2 mb-3">Mô Tả</div>
+                    <div class="col-md-10 mb-3" id="vMT">
+                    </div>
+                    <div class="col-md-2 mb-3">Ảnh đại diện</div>
+                    <div class="col-md-10 mb-3" id="vADD">
+                    </div>
+                    <div class="col-md-2 mb-3">Nội dung</div>
+                    <div class="col-md-10 mb-3" id="vND">
+                    </div>
+                    <div class="col-md-2 mb-3">Tags</div>
+                    <div class="col-md-10 mb-3" id="vTS">
+                    </div>
+                    <div class="col-md-2 mb-3">Tác giả</div>
+                    <div class="col-md-10 mb-3" id="vTG">
+                    </div>
+                    <div class="col-md-2 mb-3">Lượt xem</div>
+                    <div class="col-md-10 mb-3" id="vLX">
+                    </div>
+                    <div class="col-md-2 mb-3">Mã loại tin</div>
+                    <div class="col-md-10 mb-3" id="vMLT">
+                    </div>
+                    <div class="col-md-2 mb-3">Trạng thái</div>
+                    <div class="col-md-10 mb-3" id="vTT">
+                    </div>
+                    <div class="col-md-2 mb-3">Mã nhân viên</div>
+                    <div class="col-md-10 mb-3" id="vMNV">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function ThemTinTuc() {
+        $("#aoe").val('1');
+        $("#TD").val("");
+        $("#MT").val("");
+        $("#ADD").val("");
+        $("#ND").val("");
+        $("#TS").val("");
+        $("#TG").val("");
+        $("#LX").val("");
+        $("#MLT").val("Chọn loại tin");
+        $("#TT").val("Chọn trạng thái");
+        $("#MNV").val("Chọn nhân viên");
+        $("#ThemTin").modal("show");
+        $(".modal-title").html("Thêm tin tức");
+    }
+
+    function SuaTinTuc(id) {
+        $("#aoe").val('0');
+        (jQuery).get("/Admin/TinTuc/Lay1TinTuc", { id: id }, function (data) {
+            $("#MTT").val(data.IDTinTuc);
+            $("#TD").val(data.TieuDe);
+            $("#MT").val(data.MoTa);
+            $("#ND").val(data.NoiDung);
+            $("#TS").val(data.Tags);
+            $("#TG").val(data.TacGia);
+            $("#LX").val(data.LuotXem);
+            $("#MLT").val(data.IDLoaiTin);
+            $("#TT").val(data.TrangThai);
+            $("#MNV").val(data.IDNhanVien);
+            $("#ADD").val(data.AnhDaiDien);
+        });
+        $("#ThemTin").modal("show");
+        $(".modal-title").html("Sửa tin tức");
+    }
+
+    function HienThiTin(id) {
+        (jQuery).get("/Admin/TinTuc/Lay1TinTuc", { id: id }, function (data) {
+            $("#vMTT").html(data.MTT);
+            $("#vTD").html(data.TieuDe);
+            $("#vMT").html(data.MoTa);
+            $("#vADD").html(data.AnhDaiDien);
+            $("#vND").html(data.NoiDung);
+            $("#vTS").html(data.Tags);
+            $("#vTG").html(data.TacGia);
+            $("#vLX").html(data.LuotXem);
+            $("#vMLT").html(data.IDLoaiTin);
+            $("#vTT").html(data.TrangThai);
+            $("#vMNV").html(data.IDNhanVien);
+        });
+        $("#HienThi").modal("show");
+        $(".modal-title").html("Hiển thị tin tức");
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+

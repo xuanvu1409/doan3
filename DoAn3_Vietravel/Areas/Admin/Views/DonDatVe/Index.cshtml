@@ -1,0 +1,153 @@
+﻿@model IEnumerable<DoAn3_Vietravel.Areas.Admin.Models.DonDatVe>
+@using DoAn3_Vietravel.Areas.Admin.Models;
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="breadcrumbs">
+    <div class="col-sm-4">
+        <div class="page-header float-left">
+            <div class="page-title">
+                <h1>Dashboard</h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-8">
+        <div class="page-header float-right">
+            <div class="page-title">
+                <ol class="breadcrumb text-right">
+                    <li><a href="#">Home</a></li>
+                    <li class="active">DonDatVe</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content mt-3">
+    <div class="animated fadeIn">
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <strong class="card-title">Đơn đặt vé</strong>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-primary float-right bor-rd" onclick="ThemDonDatVe()">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div id="bootstrap-data-table-export_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <table id="bootstrap-data-table-export" class="table table-striped table-bordered dataTable no-footer chunho" role="grid" aria-describedby="bootstrap-data-table-export_info">
+                                        <thead>
+                                            <tr role="row">
+                                                <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending">ID đơn đặt vé</th>
+                                                <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending">ID vé</th>
+                                                <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending">Ngày đặt</th>
+                                                <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending">Trạng Thái</th>
+                                                <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending">Thao tác</th>
+
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in Model)
+                                            {
+                                            <tr role="row" class="odd">
+                                                <td class="sorting_1">@item.IDDonDatVe</td>
+                                                <td>@item.IDVe</td>
+                                                <td>@item.NgayDat</td>
+                                                <td>@item.TrangThai</td>
+                                                <td>
+                                                    <button class="btn btn-info bor-rd" onclick="Sua1DonDatVe('@item.IDDonDatVe')"><i class="fa fa-edit"></i></button>
+                                                    <a class="btn btn-danger bor-rd" onclick="return confirm('Bạn có chắc chắn muốn xoá khách hàng này không?')" href="~/Admin/DonDatVe/Xoa1DonDatVe/@item.IDDonDatVe"><i class="fa fa-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- .animated -->
+</div>
+
+<div class="modal">
+    <div class="modal-content">
+        <div class="modal-header pt-0">
+            <div class="modal-title"></div>
+            <span class="close" data-dismiss="modal">&times;</span>
+        </div>
+        <form method="post" action="/Admin/DonDatVe/Them1DonDatVe" enctype="mutkipart/form-data">
+            <input type="hidden" id="aoe" name="aoe" value="1" />
+            <input type="hidden" id="MDD" name="MDD" />
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-2 mb-3">Tài Khoản</div>
+                    <div class="col-md-10 mb-3">
+                        <input class="form-control" type="number" name="MTK" id="MTK" placeholder="Nhập mã tài khoản" />
+                    </div>
+                    <div class="col-md-2 mb-3">Vé</div>
+                    <div class="col-md-10 mb-3">
+                        <select class="form-control" name="MV" id="MV">
+                            <option selected>Chọn vé</option>
+                            @{
+                                var lv = ViewBag.listv as List<Ve>;
+                                foreach (var item in lv)
+                                {
+                                    <option value="@item.IDVe">@item.IDVe</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-2 mb-3">Trạng thái</div>
+                    <div class="col-md-10 mb-3">
+                        <select class="form-control" name="TThai" id="TThai">
+                            <option value="Chưa thanh toán" selected>Chưa thanh toán</option>
+                            <option value="Đã thanh toán">Đã thanh toán</option>
+                            <option value="Đang sử dụng">Đang sử dụng</option>
+                            <option value="Đã hoàn thành">Đã hoàn thành</option>
+                            <option value="Đã hoàn thành">Bị hủy</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="submit">Lưu</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    function ThemDonDatVe() {
+        $("#aoe").val("1");
+        $("#MV").val("");
+        $(".modal").modal("show");
+        $(".modal-title").html("Thêm đơn đặt vé");
+    }
+
+    function Sua1DonDatVe(id) {
+        $("#aoe").val("0");
+        (jQuery).get("/Admin/DonDatVe/Lay1DonDatVe", { id: id }, function (data) {
+            $("#MV").val(data.IDVe);
+            $("#ND").val(data.NgayDat);
+            $("#TT").val(data.TrangThai);
+        });
+        $(".modal").modal("show");
+        $(".modal-title").html("Sửa khách hàng");
+    }
+</script>
+

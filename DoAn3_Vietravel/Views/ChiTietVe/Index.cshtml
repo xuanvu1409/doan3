@@ -1,0 +1,1144 @@
+﻿@{
+    ViewBag.Title = "ChiTietVe";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Assets/css/Vietravel.css" rel="stylesheet" />
+<div class="n3-breadcrumb">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 ">
+                <div class="breadcrumb">
+                    <a href="/Home/Index">Du lịch</a> &nbsp;»&nbsp; <a href="/DanhSachVe/Index/@Model.IDLoaiVe" itemprop="url">Du lịch trong nước</a> &nbsp;»&nbsp; <a href="#">@Model.TenVe</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb -->
+
+<div class="container n3-tour-description mb-5">
+    <div class="row">
+        <div class="col-12 mb-3">
+            <h1 class="tour-name"><a>@Model.TenVe</a></h1>
+            <span itemprop="brand" style="display: none;">Vietravel</span>
+            <div class="tour-code"><i class="fas fa-barcode"></i>&nbsp;&nbsp;@Model.IDVe</div>
+        </div>
+        <div class="bd-example slideshow-pt col-lg-8 col-md-12 col-sm-12 col-12">
+            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="~/Assets/images/Tour/@Model.HinhAnh" alt="@Model.TenVe" class="d-block w-100">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+        <div class="info col-lg-4 col-md-12 col-sm-12 col-12">
+            <div class="frame-info position-relative">
+                <div class="sec2">
+                    <div class="row mb-2">
+                        <div class="col-lg-4 col-md-2 col-sm-3 col-6 text-danger" style="font-weight:700;">Khởi h&#224;nh:</div>
+                        <div class="col-lg-8 col-md-10 col-sm-9 col-6">
+                            <div class="row">
+                                <div class="mg-bot-date col-6">
+                                    @Model.NgayKhoiHanh
+                                    <span class="d-block  d-sm-none">
+                                        <i class="far fa-calendar-alt"></i>&nbsp;
+                                        <a href="#" class="b">Ng&#224;y kh&#225;c</a>
+                                    </span>
+                                </div>
+                                <div class="hidden-lg hidden-md hidden-sm col-6">
+                                    <i class="far fa-calendar-alt"></i>&nbsp;<a href="#" class="b">Ng&#224;y kh&#225;c</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-lg-4 col-md-2 col-sm-3 col-6 text-danger" style="font-weight:700;">Thời gian:</div>
+                        <div class="col-lg-8 col-md-10 col-sm-9 col-6">
+                            @Model.ThoiGian ngày
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-2 col-sm-3 col-6 text-danger" style="padding-right: 0px !important; font-weight:700;">Nơi khởi h&#224;nh:</div>
+                        <div class="col-lg-8 col-md-10 col-sm-9 col-6">
+                            @Model.NoiTapTrung
+                        </div>
+                    </div>
+                </div>
+                <div class="sec3">
+                    <div class="row">
+                        <div class="col-lg-7 col-md-7 col-sm-7 col-7">
+                            <div style="margin-bottom: 7px;">
+                                <span class="price">@(string.Format("{0:#,##0}", Model.Gia))</span>&nbsp;<span class="price">đ</span>
+                            </div>
+                            <div>
+                                Số chỗ c&#242;n nhận:
+                                <span class="sit">@Model.SoCho</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-5 col-5 text-right">
+                            <button class="btn btn-book1 btn-md" onclick="return checkLogin()">Đặt ngay</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="sec5">
+                    <div style="margin-bottom: 8px;">Bạn cần hỗ trợ?</div>
+                    <div>
+                        <div class="float-left btn-s1">
+
+                            <a>
+                                <img src="~/Assets/img/btn-call.png" />
+                            </a>
+                        </div>
+                        <div class="float-left btn-s2">
+                            <img src="~/Assets/img/btn-call2.png" />
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="bg-phone hidden-md hidden-sm d-block  d-sm-none">
+                    <img src="~/Assets/img/bg-phone.png" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container n3-tour-detail">
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-4 col-12">
+            <div class="menu-left mb-4">
+                <div class="panel panel-default panel-side-menu">
+                    <div class="panel-body panel-body-nav">
+                        <div class="side-menu">
+                            <ul class="list-unstyled">
+                                <li id="cct" class="tab-chuongtrinhtour active">
+                                    <a href="#">
+                                        <i class="fas fa-spinner"></i>
+                                        &nbsp;&nbsp;
+                                        <span>Chương tr&#236;nh tour</span>
+                                    </a>
+                                </li>
+                                <li class="tab-chitiettour" id="tabChiTiet">
+                                    <a href="#">
+                                        <i class="fas fa-list"></i>
+                                        &nbsp;&nbsp;
+                                        <span>Chi tiết tour</span>
+                                    </a>
+                                </li>
+                                <li class="tab-luuy">
+                                    <a href="#">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                        &nbsp;&nbsp;
+                                        <span>Lưu &#253;</span>
+                                    </a>
+                                </li>
+                                <li class="tab-ngaykhac " id="tabNgayKhac">
+                                    <a href="#">
+                                        <i class="far fa-calendar-alt"></i>
+                                        &nbsp;&nbsp;
+                                        <span>Ng&#224;y kh&#225;c</span>
+                                    </a>
+                                </li>
+                                <li class="tab-ykien">
+                                    <a href="#">
+                                        <i class="far fa-comments"></i>
+                                        &nbsp;&nbsp;
+                                        <span>&#221; kiến kh&#225;ch h&#224;ng</span>
+                                    </a>
+                                </li>
+                                <li class="tab-lienhe" id="tabLienHe">
+                                    <a href="#">
+                                        <i class="fas fa-podcast"></i>
+                                        &nbsp;&nbsp;
+                                        <span>Li&#234;n hệ</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="services">
+                <div class="title-lg">Dịch vụ đi k&#232;m</div>
+                <div class="frame-service">
+                    <ul class="list-service pl-0">
+                        <li>Bữa ăn theo chương tr&#236;nh</li>
+                        <li>Bảo hiểm</li>
+                        <li>Hướng dẫn vi&#234;n</li>
+                        <li>V&#233; tham quan</li>
+                        <li>Vận chuyển</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mb-4 d-block  d-sm-none">
+                <a href="#"><img src="~/Assets/img/tylevisa.jpg" alt="visa" class="w-100 d-block"></a>
+            </div>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-8 col-12">
+            <div class="sec-info">
+                <div class="chuongtrinhtour mb-4">
+                    <div class="title-lg"><h2>Chương tr&#236;nh tour</h2></div>
+                    <div style="line-height: 20px; text-align: justify;padding:20px 20px 0px 20px">
+                        @Model.LichTrinh
+                    </div>
+                </div>
+                <div class="chitiettour mb-4" style="display: none;">
+                    <div class="title-lg" style="font-weight:700;"><h2>Chi tiết tour</h2></div>
+                    <div class="sec-content tour-detail">
+                        <div id="divThongTinVanChuyen">
+                            <div class="title">
+                                <span class="d-block  d-sm-none">
+                                    <img src="~/Assets/img/i-info.png" alt="info">&nbsp;&nbsp;
+                                </span>
+                                Th&#244;ng tin vận chuyển
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <table class="table table-bordered">
+                                        <tbody>
+                                            <tr>
+                                                <td>Thông tin vận chuyển</td>
+                                                <td>
+                                                    @Model.HinhThucVanChuyen
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        @{
+                            Html.RenderAction("ThongTinKhachSan", "ChiTietVe", new { id = Model.IDKhachSan });
+                        }
+
+                        @{
+                            Html.RenderAction("ThongTinNhanVien", "ChiTietVe", new { id = Model.IDNhanVien });
+                        }
+                        <div id="divThongTinHDVTien"></div>
+                        <div class="info">
+                            <div class="title">
+                                <span class="d-block  d-sm-none">
+                                    <img src="~/Assets/img/i-info.png" alt="info">&nbsp;&nbsp;
+                                </span>
+                                Th&#244;ng tin tập trung
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <table class="table table-bordered">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    Nơi tập trung
+                                                </td>
+                                                <td>
+                                                    <span>@Model.NoiTapTrung</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tour-price">
+                            <div class="title">
+                                <span class="d-block  d-sm-none">
+                                    <img src="~/Assets/img/i-tourprice.png" alt="tourprice">&nbsp;&nbsp;
+                                </span>
+                                Gi&#225; tour &amp; Phụ thu ph&#242;ng đơn
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <table class="table table-bordered">
+                                        <tr class="bold">
+                                            <td>Phụ thu</td>
+                                            <td>@Model.PhuThu</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="note">
+                            <div class="title">
+                                <span class="d-block  d-sm-none">
+                                    <img src="~/Assets/img/i-note.png" alt="note">&nbsp;&nbsp;
+                                </span>
+                                Ghi ch&#250;
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <p class="note-content">
+                                        @Model.GhiChu
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="luuy mb-4" style="display: none;">
+                    <div class="title-lg"><h2>Lưu &#253;</h2></div>
+                    <div class="sec-content attention">
+                        <div style="text-align: justify;">
+                            &nbsp;
+                        </div>
+                        <table border="0" cellpadding="0" cellspacing="0" style="width:776px;" width="776">
+                            <colgroup>
+                                <col />
+                            </colgroup>
+                            <tbody>
+                                <tr height="20">
+                                    <td height="20" style="height:20px;width:776px;">
+                                        <strong>Lộ tr&igrave;nh tham khảo, cự ly khoảng:</strong>
+                                    </td>
+                                </tr>
+                                <tr height="20">
+                                    <td height="20" style="height: 20px; text-align: justify;">
+                                        Ng&agrave;y 01 (350 km): TP. HCM - KDL Cổ Thạch (280 km) - Ninh Chữ (70 km)
+                                    </td>
+                                </tr>
+                                <tr height="20">
+                                    <td height="20" style="height: 20px; text-align: justify;">
+                                        Ng&agrave;y 02&nbsp; (90 km): Ninh Chữ - Vịnh Vĩnh Hy (35 km) - Th&aacute;p Ch&agrave;m Poklong Giarai (45 km) - Ninh Chữ (10 km)
+                                    </td>
+                                </tr>
+                                <tr height="20">
+                                    <td height="20" style="height: 20px; text-align: justify;">
+                                        Ng&agrave;y 03 (338 km): Ninh Chữ - L&agrave;ng Gốm B&agrave;u Tr&uacute;c (18 km) - TP. HCM (320 km)
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div style="text-align: justify;">
+                            &nbsp;
+                        </div>
+                        <div style="text-align: justify;">
+                            <div>@Model.LuuY</div>
+                            <div>
+                                <strong>Gi&aacute; v&eacute; trẻ em:&nbsp;</strong>
+                            </div>
+                            <div>
+                                -<span style="white-space:pre"> </span>Trẻ em dưới 5 tuổi: kh&ocirc;ng thu ph&iacute; dịch vụ, gia đ&igrave;nh tự lo cho b&eacute;. Hai người lớn chỉ được k&egrave;m 1 trẻ em dưới 5 tuổi, trẻ em thứ 2 phải đ&oacute;ng ph&iacute; theo quy định d&agrave;nh cho độ tuổi từ 5 đến dưới 12 tuổi v&agrave; phụ thu giường đơn
+                            </div>
+                            <div>
+                                -<span style="white-space:pre"> </span>Trẻ em từ 5 - dưới 12 tuổi: mua 50% v&eacute; dịch vụ, bao gồm phương tiện xe vận chuyển, ăn uống, v&eacute; tham quan, ngủ chung với gia đ&igrave;nh, kh&ocirc;ng c&oacute; giường ri&ecirc;ng. Hai người lớn chỉ được k&egrave;m 1 trẻ em từ 5 - dưới 12 tuổi, em thứ hai trở l&ecirc;n phải mua 1 suất giường đơn
+                            </div>
+                            <div>
+                                -<span style="white-space:pre"> </span>Trẻ em từ 12 tuổi trở l&ecirc;n: mua một v&eacute; như người lớn&nbsp;
+                            </div>
+                            <div>
+                                &nbsp;
+                            </div>
+                            <div>
+                                <strong>C&aacute;c điều kiện khi đăng k&yacute; tour:&nbsp;</strong>
+                            </div>
+                            <div>
+                                -<span style="white-space:pre"> </span>Khi đăng k&yacute; vui l&ograve;ng cung cấp giấy tờ t&ugrave;y th&acirc;n tất cả người đi: Chứng minh nh&acirc;n d&acirc;n/Hộ chiếu (Passport)/Giấy khai sinh (trẻ em dưới 14 tuổi). Trong trường hợp đăng k&yacute; trực tuyến qua www.travel.com.vn&nbsp; vui l&ograve;ng nhập t&ecirc;n ch&iacute;nh x&aacute;c theo thứ tự: Họ/t&ecirc;n l&oacute;t/t&ecirc;n xuất v&eacute; m&aacute;y bay. Qu&yacute; kh&aacute;ch khi đăng k&yacute; cung cấp t&ecirc;n theo giấy tờ t&ugrave;y th&acirc;n n&agrave;o, khi đi tour mang theo giấy tờ t&ugrave;y th&acirc;n đ&oacute;.&nbsp;
+                            </div>
+                            <div>
+                                -<span style="white-space:pre"> </span>Quy định giấy tờ t&ugrave;y th&acirc;n khi đi tour :&nbsp;
+                            </div>
+                            <div>
+                                Kh&aacute;ch quốc tịch Việt Nam: Trẻ em dưới 14 tuổi Giấy khai sinh bản ch&iacute;nh/Hộ chiếu bản ch&iacute;nh c&ograve;n gi&aacute; trị sử dụng. Trẻ em từ 14 tuổi trở l&ecirc;n v&agrave; Người lớn CMND/ Hộ chiếu bản ch&iacute;nh c&ograve;n gi&aacute; trị sử dụng. Kh&aacute;ch quốc tịch nước ngo&agrave;i hoặc l&agrave; Việt kiều: Khi đi tour vui l&ograve;ng mang theo hộ chiếu bản ch&iacute;nh (Passport) k&egrave;m thị thực nhập cảnh (visa) hoặc thẻ xanh k&egrave;m thị thực nhập cảnh (visa d&aacute;n v&agrave;o hộ chiếu hoặc tờ rời hoặc cuốn miễn thị thực, c&aacute;c loại giấy tờ n&agrave;y phải c&oacute; dấu nhập cảnh Việt Nam v&agrave; c&ograve;n gi&aacute; trị sử dụng theo quy định khi đi tour).
+                            </div>
+                            <div>
+                                -<span style="white-space:pre"> </span>Giờ nhận ph&ograve;ng &amp; trả ph&ograve;ng theo quy định kh&aacute;ch sạn, nhận sau 14:00 giờ v&agrave; trả trước 12:00 giờ.
+                            </div>
+                            <div>
+                                -<span style="white-space:pre"> </span>Ph&ograve;ng kh&aacute;ch sạn/resort c&oacute; thể xảy ra trường hợp ph&ograve;ng kh&ocirc;ng gần nhau, kh&ocirc;ng c&ugrave;ng tầng, loại ph&ograve;ng một giường đ&ocirc;i hoặc hai giường đơn kh&ocirc;ng theo y&ecirc;u cầu, t&ugrave;y t&igrave;nh h&igrave;nh thực tế từng kh&aacute;ch sạn/Resort.&nbsp;
+                            </div>
+                            <div>
+                                -<span style="white-space:pre"> </span>Trường hợp qu&yacute; kh&aacute;ch tham gia tour 01 kh&aacute;ch, bắt buộc đ&oacute;ng th&ecirc;m tiền phụ thu ph&ograve;ng đơn để ở ri&ecirc;ng 01 ph&ograve;ng. Trường hợp trong đo&agrave;n cũng c&oacute; kh&aacute;ch đi 01 m&igrave;nh, c&ugrave;ng giới t&iacute;nh v&agrave; c&oacute; nhu cầu muốn gh&eacute;p c&ugrave;ng ph&ograve;ng với qu&yacute; kh&aacute;ch th&igrave; Vietravel sẽ ho&agrave;n lại tiền phụ thu ph&ograve;ng đơn cho qu&yacute; kh&aacute;ch.
+                            </div>
+                            <div>
+                                -<span style="white-space:pre"> </span>Trường hợp qu&yacute; kh&aacute;ch đi nh&oacute;m 03 kh&aacute;ch, Vietravel sẽ cung cấp 01 ph&ograve;ng d&agrave;nh cho 03 kh&aacute;ch l&agrave; 01 giường lớn 1m6 v&agrave; 01 giường phụ di động từ 0.8 - 1,2m (extrabed). Trong trường hợp qu&yacute; kh&aacute;ch c&oacute; nhu cầu ở ri&ecirc;ng, vui l&ograve;ng đ&oacute;ng th&ecirc;m tiền phụ thu ph&ograve;ng đơn theo quy định.&nbsp;
+                            </div>
+                            <div>
+                                -<span style="white-space:pre"> </span>Trong trường hợp Qu&yacute; kh&aacute;ch c&oacute; y&ecirc;u cầu n&acirc;ng chuẩn loại ph&ograve;ng cao cấp hơn vui l&ograve;ng li&ecirc;n hệ phụ tr&aacute;ch tuyến &amp; thanh to&aacute;n ch&iacute; ph&aacute;t sinh t&ugrave;y hạng ph&ograve;ng y&ecirc;u cầu (nếu c&oacute;).&nbsp;&nbsp;
+                            </div>
+                            <div>
+                                -<span style="white-space:pre"> </span>Đối với c&aacute;c chương tr&igrave;nh tham quan biển đảo, trong trường hợp Qu&yacute; kh&aacute;ch kh&ocirc;ng khỏe, c&oacute; tiền sử bệnh hoặc c&oacute; chất k&iacute;ch th&iacute;ch trong người (rượu, bia&hellip;) th&igrave; kh&ocirc;ng n&ecirc;n tắm &amp; lặn biển để đảm bảo sự an to&agrave;n.
+                            </div>
+                            <div>
+                                -<span style="white-space:pre"> </span>Cam kết đ&atilde; được tư vấn hiểu r&otilde; v&agrave; đồng &yacute; c&aacute;c quy định li&ecirc;n quan về điều kiện sức khỏe khi tham gia chương tr&igrave;nh du lịch. Kh&aacute;ch nữ từ 55 tuổi trở l&ecirc;n v&agrave; kh&aacute;ch nam từ 60 tuổi trở l&ecirc;n: n&ecirc;n c&oacute; người th&acirc;n dưới 55 tuổi (đủ sức khỏe) đi c&ugrave;ng. Kh&aacute;ch từ 70 tuổi trở l&ecirc;n: c&oacute; người th&acirc;n dưới 55 tuổi (đủ sức khỏe) đi c&ugrave;ng. Kh&aacute;ch từ 80 tuổi trở l&ecirc;n kh&ocirc;ng c&oacute; chế độ bảo hiểm, Vietravel giữ quyền xem x&eacute;t nhận phục vụ kh&aacute;ch tr&ecirc;n 80 tuổi căn cứ tr&ecirc;n điều kiện sức khỏe v&agrave; c&oacute; người th&acirc;n đi c&ugrave;ng. Qu&yacute; kh&aacute;ch mang thai vui l&ograve;ng b&aacute;o cho nh&acirc;n vi&ecirc;n b&aacute;n tour ngay tại thời điểm đăng k&yacute;. Phải c&oacute; &yacute; kiến của b&aacute;c sĩ trước khi đi tour, tự chịu tr&aacute;ch nhiệm về sức khỏe của m&igrave;nh v&agrave; thai nhi trong suốt thời gian tham gia chương tr&igrave;nh du lịch. Khi đi tour phải mang theo sổ kh&aacute;m thai v&agrave; giấy tờ t&ugrave;y th&acirc;n theo quy định h&atilde;ng h&agrave;ng kh&ocirc;ng. Tuần thai từ 28 tuần trở đi phải mang theo giấy kh&aacute;m thai trong v&ograve;ng 7 ng&agrave;y trở lại. Cam kết bản th&acirc;n v&agrave; người th&acirc;n ho&agrave;n to&agrave;n c&oacute; đủ sức khỏe để đi du lịch theo chương tr&igrave;nh. Đồng &yacute; miễn trừ to&agrave;n bộ tr&aacute;ch nhiệm ph&aacute;p l&yacute;, kh&ocirc;ng khiếu nại, kh&ocirc;ng y&ecirc;u cầu bồi thường đối với Vietravel n&oacute;i chung v&agrave; nh&acirc;n vi&ecirc;n Vietravel n&oacute;i ri&ecirc;ng về tất cả c&aacute;c vấn đề xảy ra li&ecirc;n quan đến t&igrave;nh trạng sức khỏe của kh&aacute;ch h&agrave;ng khi tham gia tour hoặc sử dụng c&aacute;c dịch vụ do Vietravel cung cấp. Qu&yacute; kh&aacute;ch cam kết tự chịu mọi chi ph&iacute; ph&aacute;t sinh ngo&agrave;i chương tr&igrave;nh tour li&ecirc;n quan đến việc giải quyết c&aacute;c rủi ro về sức khỏe (lưu tr&uacute;, vận chuyển, chi ph&iacute; kh&aacute;m chữa bệnh...) &ndash; ngoại trừ c&aacute;c chi ph&iacute; thuộc hạng mục bảo hiểm sẽ do C&ocirc;ng ty Bảo hiểm ho&agrave;n trả theo quy định.
+                            </div>
+                            <div>
+                                -<span style="white-space:pre"> </span>Qu&yacute; kh&aacute;ch c&oacute; nhu cầu cần xuất h&oacute;a đơn vui l&ograve;ng cung cấp th&ocirc;ng tin xuất h&oacute;a đơn cho nh&acirc;n vi&ecirc;n b&aacute;n tour&nbsp; khi ngay khi đăng k&yacute; hoặc trước khi thanh to&aacute;n hết, kh&ocirc;ng nhận xuất h&oacute;a đơn sau khi tour đ&atilde; kết th&uacute;c.&nbsp;
+                            </div>
+                            <div>
+                                -<span style="white-space:pre"> </span>Qu&yacute; kh&aacute;ch vui l&ograve;ng đọc kỹ chương tr&igrave;nh, gi&aacute; tour, c&aacute;c khoản bao gồm cũng như kh&ocirc;ng bao gồm trong chương tr&igrave;nh, c&aacute;c điều kiện hủy tour tr&ecirc;n bi&ecirc;n nhận đ&oacute;ng tiền. T&ugrave;y thời điểm đăng k&yacute;, k&ecirc;nh b&aacute;n, gi&aacute; tour c&oacute; thể thay đổi. Trong trường hợp Qu&yacute; kh&aacute;ch kh&ocirc;ng trực tiếp đến đăng k&yacute; tour m&agrave; do người kh&aacute;c đến đăng k&yacute; th&igrave; Qu&yacute; kh&aacute;ch vui l&ograve;ng t&igrave;m hiểu kỹ chương tr&igrave;nh từ người đăng k&yacute; cho m&igrave;nh.&nbsp;
+                            </div>
+                            <div>
+                                &nbsp;
+                            </div>
+                            <div>
+                                <strong>Lưu &yacute; khi chuyển/hủy tour:</strong>
+                            </div>
+                            <div>
+                                -<span style="white-space:pre"> </span>Sau khi thanh to&aacute;n tiền, nếu Qu&yacute; kh&aacute;ch muốn chuyển/hủy tour xin vui l&ograve;ng mang V&eacute; Du Lịch đến văn ph&ograve;ng đăng k&yacute; tour để l&agrave;m thủ tục chuyển/hủy tour v&agrave; chịu chi ph&iacute; theo quy định của Vietravel. Kh&ocirc;ng giải quyết c&aacute;c trường hợp li&ecirc;n hệ chuyển/hủy tour qua điện thoại.
+                            </div>
+                            <div>
+                                &nbsp;
+                            </div>
+                            <div>
+                                <strong>C&aacute;c điều kiện hủy tour: (đối với ng&agrave;y thường )</strong>
+                            </div>
+                            <div>
+                                - <span style="white-space:pre"> </span>Được chuyển sang c&aacute;c tuyến du lịch kh&aacute;c trước ng&agrave;y khởi&nbsp; h&agrave;nh 20 ng&agrave;y : Kh&ocirc;ng mất chi ph&iacute;.
+                            </div>
+                            <div>
+                                - <span style="white-space:pre"> </span>Nếu hủy hoặc chuyển sang c&aacute;c chuyến du lịch kh&aacute;c ngay sau khi đăng k&yacute; đến từ 15-19 ng&agrave;y trước ng&agrave;y khởi h&agrave;nh: Chi ph&iacute; hủy tour: 50% tiền cọc tour.
+                            </div>
+                            <div>
+                                - <span style="white-space:pre"> </span>Nếu hủy hoặc chuyển sang c&aacute;c chuyến du lịch kh&aacute;c từ 12-14 ng&agrave;y trước ng&agrave;y khởi h&agrave;nh: Chi ph&iacute; hủy tour: 100% tiền cọc tour.
+                            </div>
+                            <div>
+                                - <span style="white-space:pre"> </span>Nếu hủy chuyến du lịch trong v&ograve;ng từ 08-11 ng&agrave;y trước ng&agrave;y khởi h&agrave;nh: Chi ph&iacute; hủy tour: 50% tr&ecirc;n gi&aacute; tour du lịch.
+                            </div>
+                            <div>
+                                - <span style="white-space:pre"> </span>Nếu hủy chuyến du lịch trong v&ograve;ng từ 05-07 ng&agrave;y trước ng&agrave;y khởi h&agrave;nh: Chi ph&iacute; hủy tour: 70% tr&ecirc;n gi&aacute; tour du lịch.
+                            </div>
+                            <div>
+                                - <span style="white-space:pre"> </span>Nếu hủy chuyến du lịch trong v&ograve;ng từ 02-04 ng&agrave;y trước ng&agrave;y khởi h&agrave;nh: Chi ph&iacute; hủy tour: 90% tr&ecirc;n gi&aacute; v&eacute; du lịch.
+                            </div>
+                            <div>
+                                - <span style="white-space:pre"> </span>Nếu hủy chuyến du lịch trong v&ograve;ng 1 ng&agrave;y trước ng&agrave;y khởi h&agrave;nh : Chi ph&iacute; hủy tour: 100% tr&ecirc;n gi&aacute; v&eacute; du lịch.
+                            </div>
+                            <div>
+                                &nbsp;
+                            </div>
+                            <div>
+                                <strong>C&aacute;c điều kiện hủy tour: (đối với ng&agrave;y lễ, tết )</strong>
+                            </div>
+                            <div>
+                                - <span style="white-space:pre"> </span>Được chuyển sang c&aacute;c tuyến du lịch kh&aacute;c trước ng&agrave;y khởi&nbsp; h&agrave;nh 30 ng&agrave;y : Kh&ocirc;ng mất chi ph&iacute;.
+                            </div>
+                            <div>
+                                - <span style="white-space:pre"> </span>Nếu hủy hoặc chuyển sang c&aacute;c chuyến kh&aacute;c ngay sau khi đăng k&yacute; đến từ 25-29 ng&agrave;y trước ng&agrave;y khởi h&agrave;nh: Chi ph&iacute; hủy tour: 50% tiền cọc tour.
+                            </div>
+                            <div>
+                                -<span style="white-space:pre"> </span>Nếu hủy hoặc chuyển sang c&aacute;c chuyến kh&aacute;c từ 20-24 ng&agrave;y trước ng&agrave;y khởi h&agrave;nh: Chi ph&iacute; hủy tour: 100% tiền cọc tour.
+                            </div>
+                            <div>
+                                - <span style="white-space:pre"> </span>Nếu hủy chuyến du lịch trong v&ograve;ng từ 17-19 ng&agrave;y trước ng&agrave;y khởi h&agrave;nh: Chi ph&iacute; hủy tour: 50% tr&ecirc;n gi&aacute; tour du lịch.
+                            </div>
+                            <div>
+                                - <span style="white-space:pre"> </span>Nếu hủy chuyến du lịch trong v&ograve;ng từ 08-16 ng&agrave;y trước ng&agrave;y khởi h&agrave;nh: Chi ph&iacute; hủy tour: 70% tr&ecirc;n gi&aacute; tour du lịch.
+                            </div>
+                            <div>
+                                - <span style="white-space:pre"> </span>Nếu hủy chuyến du lịch trong v&ograve;ng từ 02-07 ng&agrave;y trước ng&agrave;y khởi h&agrave;nh: Chi ph&iacute; hủy tour:&nbsp; 90% tr&ecirc;n gi&aacute; v&eacute; du lịch.
+                            </div>
+                            <div>
+                                - <span style="white-space:pre"> </span>Nếu hủy chuyến du lịch trong v&ograve;ng 1 ng&agrave;y trước ng&agrave;y khởi h&agrave;nh : Chi ph&iacute; hủy tour: 100% tr&ecirc;n gi&aacute; v&eacute; du lịch.
+                            </div>
+                            <div>
+                                <strong>C&aacute;c tour Lễ, Tết l&agrave; tour c&oacute; thời gian diễn ra rơi v&agrave;o một trong c&aacute;c ng&agrave;y Lễ, Tết theo quy định&nbsp;</strong>
+                            </div>
+                            <div>
+                                <strong>Thời gian hủy được t&iacute;nh cho ng&agrave;y l&agrave;m việc, kh&ocirc;ng t&iacute;nh thứ 7, Chủ Nhật v&agrave; c&aacute;c ng&agrave;y Lễ, Tết.&nbsp;&nbsp;</strong>
+                            </div>
+                            <div>
+                                &nbsp;
+                            </div>
+                            <div style="text-align: center;">
+                                <strong>Mọi chi tiết vui l&ograve;ng li&ecirc;n hệ:</strong>
+                            </div>
+                            <div style="text-align: center;">
+                                <strong>KHỐI KH&Aacute;CH LẺ - DU LỊCH TRONG NƯỚC</strong>
+                            </div>
+                            <div style="text-align: center;">
+                                190 PASTEUR, PHƯỜNG 6, QUẬN 3, TP.HCM
+                            </div>
+                            <div style="text-align: center;">
+                                Điện thoại: (84-28) 3822 8898 (Ext: 1231, 1338, 1133, 1174)
+                            </div>
+                            <div style="text-align: center;">
+                                Tổng đ&agrave;i tư vấn từ 8:00 - 23:00: 1900 1839&nbsp;&nbsp;
+                            </div>
+                            <div style="text-align: center;">
+                                Hotline: 0938 301 399
+                            </div>
+                            <div style="text-align: center;">
+                                <strong>VIETRAVEL K&Iacute;NH CH&Uacute;C QU&Yacute; KH&Aacute;CH MỘT CHUYẾN DU LỊCH VUI VẺ!</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="text-transform: uppercase;font-weight: 500;font-size: 16px;padding: 15px;">Th&#244;ng tin:</div>
+                    <div class="sec-content attention">
+                    </div>
+                </div>
+                <div class="ngaykhac mg-bot30" style="display: block;">
+                    <div class="title-lg"><h2>Ngày khác</h2></div>
+                </div>
+                <div class="ykien mb-4" style="display: none;">
+                    <!--Ý kiến khách hàng-->
+
+                    <div class="title-lg"><h2>&#221; KIẾN KH&#193;CH H&#192;NG (0)</h2></div>
+                    <div class="sec-content customer-idea">
+
+                        <div id="comment-list">
+                        </div>
+
+
+
+                        <form action="/Comment/Reply" id="mainform" method="post">
+                            <input name="__RequestVerificationToken" type="hidden" value="D2ZmrN5GGYf1rad99bkX497YpSKkHqxaw9tZYWACvKdD3HJbda4jaj5NLKTegAvja6zryhAafohCkhhQTZ3CN7RlL7UVtzcP_7vmq_XTmpc1" />
+                            <input id="HeaderTour" name="HeaderTour" type="hidden" value="NDSGN561" />
+                            <div class="frame-feedback">
+                                <div class="title">
+                                    <img src="~/Assets/img/i-feedback.png" alt="feedback">&nbsp;&nbsp;Gửi &#253; kiến
+                                </div>
+                                <div class="form-feedback">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-12 col-12 mb-3">
+                                            <input class="form-control input-md" id="UserName" name="UserName" placeholder="Họ tên(*)" required="required" type="text" value="" />
+                                        </div>
+                                        <div class="col-md-6 col-sm-12 col-12 mb-3">
+                                            <input class="form-control input-md" id="Email" name="Email" placeholder="Email(*)" required="required" type="email" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-12">
+                                            <textarea class="form-control" cols="20" id="Content" name="Content" placeholder="Ý kiến của bạn(*)" required="required" rows="5"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 text-center mb-3">
+                                            <button type="submit" class="btn btn-md btn-detail" id="btn_submitmainform">Gửi đi&nbsp;&nbsp;<i class="fas fa-paper-plane"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="lienhe mb-4" style="display: none;">
+                    <div class="title-lg"><h2>Li&#234;n hệ</h2></div>
+                    <div class="sec-content contact">
+                        <div class="row vpc">
+                            <div class="col-12 title">
+                                Trụ sở ch&#237;nh
+                            </div>
+                            <div class="col-sm-6 col-12 mb-4">
+                                <p class="address mb-2"><strong>Địa chỉ: </strong> 190 Pasteur, Phường 6, Quận 3, Tp. Hồ Chí Minh</p>
+                                <p class="mb-2"><strong>Điện thoại:</strong> (84-28) 3822 8898</p>
+                                <p class="mb-2"><strong>Fax:</strong> (84-28) 3829 9142</p>
+                                <p><strong>Email:</strong> info@vietravel.com</p>
+                            </div>
+                        </div>
+                        <div class="row cn">
+                            <div class="col-12 mb-4">
+                                <ul class="list-mien list-inline">
+                                    <li class="active item-mn" id="tabMienNam"><a href="#">Miền Nam</a></li>
+                                    <li class="item-mb"><a href="#" id="tabMienBac">Miền Bắc</a></li>
+                                    <li class="item-mt"><a href="#" id="tabMienTrung">Miền Trung</a></li>
+                                </ul>
+                            </div>
+                            <div class="mien miennam" id="divMienNam">
+                            </div>
+                            <div class="mien mienbac" id="divMienBac">
+                            </div>
+                            <div class="mien mientrung" id="divMienTrung">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-12">
+    <div class="line-ct">&nbsp;</div>
+</div>
+<div class="col-12 tour-similar">
+    <div class="row">
+        <div class="col-12 mb-3">
+            <div class="title-ft">Các tour tương tự</div>
+        </div>
+        <div id="theogia" class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
+                <a href="/tourNDSGN538-001-060120XE-V/da-lat-langbiang-canh-dong-hoa-cam-tu-cau-duong-ham-dat-set-tour-tiet-kiem.aspx" title="Đà Lạt - Langbiang - Cánh Đồng Hoa Cẩm Tú Cầu - Đường Hầm Đất Sét (Tour Tiết Kiệm)">
+                    <div class="position-relative">
+                        <img src="https://travel.com.vn/Images/destination/tf_190909013453_124909.jpg" class="w-100 d-block" alt="Đà Lạt - Langbiang - Cánh Đồng Hoa Cẩm Tú Cầu - Đường Hầm Đất Sét (Tour Tiết Kiệm)">
+                        <div class="frame-ttt1">
+                            <div class="float-left">
+                                <img src="~/Assets/img/i-date.png" alt="date">
+                            </div>
+                            <div class="float-left date">
+                                <span class="yellow">06/01/2020</span> -
+                                <span class="yellow">3 ngày</span> - <span class="yellow">9 chỗ</span>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </a>
+                <div class="frame-ttt2">
+                    <a href="/tourNDSGN538-001-060120XE-V/da-lat-langbiang-canh-dong-hoa-cam-tu-cau-duong-ham-dat-set-tour-tiet-kiem.aspx" title="Đà Lạt - Langbiang - Cánh Đồng Hoa Cẩm Tú Cầu - Đường Hầm Đất Sét (Tour Tiết Kiệm)">
+                        <div class="ttt-title dot-dot cut-ttt">Đà Lạt - Langbiang - Cánh Đồng ... </div>
+                    </a>
+                    <div class="ttt-line"></div>
+                    <div>
+                        <img src="~/Assets/img/i-price.png" class="float-left" alt="price">
+                        <div class="float-left ttt-info">
+
+                            <span class="price-n">2,190,000 đ</span>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
+                <a href="/tourNDSGN550-006-280320XE-V/phan-thiet-ta-cu-doi-cat-vang-resort-3sao-tour-tiet-kiem.aspx" title="Phan Thiết - Tà Cú - Đồi Cát Vàng (Resort 3*. Tour Tiết Kiệm)">
+                    <div class="position-relative">
+                        <img src="https://travel.com.vn/Images/destination/tf_191022115958_594406.jpg" class="w-100 d-block" alt="Phan Thiết - Tà Cú - Đồi Cát Vàng (Resort 3*. Tour Tiết Kiệm)">
+                        <div class="frame-ttt1">
+                            <div class="float-left">
+                                <img src="~/Assets/img/i-date.png" alt="date">
+                            </div>
+                            <div class="float-left date">
+                                <span class="yellow">28/03/2020</span> -
+                                <span class="yellow">2 ngày</span> - <span class="yellow">9 chỗ</span>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </a>
+                <div class="frame-ttt2">
+                    <a href="/tourNDSGN550-006-280320XE-V/phan-thiet-ta-cu-doi-cat-vang-resort-3sao-tour-tiet-kiem.aspx" title="Phan Thiết - Tà Cú - Đồi Cát Vàng (Resort 3*. Tour Tiết Kiệm)">
+                        <div class="ttt-title dot-dot cut-ttt">Phan Thiết - Tà Cú - Đồi Cát V ... </div>
+                    </a>
+                    <div class="ttt-line"></div>
+                    <div>
+                        <img src="~/Assets/img/i-price.png" class="float-left" alt="price">
+                        <div class="float-left ttt-info">
+
+                            <span class="price-n">2,390,000 đ</span>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
+                <a href="/tourNDSGN538-050-250520XE-V-1/da-lat-langbiang-canh-dong-hoa-cam-tu-cau-duong-ham-dat-set-khach-san-3-sao-tour-tiet-kiem.aspx" title="Đà Lạt - Langbiang - Cánh Đồng Hoa Cẩm Tú Cầu - Đường Hầm Đất Sét (Khách sạn 3 sao. Tour Tiết Kiệm)">
+                    <div class="position-relative">
+                        <img src="https://travel.com.vn/Images/destination/tf_190909013453_124909.jpg" class="w-100 d-block" alt="Đà Lạt - Langbiang - Cánh Đồng Hoa Cẩm Tú Cầu - Đường Hầm Đất Sét (Khách sạn 3 sao. Tour Tiết Kiệm)">
+                        <div class="frame-ttt1">
+                            <div class="float-left">
+                                <img src="~/Assets/img/i-date.png" alt="date">
+                            </div>
+                            <div class="float-left date">
+                                <span class="yellow">25/05/2020</span> -
+                                <span class="yellow">3 ngày</span> - <span class="yellow">9 chỗ</span>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </a>
+                <div class="frame-ttt2">
+                    <a href="/tourNDSGN538-050-250520XE-V-1/da-lat-langbiang-canh-dong-hoa-cam-tu-cau-duong-ham-dat-set-khach-san-3-sao-tour-tiet-kiem.aspx" title="Đà Lạt - Langbiang - Cánh Đồng Hoa Cẩm Tú Cầu - Đường Hầm Đất Sét (Khách sạn 3 sao. Tour Tiết Kiệm)">
+                        <div class="ttt-title dot-dot cut-ttt">Đà Lạt - Langbiang - Cánh Đồng ... </div>
+                    </a>
+                    <div class="ttt-line"></div>
+                    <div>
+                        <img src="~/Assets/img/i-price.png" class="float-left" alt="price">
+                        <div class="float-left ttt-info">
+
+                            <span class="price-n">2,590,000 đ</span>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
+                <a href="/tourNDSGN538-076-270720XE-V-1/da-lat-langbiang-canh-dong-hoa-cam-tu-cau-duong-ham-dat-set-khach-san-3-sao-tour-tiet-kiem.aspx" title="Đà Lạt - Langbiang - Cánh Đồng Hoa Cẩm Tú Cầu - Đường Hầm Đất Sét (Khách sạn 3 sao. Tour Tiết Kiệm)">
+                    <div class="position-relative">
+                        <img src="https://travel.com.vn/Images/destination/tf_190909013453_124909.jpg" class="w-100 d-block" alt="Đà Lạt - Langbiang - Cánh Đồng Hoa Cẩm Tú Cầu - Đường Hầm Đất Sét (Khách sạn 3 sao. Tour Tiết Kiệm)">
+                        <div class="frame-ttt1">
+                            <div class="float-left">
+                                <img src="~/Assets/img/i-date.png" alt="date">
+                            </div>
+                            <div class="float-left date">
+                                <span class="yellow">27/07/2020</span> -
+                                <span class="yellow">3 ngày</span> - <span class="yellow">9 chỗ</span>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </a>
+                <div class="frame-ttt2">
+                    <a href="/tourNDSGN538-076-270720XE-V-1/da-lat-langbiang-canh-dong-hoa-cam-tu-cau-duong-ham-dat-set-khach-san-3-sao-tour-tiet-kiem.aspx" title="Đà Lạt - Langbiang - Cánh Đồng Hoa Cẩm Tú Cầu - Đường Hầm Đất Sét (Khách sạn 3 sao. Tour Tiết Kiệm)">
+                        <div class="ttt-title dot-dot cut-ttt">Đà Lạt - Langbiang - Cánh Đồng ... </div>
+                    </a>
+                    <div class="ttt-line"></div>
+                    <div>
+                        <img src="~/Assets/img/i-price.png" class="float-left" alt="price">
+                        <div class="float-left ttt-info">
+
+                            <span class="price-n">2,590,000 đ</span>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="col-12">
+    <div class="line-ct">&nbsp;</div>
+</div>
+<div class="col-12 news-relate">
+    <div class="row">
+        <div class="col-12 mb-3">
+            <div class="title-ft">B&#224;i viết li&#234;n quan</div>
+        </div>
+        <div class="col-12" id="PictureNewsSearch">
+            <img src="~/Assets/img/loading.gif" alt="loading" style="text-align:center;display:table;margin:0 auto;margin-bottom:30px;height:50px" />
+        </div>
+    </div>
+</div>
+
+<div id="SendEmailFriend" class="modal fade" role="dialog">
+    <form action="/Tour/SendEmail" id="SendEmail" method="post">
+        <input name="__RequestVerificationToken" type="hidden" value="nTERUXQuDHVIimEgVn65_k2TvZ6r5lsO32YUtkImd_wosjSi4ZMa-_wuepkD5Y3XBiA5nmBKn8TK3tFujU9k8ai7-dT0AMUbPfdB2ef4KAk1" />        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">GỬI EMAIL CHO BẠN B&#200;</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <div class="input-container">
+                                <i class="fas fa-envelope icon"></i>
+                                <input type="email" name="EmailOwn" id="EmailOwn" class="input-field" placeholder="Email" />
+                            </div>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <div class="input-container">
+                                <i class="fas fa-envelope icon"></i>
+                                <input type="email" name="EmailFriend" id="EmailFriend" required="required" class="input-field" placeholder="Email người nhận (*)" />
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="input-container">
+                                <i class="fa fa-th-list icon"></i>
+                                <textarea id="EmailContain" name="EmailContain" required="required" class="input-field" placeholder="Nội dung (*)" rows="4"></textarea>
+                                <input type="hidden" value="https://travel.com.vn/tourNDSGN561-023-151119XE-V/ninh-chu-kdl-co-thach-vuon-nho-vinh-vinh-hy-tour-tiet-kiem.aspx" name="hidLink" />
+                                <input type="hidden" value="Ninh Chữ - KDL Cổ Thạch - Vườn Nho - Vịnh Vĩnh Hy (Tour Tiết Kiệm)" name="hidName" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-md btn-default" type="submit">Gửi email&nbsp;&nbsp;<i class="fas fa-sign-in-alt" aria-hidden="true"></i></button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div id="div360" class="modal fade" role="dialog">
+    <div class="modal-dialog" style="width:1135px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <div class="modal-title font500" id="divHeader360"></div>
+            </div>
+            <div class="modal-body" id="divContent360">
+            </div>
+        </div>
+    </div>
+</div>
+<div id="div360Img" class="modal fade" role="dialog">
+    <div class="modal-dialog" style="width:900px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <div class="modal-title font500" id="divHeader360Img"></div>
+            </div>
+            <div class="modal-body" id="divContent360Img">
+            </div>
+        </div>
+    </div>
+</div>
+<div id="divTuVan" class="modal fade" role="dialog">
+    <form action="/Comment/TuVan" id="mainformTuVan" method="post">
+        <input name="__RequestVerificationToken" type="hidden" value="lXlq95g5N76sGTOTcYL_3-NcscGajQtL8BxhQ3ZtB00I_NLUecYnsMc80positionzQQ95OvfyoIi8z-Og5WPiGU9T7ifNl0eFih4fL1vmVcRNwE1" />        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">GỬI TH&#212;NG TIN TƯ VẤN</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            Qu&#253; kh&#225;ch vui l&#242;ng nhập th&#244;ng tin b&#234;n dưới, Vietravel sẽ li&#234;n hệ lại sau &#237;t ph&#250;t
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <div class="input-container">
+                                <i class="fas fa-user icon"></i>
+                                <input class="input-field" id="FullName" name="FullName" placeholder="Họ tên(*)" required="required" type="text" value="" />
+                            </div>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <div class="input-container">
+                                <i class="fas fa-phone icon"></i>
+                                <input class="input-field" id="Telephone" name="Telephone" placeholder="Điện thoại(*)" required="required" type="text" value="" />
+                            </div>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <div class="input-container">
+                                <i class="fas fa-envelope icon"></i>
+                                <input class="input-field" id="TuVanEmail" name="Email" placeholder="Email(*)" type="text" value="" />
+                            </div>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <div class="input-container">
+                                <i class="fas fa-th-list icon"></i>
+                                <textarea class="input-field" cols="20" id="NoiDungTuVan" name="NoiDung" placeholder="Thông tin cần tư vấn(*)" required="required" rows="4">
+</textarea>
+                                <input id="LinkTour" name="LinkTour" type="hidden" value="" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-md btn-default" type="submit" id="btn_TuVan">Gửi đi&nbsp;&nbsp;<i class="fas fa-sign-in-alt" aria-hidden="true"></i></button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        $('.tab-chuongtrinhtour').click(function () {
+            $('.tab-chitiettour').removeClass("active");
+            $('.tab-luuy').removeClass("active");
+            $('.tab-ngaykhac').removeClass("active");
+            $('.tab-ykien').removeClass("active");
+            $('.tab-lienhe').removeClass("active");
+            $('.chitiettour').css("display", "none");
+            $('.luuy').css("display", "none");
+            $('.ngaykhac').css("display", "none");
+            $('.ykien').css("display", "none");
+            $('.lienhe').css("display", "none");
+            $('.chuongtrinhtour').css("display", "block");
+            $('.tab-chuongtrinhtour').addClass("active");
+            $("html,body").animate({
+                scrollTop: $(".chuongtrinhtour").offset().top
+            }, "800");
+            return false;
+        });
+
+        $('.tab-chitiettour').click(function () {
+            $('.tab-chuongtrinhtour').removeClass("active");
+            $('.tab-luuy').removeClass("active");
+            $('.tab-ngaykhac').removeClass("active");
+            $('.tab-ykien').removeClass("active");
+            $('.tab-lienhe').removeClass("active");
+            $('.chuongtrinhtour').css("display", "none");
+            $('.luuy').css("display", "none");
+            $('.ngaykhac').css("display", "none");
+            $('.ykien').css("display", "none");
+            $('.lienhe').css("display", "none");
+            $('.chitiettour').css("display", "block");
+            $('.tab-chitiettour').addClass("active");
+            $("html,body").animate({
+                scrollTop: $(".chitiettour").offset().top
+            }, "800");
+            return false;
+        });
+        $('.tab-luuy').click(function () {
+            $('.tab-chuongtrinhtour').removeClass("active");
+            $('.tab-chitiettour').removeClass("active");
+            $('.tab-ngaykhac').removeClass("active");
+            $('.tab-ykien').removeClass("active");
+            $('.tab-lienhe').removeClass("active");
+            $('.chuongtrinhtour').css("display", "none");
+            $('.chitiettour').css("display", "none");
+            $('.ngaykhac').css("display", "none");
+            $('.ykien').css("display", "none");
+            $('.lienhe').css("display", "none");
+            $('.luuy').css("display", "block");
+            $('.tab-luuy').addClass("active");
+            $("html,body").animate({
+                scrollTop: $(".luuy").offset().top
+            }, "800");
+            return false;
+        });
+        $('.tab-ngaykhac').click(function (event) {
+            $('.tab-chuongtrinhtour').removeClass("active");
+            $('.tab-chitiettour').removeClass("active");
+            $('.tab-luuy').removeClass("active");
+            $('.tab-ykien').removeClass("active");
+            $('.tab-lienhe').removeClass("active");
+            $('.chuongtrinhtour').css("display", "none");
+            $('.chitiettour').css("display", "none");
+            $('.luuy').css("display", "none");
+            $('.ykien').css("display", "none");
+            $('.lienhe').css("display", "none");
+            $('.ngaykhac').css("display", "block");
+            $('.tab-ngaykhac').addClass("active");
+            $("html,body").animate({
+                scrollTop: $(".ngaykhac").offset().top
+            }, "800");
+            return false;
+        });
+        $('.tab-ykien').click(function (event) {
+            $('.tab-chuongtrinhtour').removeClass("active");
+            $('.tab-chitiettour').removeClass("active");
+            $('.tab-luuy').removeClass("active");
+            $('.tab-ngaykhac').removeClass("active");
+            $('.tab-lienhe').removeClass("active");
+            $('.chuongtrinhtour').css("display", "none");
+            $('.chitiettour').css("display", "none");
+            $('.ngaykhac').css("display", "none");
+            $('.luuy').css("display", "none");
+            $('.lienhe').css("display", "none");
+            $('.ykien').css("display", "block");
+            $('.tab-ykien').addClass("active");
+            $("html,body").animate({
+                scrollTop: $(".ykien").offset().top
+            }, "800");
+            return false;
+        });
+        $('.tab-lienhe').click(function (event) {
+            $('.tab-chuongtrinhtour').removeClass("active");
+            $('.tab-chitiettour').removeClass("active");
+            $('.tab-luuy').removeClass("active");
+            $('.tab-ykien').removeClass("active");
+            $('.tab-ngaykhac').removeClass("active");
+            $('.chuongtrinhtour').css("display", "none");
+            $('.chitiettour').css("display", "none");
+            $('.ngaykhac').css("display", "none");
+            $('.luuy').css("display", "none");
+            $('.ykien').css("display", "none");
+            $('.lienhe').css("display", "block");
+            $('.tab-lienhe').addClass("active");
+            $("html,body").animate({
+                scrollTop: $(".lienhe").offset().top
+            }, "800");
+            return false;
+        });
+        $(".item-mn").click(function (event) {
+            event.preventDefault();
+            $(".mienbac").css("display", "none");
+            $(".miennam").css("display", "block");
+            $(".mientrung").css("display", "none");
+            $(".item-mn").addClass("active");
+            $(".item-mb").removeClass("active");
+            $(".item-mt").removeClass("active");
+
+        });
+        $(".item-mt").click(function (event) {
+            event.preventDefault();
+            $(".mienbac").css("display", "none");
+            $(".miennam").css("display", "none");
+            $(".mientrung").css("display", "block");
+            $(".item-mn").removeClass("active");
+            $(".item-mb").removeClass("active");
+            $(".item-mt").addClass("active");
+        });
+        $(".item-mb").click(function (event) {
+            event.preventDefault();
+            $(".mienbac").css("display", "block");
+            $(".miennam").css("display", "none");
+            $(".mientrung").css("display", "none");
+            $(".item-mn").removeClass("active");
+            $(".item-mb").addClass("active");
+            $(".item-mt").removeClass("active");
+        });
+
+        $('.tab-dattour').click(function () {
+            $('.tab-thanhvien').removeClass("active");
+            $('.tab-tour').removeClass("active");
+            $('.thanhvien').css("display", "none");
+            $('.dattour').css("display", "block");
+            $('.tour').css("display", "none");
+            $('.tab-dattour').addClass("active");
+        });
+        $('.tab-tour').click(function () {
+            $('.tab-thanhvien').removeClass("active");
+            $('.tab-dattour').removeClass("active");
+            $('.thanhvien').css("display", "none");
+            $('.tour').css("display", "block");
+            $('.dattour').css("display", "none");
+            $('.tab-tour').addClass("active");
+        });
+        $('.tab-thanhvien').click(function () {
+            $('.tab-thanhvien').addClass("active");
+            $('.tab-tour').removeClass("active");
+            $('.thanhvien').css("display", "block");
+            $('.dattour').css("display", "none");
+            $('.tour').css("display", "none");
+            $('.tab-dattour').removeClass("active");
+        });
+        $('.ah1 .hienra').click(function (event) {
+            event.preventDefault();
+            $('.n3-tour-detail .chuongtrinhtour .d1.detail').css("max-height", "initial");
+            $('.n3-tour-detail .chuongtrinhtour .d1.detail').css("overflow-y", "initial");
+            $('.ah1 .andi').css("display", "block");
+            $('.ah1 .hienra').css("display", "none");
+        });
+        $('.ah1 .andi').click(function (event) {
+            event.preventDefault();
+            $('.tour-detail .chuongtrinhtour .d1.detail').css("max-height", "90px");
+            $('.tour-detail .chuongtrinhtour .d1.detail').css("overflow-y", "hidden");
+            $('.ah1 .andi').css("display", "none");
+            $('.ah1 .hienra').css("display", "block");
+        });
+        $('.ah2 .hienra').click(function (event) {
+            event.preventDefault();
+            $('.tour-detail .chuongtrinhtour .d2.detail').css("max-height", "initial");
+            $('.tour-detail .chuongtrinhtour .d2.detail').css("overflow-y", "initial");
+            $('.ah2 .andi').css("display", "block");
+            $('.ah2 .hienra').css("display", "none");
+        });
+        $('.ah2 .andi').click(function (event) {
+            event.preventDefault();
+            $('.tour-detail .chuongtrinhtour .d2.detail').css("max-height", "90px");
+            $('.tour-detail .chuongtrinhtour .d2.detail').css("overflow-y", "hidden");
+            $('.ah2 .andi').css("display", "none");
+            $('.ah2 .hienra').css("display", "block");
+        });
+        $('.ah3 .hienra').click(function (event) {
+            event.preventDefault();
+            $('.tour-detail .chuongtrinhtour .d3.detail').css("max-height", "initial");
+            $('.tour-detail .chuongtrinhtour .d3.detail').css("overflow-y", "initial");
+            $('.ah3 .andi').css("display", "block");
+            $('.ah3 .hienra').css("display", "none");
+        });
+        $('.ah3 .andi').click(function (event) {
+            event.preventDefault();
+            $('.tour-detail .chuongtrinhtour .d3.detail').css("max-height", "90px");
+            $('.tour-detail .chuongtrinhtour .d3.detail').css("overflow-y", "hidden");
+            $('.ah3 .andi').css("display", "none");
+            $('.ah3 .hienra').css("display", "block");
+        });
+        $('.ah4 .hienra').click(function (event) {
+            event.preventDefault();
+            $('.tour-detail .chuongtrinhtour .d4.detail').css("max-height", "initial");
+            $('.tour-detail .chuongtrinhtour .d4.detail').css("overflow-y", "initial");
+            $('.ah4 .andi').css("display", "block");
+            $('.ah4 .hienra').css("display", "none");
+        });
+        $('.ah4 .andi').click(function (event) {
+            event.preventDefault();
+            $('.tour-detail .chuongtrinhtour .d4.detail').css("max-height", "90px");
+            $('.tour-detail .chuongtrinhtour .d4.detail').css("overflow-y", "hidden");
+            $('.ah4 .andi').css("display", "none");
+            $('.ah4 .hienra').css("display", "block");
+        });
+
+        $('.ah5 .hienra').click(function (event) {
+            event.preventDefault();
+            $('.tour-detail .chuongtrinhtour .d5.detail').css("max-height", "initial");
+            $('.tour-detail .chuongtrinhtour .d5.detail').css("overflow-y", "initial");
+            $('.ah5 .andi').css("display", "block");
+            $('.ah5 .hienra').css("display", "none");
+        });
+        $('.ah5 .andi').click(function (event) {
+            event.preventDefault();
+            $('.tour-detail .chuongtrinhtour .d5.detail').css("max-height", "90px");
+            $('.tour-detail .chuongtrinhtour .d5.detail').css("overflow-y", "hidden");
+            $('.ah5 .andi').css("display", "none");
+            $('.ah5 .hienra').css("display", "block");
+        });
+        $('.ah6 .hienra').click(function (event) {
+            event.preventDefault();
+            $('.tour-detail .chuongtrinhtour .d6.detail').css("max-height", "initial");
+            $('.tour-detail .chuongtrinhtour .d6.detail').css("overflow-y", "initial");
+            $('.ah6 .andi').css("display", "block");
+            $('.ah6 .hienra').css("display", "none");
+        });
+        $('.ah6 .andi').click(function (event) {
+            event.preventDefault();
+            $('.tour-detail .chuongtrinhtour .d6.detail').css("max-height", "90px");
+            $('.tour-detail .chuongtrinhtour .d6.detail').css("overflow-y", "hidden");
+            $('.ah6 .andi').css("display", "none");
+            $('.ah6 .hienra').css("display", "block");
+        });
+        $('.ah7 .hienra').click(function (event) {
+            event.preventDefault();
+            $('.tour-detail .chuongtrinhtour .d7.detail').css("max-height", "initial");
+            $('.tour-detail .chuongtrinhtour .d7.detail').css("overflow-y", "initial");
+            $('.ah7 .andi').css("display", "block");
+            $('.ah7 .hienra').css("display", "none");
+        });
+        $('.ah7 .andi').click(function (event) {
+            event.preventDefault();
+            $('.tour-detail .chuongtrinhtour .d7.detail').css("max-height", "90px");
+            $('.tour-detail .chuongtrinhtour .d7.detail').css("overflow-y", "hidden");
+            $('.ah7 .andi').css("display", "none");
+            $('.ah7 .hienra').css("display", "block");
+        });
+        $('.ah8 .hienra').click(function (event) {
+            event.preventDefault();
+            $('.tour-detail .chuongtrinhtour .d8.detail').css("max-height", "initial");
+            $('.tour-detail .chuongtrinhtour .d8.detail').css("overflow-y", "initial");
+            $('.ah8 .andi').css("display", "block");
+            $('.ah8 .hienra').css("display", "none");
+        });
+        $('.ah8 .andi').click(function (event) {
+            event.preventDefault();
+            $('.tour-detail .chuongtrinhtour .d8.detail').css("max-height", "90px");
+            $('.tour-detail .chuongtrinhtour .d8.detail').css("overflow-y", "hidden");
+            $('.ah8 .andi').css("display", "none");
+            $('.ah8 .hienra').css("display", "block");
+        });
+        $('.ah9 .hienra').click(function (event) {
+            event.preventDefault();
+            $('.tour-detail .chuongtrinhtour .d9.detail').css("max-height", "initial");
+            $('.tour-detail .chuongtrinhtour .d9.detail').css("overflow-y", "initial");
+            $('.ah9 .andi').css("display", "block");
+            $('.ah9 .hienra').css("display", "none");
+        });
+        $('.ah9 .andi').click(function (event) {
+            event.preventDefault();
+            $('.tour-detail .chuongtrinhtour .d9.detail').css("max-height", "90px");
+            $('.tour-detail .chuongtrinhtour .d9.detail').css("overflow-y", "hidden");
+            $('.ah9 .andi').css("display", "none");
+            $('.ah9 .hienra').css("display", "block");
+        });
+        $('.ah10 .hienra').click(function (event) {
+            event.preventDefault();
+            $('.tour-detail .chuongtrinhtour .d10.detail').css("max-height", "initial");
+            $('.tour-detail .chuongtrinhtour .d10.detail').css("overflow-y", "initial");
+            $('.ah10 .andi').css("display", "block");
+            $('.ah10 .hienra').css("display", "none");
+        });
+        $('.ah10 .andi').click(function (event) {
+            event.preventDefault();
+            $('.tour-detail .chuongtrinhtour .d10.detail').css("max-height", "90px");
+            $('.tour-detail .chuongtrinhtour .d10.detail').css("overflow-y", "hidden");
+            $('.ah10 .andi').css("display", "none");
+            $('.ah10 .hienra').css("display", "block");
+        });
+    });
+
+    function checkLogin() {
+        $.get("/TaiKhoan/checkLogin", function (data) {
+            if (data.code == 0) {
+                alert("Cần đăng nhập trước khi thực hiện thao tác này.");
+                return false;
+            } else {
+                window.location.href = "/DonDatVe/Index/@Model.IDVe";
+            }
+        });
+        return true;
+    }
+</script>
+

@@ -1,0 +1,519 @@
+﻿
+@{
+    ViewBag.Title = "LienHe";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Assets/css/Vietravel.css" rel="stylesheet" />
+<div class="n3-breadcrumb">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 ">
+                <div class="breadcrumb">
+                    <span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://travel.com.vn/" itemprop="url"><span itemprop="title">Du lịch</span></a></span> &nbsp;»&nbsp; <span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://travel.com.vn/lien-he.aspx" itemprop="url"><span itemprop="title">Liên hệ</span></a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container n3-contact mb-5">
+    <div class="row">
+        <div class="col-12 mb-3">
+            <div class="title mb-3"><h1>LIÊN HỆ</h1></div>
+            <div style="display: none"><h2>Hệ thống chi nhánh</h2></div>
+            <div class="text-center">Để có thể đáp ứng được các yêu cầu và các ý kiến đóng góp của quý vị một cách nhanh chóng xin vui lòng liên hệ</div>
+        </div>
+        <div class="col-12 mb-5">
+            <form action="/StaticPage/SendEmail" id="SendEmail" method="post">
+                <input name="__RequestVerificationToken" type="hidden" value="g8aw3i37oleCxmuQvLSaIkq2efP8Ilk_9g7vNHWCRwBbREoMRJtSh5jOwujvWKyWVAiAGmAgVAJg7vu1yPPl8y5RWeUQgiXCrz1xQyfzPG81">            <div class="frame-contact">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-12 mb-3">
+                            <label>Loại thông tin (<span class="star">*</span>)</label>
+                            <select name="Type" class="form-control">
+                                <option value="1">Du lịch</option>
+                                <option value="2">Chăm sóc khách hàng</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-12 mb-3">
+                            <label>Họ tên (<span class="star">*</span>)</label>
+                            <input type="text" class="form-control" required="required" name="txtHoTen" id="txtHoTen">
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-12 mb-3">
+                            <label>Email (<span class="star">*</span>)</label>
+                            <input type="email" class="form-control" required="required" name="txtEmail" id="txtEmail">
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-12 mb-3">
+                            <label>Điện thoại (<span class="star">*</span>)</label>
+                            <input type="text" class="form-control" required="required" name="txtDienThoai" id="txtDienThoai">
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-12 mb-3">
+                            <label>Tên công ty</label>
+                            <input type="text" class="form-control" name="txtTenCongTy">
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-12 mb-3">
+                            <label>Số khách</label>
+                            <input type="text" class="form-control" name="txtSoKhach">
+                        </div>
+                        <div class="col-12 mb-3">
+                            <label>Địa chỉ</label>
+                            <input type="text" class="form-control" name="txtDiaChi">
+                        </div>
+                        <div class="col-12 mb-3">
+                            <label>Tiêu đề (<span class="star">*</span>)</label>
+                            <input type="text" class="form-control" required="required" name="txtTieuDe">
+                        </div>
+                        <div class="col-12 mb-4">
+                            <label>Nội dung (<span class="star">*</span>)</label>
+                            <textarea class="form-control" rows="4" cols="5" required="required" name="txtNoiDung"></textarea>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <input id="responseCaptcha" name="responseCaptcha" type="hidden" value="">
+                            <div class="g-recaptcha" data-theme="light" data-sitekey="6LcezicTAAAAAIbBsNL6IS14WAowVVhd_iL0hVNf"><div style="width: 304px; height: 78px;"><div><iframe src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LcezicTAAAAAIbBsNL6IS14WAowVVhd_iL0hVNf&amp;co=aHR0cHM6Ly90cmF2ZWwuY29tLnZuOjQ0Mw..&amp;hl=vi&amp;v=0bBqi43w2fj-Lg1N3qzsqHNu&amp;theme=light&amp;size=normal&amp;cb=dkkre9npirvp" width="304" height="78" role="presentation" name="a-uudx5kj4rzfi" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div></div>
+                        </div>
+                        <div class="col-12 text-center">
+                            <button type="submit" class="btn btn-md btn-general">Gửi đi &nbsp;&nbsp;<i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-12">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-4">
+                    <div class="frame-cn">
+                        <div class="tencn">Hồ Chí Minh</div>
+                        <div class="mb-2">
+                            <div class="i-con"><i class="fas fa-map-signs"></i></div>
+                            <div class="i-text">190 Pasteur, Quận 3, Tp. Hồ Chí Minh, Việt Nam</div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="mb-2">
+                            <div class="i-con"><i class="fas fa-phone"></i></div>
+                            <div class="i-text">Tel: (84-28) 3822 8898</div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="mb-2">
+                            <div class="i-con"><i class="fas fa-fax"></i></div>
+                            <div class="i-text">Fax: (84-28) 3829 9142</div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="mb-2">
+                            <div class="i-con"><i class="fas fa-envelope"></i></div>
+                            <div class="i-text">Email: info@vietravel.com</div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-4">
+                    <div class="frame-cn">
+                        <div class="tencn">Chi Nhánh Hà Nội</div>
+                        <div class="mb-2">
+                            <div class="i-con"><i class="fas fa-map-signs"></i></div>
+                            <div class="i-text">03 Hai Bà Trưng, Quận Hoàn Kiếm, Hà Nội</div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="mb-2">
+                            <div class="i-con"><i class="fas fa-phone"></i></div>
+                            <div class="i-text">Tel: (84-24) 3933 1978</div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="mb-2">
+                            <div class="i-con"><i class="fas fa-fax"></i></div>
+                            <div class="i-text">Fax: (84-24) 3933 1979</div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="mb-2">
+                            <div class="i-con"><i class="fas fa-envelope"></i></div>
+                            <div class="i-text">Email: vtv.hanoi@vietravel.com</div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-4">
+                    <div class="frame-cn">
+                        <div class="tencn">Chi Nhánh Đà Nẵng</div>
+                        <div class="mb-2">
+                            <div class="i-con"><i class="fas fa-map-signs"></i></div>
+                            <div class="i-text">58 Pasteur, Hải Châu, Đà Nẵng</div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="mb-2">
+                            <div class="i-con"><i class="fas fa-phone"></i></div>
+                            <div class="i-text">Tel: (84-236) 3863 544</div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="mb-2">
+                            <div class="i-con"><i class="fas fa-fax"></i></div>
+                            <div class="i-text">Fax: (84-236) 3863 571</div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="mb-2">
+                            <div class="i-con"><i class="fas fa-envelope"></i></div>
+                            <div class="i-text">Email: vtv.danang@vietravel.com</div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-4">
+                    <div class="frame-cn">
+                        <div class="tencn">Chi Nhánh Cần Thơ</div>
+                        <div class="mb-2">
+                            <div class="i-con"><i class="fas fa-map-signs"></i></div>
+                            <div class="i-text">5 Trần Văn Khéo, Cái Khế, Ninh Kiều, Cần Thơ</div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="mb-2">
+                            <div class="i-con"><i class="fas fa-phone"></i></div>
+                            <div class="i-text">Tel: (84-292) 3763 085</div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="mb-2">
+                            <div class="i-con"><i class="fas fa-fax"></i></div>
+                            <div class="i-text">Fax: (84-292) 3763 086</div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="mb-2">
+                            <div class="i-con"><i class="fas fa-envelope"></i></div>
+                            <div class="i-text">Email: vtv.cantho@vietravel.com</div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="bor-top">&nbsp;</div>
+        </div>
+        <div class="col-12">
+            <div class="tenmien">
+                <img src="~/Assets/img/i-des.png" />&nbsp;&nbsp;<h2>Khu Vực Miền Nam</h2>
+            </div>
+            <div class="mb-4">
+                <ul class="row list-vp">
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="5" data-toggle="modal" data-target="#myModal">Phòng Đăng Ký Du Lịch Phú Nhuận</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="6" data-toggle="modal" data-target="#myModal">Phòng Đăng Ký Du Lịch Gò Vấp</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="7" data-toggle="modal" data-target="#myModal">TT Du Lịch Lá Xanh</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="8" data-toggle="modal" data-target="#myModal">Phòng Đăng Ký Du Lịch Phú Mỹ Hưng</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="9" data-toggle="modal" data-target="#myModal">Phòng Đăng Ký Du Lịch Quận 4</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="10" data-toggle="modal" data-target="#myModal">Phòng Đăng Ký Du Lịch Cộng Hòa</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="11" data-toggle="modal" data-target="#myModal">Phòng Đăng Ký Du Lịch Quận 11</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="12" data-toggle="modal" data-target="#myModal">Phòng Đăng Ký Du Lịch Chợ Lớn</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="13" data-toggle="modal" data-target="#myModal">Phòng Đăng Ký Du Lịch Âu Cơ</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="14" data-toggle="modal" data-target="#myModal">Phòng Đăng Ký Du Lịch Quận 10</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="15" data-toggle="modal" data-target="#myModal">Phòng Đăng Ký Du Lịch Tân Định</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="17" data-toggle="modal" data-target="#myModal">Phòng Đăng Ký Du Lịch Thủ Đức</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="66" data-toggle="modal" data-target="#myModal">Phòng Đăng Ký Du Lịch Quận 8</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="18" data-toggle="modal" data-target="#myModal">Chi Nhánh Đồng Nai</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="19" data-toggle="modal" data-target="#myModal">Chi Nhánh Cà Mau</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="20" data-toggle="modal" data-target="#myModal">Chi Nhánh Bình Dương</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="21" data-toggle="modal" data-target="#myModal">Chi Nhánh Vũng Tàu</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="22" data-toggle="modal" data-target="#myModal">Văn Phòng Đăng Ký Du Lịch Bà Rịa</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="24" data-toggle="modal" data-target="#myModal">Chi Nhánh Phú Quốc</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="25" data-toggle="modal" data-target="#myModal">Quầy Khai Thác D.Vụ Sân Bay Phú Quốc</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="26" data-toggle="modal" data-target="#myModal">Chi Nhánh Long Xuyên</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="27" data-toggle="modal" data-target="#myModal">Văn Phòng Đăng Ký Du Lịch Châu Đốc</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="43" data-toggle="modal" data-target="#myModal">Chi Nhánh Rạch Giá</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="68" data-toggle="modal" data-target="#myModal">Chi Nhánh Long An</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="69" data-toggle="modal" data-target="#myModal">Chi Nhánh Bạc Liêu</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="73" data-toggle="modal" data-target="#myModal">Chi nhánh Đồng Tháp</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="74" data-toggle="modal" data-target="#myModal">Chi nhánh Sóc Trăng</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="82" data-toggle="modal" data-target="#myModal">Chi nhánh Vĩnh Long</a></li>
+                </ul>
+                <div id="myModal" class="modal fade" role="dialog" style="opacity: 1; overflow: visible;">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">×</button>
+                                <h4 class="modal-title" id="mapName"></h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="frame-cn">
+                                    <div class="mb-1">
+                                        <div class="i-con"><i class="fas fa-map-signs"></i></div>
+                                        <div class="i-text" id="mapAddress"></div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="mb-1">
+                                        <div class="i-con"><i class="fas fa-phone"></i></div>
+                                        <div class="i-text" id="mapTel"></div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="mb-1">
+                                        <div class="i-con"><i class="fas fa-fax"></i></div>
+                                        <div class="i-text" id="mapFax"></div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="mb-1">
+                                        <div class="i-con"><i class="fas fa-envelope"></i></div>
+                                        <div class="i-text" id="mapEmail"></div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 hidden-xs">
+                                        <div id="map-canvas" style="position: relative; overflow: hidden;"><div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);"><div style="overflow: hidden;"></div><div class="gm-style" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px;"><div tabindex="0" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; cursor: url(&quot;https://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default; touch-action: pan-x pan-y;"><div style="z-index: 1; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 983; transform: matrix(1, 0, 0, 1, -188, -120);"><div style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: -1;"><div style="position: absolute; z-index: 983; transform: matrix(1, 0, 0, 1, -188, -120);"><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: 0px;"></div></div></div><div style="width: 20px; height: 34px; overflow: hidden; position: absolute; left: -10px; top: -28px; z-index: 6; animation-duration: 500ms; animation-iteration-count: 1; animation-name: _gm1090;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="width: 20px; height: 34px; overflow: hidden; position: absolute; left: -10px; top: -28px; z-index: 6; animation-duration: 500ms; animation-iteration-count: 1; animation-name: _gm1090;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="width: 20px; height: 34px; overflow: hidden; position: absolute; left: -615px; top: -778px; z-index: -744; animation-duration: 500ms; animation-iteration-count: 1; animation-name: _gm1090;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="width: 20px; height: 34px; overflow: hidden; position: absolute; left: -10px; top: -28px; z-index: 6; animation-duration: 500ms; animation-iteration-count: 1; animation-name: _gm1090;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="width: 20px; height: 34px; overflow: hidden; position: absolute; left: -690px; top: -2223px; z-index: -2189; animation-duration: 500ms; animation-iteration-count: 1; animation-name: _gm1090;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="width: 20px; height: 34px; overflow: hidden; position: absolute; left: -1694px; top: -4457px; z-index: -4423; animation-duration: 500ms; animation-iteration-count: 1; animation-name: _gm1090;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="width: 20px; height: 34px; overflow: hidden; position: absolute; left: -3410px; top: -3601px; z-index: -3567; animation-duration: 500ms; animation-iteration-count: 1; animation-name: _gm1090;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="width: 20px; height: 34px; overflow: hidden; position: absolute; left: 1113px; top: 4928px; z-index: 4962; animation-duration: 500ms; animation-iteration-count: 1; animation-name: _gm1090;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="width: 20px; height: 34px; overflow: hidden; position: absolute; left: 480px; top: 2291px; z-index: 2325; animation-duration: 500ms; animation-iteration-count: 1; animation-name: _gm1090;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="width: 20px; height: 34px; overflow: hidden; position: absolute; left: -5103px; top: -2101px; z-index: -2067; animation-duration: 500ms; animation-iteration-count: 1; animation-name: _gm1090;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="width: 20px; height: 34px; overflow: hidden; position: absolute; left: -4623px; top: 2245px; z-index: 2279; animation-duration: 500ms; animation-iteration-count: 1; animation-name: _gm1090;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="width: 20px; height: 34px; overflow: hidden; position: absolute; left: -3430px; top: 2747px; z-index: 2781; animation-duration: 500ms; animation-iteration-count: 1; animation-name: _gm1090;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="width: 20px; height: 34px; overflow: hidden; position: absolute; left: -4471px; top: 581px; z-index: 615; animation-duration: 500ms; animation-iteration-count: 1; animation-name: _gm1090;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="width: 20px; height: 34px; overflow: hidden; position: absolute; left: -1988px; top: 1269px; z-index: 1303; animation-duration: 500ms; animation-iteration-count: 1; animation-name: _gm1090;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="width: 20px; height: 34px; overflow: hidden; position: absolute; left: -615px; top: -778px; z-index: -744; animation-duration: 500ms; animation-iteration-count: 1; animation-name: _gm1090;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="width: 20px; height: 34px; overflow: hidden; position: absolute; left: -3714px; top: -1041px; z-index: -1007; animation-duration: 500ms; animation-iteration-count: 1; animation-name: _gm1090;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="width: 20px; height: 34px; overflow: hidden; position: absolute; left: 6099px; top: -6670px; z-index: -6636; animation-duration: 500ms; animation-iteration-count: 1; animation-name: _gm1090;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="width: 20px; height: 34px; overflow: hidden; position: absolute; left: 11663px; top: -15974px; z-index: -15940; animation-duration: 500ms; animation-iteration-count: 1; animation-name: _gm1090;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="width: 20px; height: 34px; overflow: hidden; position: absolute; left: -4370px; top: -20560px; z-index: -20526; animation-duration: 500ms; animation-iteration-count: 1; animation-name: _gm1090;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="width: 20px; height: 34px; overflow: hidden; position: absolute; left: 36059px; top: 40755px; z-index: 40789; animation-duration: 500ms; animation-iteration-count: 1; animation-name: _gm1090;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="width: 20px; height: 34px; overflow: hidden; position: absolute; left: 44254px; top: 27295px; z-index: 27329; animation-duration: 500ms; animation-iteration-count: 1; animation-name: _gm1090;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="width: 20px; height: 34px; overflow: hidden; position: absolute; left: -84912px; top: 69686px; z-index: 69720; animation-duration: 500ms; animation-iteration-count: 1; animation-name: _gm1090;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="width: 20px; height: 34px; overflow: hidden; position: absolute; left: -615px; top: -778px; z-index: -744; animation-duration: 500ms; animation-iteration-count: 1; animation-name: _gm1090;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="width: 20px; height: 34px; overflow: hidden; position: absolute; left: -615px; top: -778px; z-index: -744; animation-duration: 500ms; animation-iteration-count: 1; animation-name: _gm1090;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="width: 20px; height: 34px; overflow: hidden; position: absolute; left: -10px; top: -28px; z-index: 6; animation-duration: 500ms; animation-iteration-count: 1; animation-name: _gm1090;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="width: 20px; height: 34px; overflow: hidden; position: absolute; left: -728px; top: 417px; z-index: 451; animation-duration: 500ms; animation-iteration-count: 1; animation-name: _gm1090;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="width: 20px; height: 34px; overflow: hidden; position: absolute; left: -2930px; top: -2534px; z-index: -2500; animation-duration: 500ms; animation-iteration-count: 1; animation-name: _gm1090;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="width: 20px; height: 34px; overflow: hidden; position: absolute; left: -2930px; top: -2534px; z-index: -2500; animation-duration: 500ms; animation-iteration-count: 1; animation-name: _gm1090;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="width: 20px; height: 34px; overflow: hidden; position: absolute; left: -615px; top: -778px; z-index: -744; animation-duration: 500ms; animation-iteration-count: 1; animation-name: _gm1090;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="width: 20px; height: 34px; overflow: hidden; position: absolute; left: -615px; top: -778px; z-index: -744; animation-duration: 500ms; animation-iteration-count: 1; animation-name: _gm1090;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="width: 20px; height: 34px; overflow: hidden; position: absolute; left: -3550px; top: 4289px; z-index: 4323; animation-duration: 500ms; animation-iteration-count: 1; animation-name: _gm1090;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="width: 20px; height: 34px; overflow: hidden; position: absolute; left: 174px; top: -22px; z-index: 12; animation-duration: 500ms; animation-iteration-count: 1; animation-name: _gm1090;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="width: 20px; height: 34px; overflow: hidden; position: absolute; left: -26656px; top: 23323px; z-index: 23357; animation-duration: 500ms; animation-iteration-count: 1; animation-name: _gm1090;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="width: 20px; height: 34px; overflow: hidden; position: absolute; left: -98753px; top: 30889px; z-index: 30923; animation-duration: 500ms; animation-iteration-count: 1; animation-name: _gm1090;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="width: 20px; height: 34px; overflow: hidden; position: absolute; left: -10px; top: -28px; z-index: 6; animation-duration: 500ms; animation-iteration-count: 1; animation-name: _gm1090;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="width: 20px; height: 34px; overflow: hidden; position: absolute; left: -66942px; top: 50601px; z-index: 50635; animation-duration: 500ms; animation-iteration-count: 1; animation-name: _gm1090;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"></div></div><div class="gm-style-pbc" style="z-index: 2; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; opacity: 0;"><p class="gm-style-pbt"></p></div><div style="z-index: 3; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; touch-action: pan-x pan-y;"><div style="z-index: 4; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"><div title="VĂN PHÒNG CHÍNH" style="width: 20px; height: 34px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: -10px; top: -28px; z-index: 6;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div title="TRỤ SỞ 1" style="width: 20px; height: 34px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: -10px; top: -28px; z-index: 6;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div title="TRỤ SỞ 2" style="width: 20px; height: 34px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: -615px; top: -778px; z-index: -744;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div title="KHU VỰC MIỀN NAM" style="width: 20px; height: 34px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: -10px; top: -28px; z-index: 6;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div title="PHÒNG ĐĂNG KÝ DU LỊCH PHÚ NHUẬN" style="width: 20px; height: 34px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: -690px; top: -2223px; z-index: -2189;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div title="PHÒNG ĐĂNG KÝ DU LỊCH QUẬN GÒ VẤP" style="width: 20px; height: 34px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: -1694px; top: -4457px; z-index: -4423;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div title="TRUNG TÂM DU LỊCH LÁ XANH" style="width: 20px; height: 34px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: -3410px; top: -3601px; z-index: -3567;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div title="PHÒNG ĐĂNG KÝ DU LỊCH PHÚ MỸ HƯNG" style="width: 20px; height: 34px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: 1113px; top: 4928px; z-index: 4962;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div title="PHÒNG ĐĂNG KÝ DU LỊCH QUẬN 4" style="width: 20px; height: 34px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: 480px; top: 2291px; z-index: 2325;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div title="PHÒNG ĐĂNG KÝ DU LỊCH CỘNG HÒA" style="width: 20px; height: 34px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: -5103px; top: -2101px; z-index: -2067;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div title="PHÒNG ĐĂNG KÝ DU LỊCH QUẬN 11" style="width: 20px; height: 34px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: -4623px; top: 2245px; z-index: 2279;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div title="PHÒNG ĐĂNG KÝ DU LỊCH CHỢ LỚN" style="width: 20px; height: 34px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: -3430px; top: 2747px; z-index: 2781;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div title="PHÒNG ĐĂNG KÝ DU LỊCH ÂU CƠ" style="width: 20px; height: 34px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: -4471px; top: 581px; z-index: 615;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div title="PHÒNG ĐĂNG KÝ DU LỊCH QUẬN 10" style="width: 20px; height: 34px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: -1988px; top: 1269px; z-index: 1303;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div title="PHÒNG ĐĂNG KÝ DU LỊCH TÂN ĐỊNH" style="width: 20px; height: 34px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: -615px; top: -778px; z-index: -744;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div title="PHÒNG ĐĂNG KÝ DU LỊCH TÂN BÌNH" style="width: 20px; height: 34px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: -3714px; top: -1041px; z-index: -1007;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div title="PHÒNG ĐĂNG KÝ DU LỊCH THỦ ĐỨC" style="width: 20px; height: 34px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: 6099px; top: -6670px; z-index: -6636;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div title="CHI NHÁNH ĐỒNG NAI" style="width: 20px; height: 34px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: 11663px; top: -15974px; z-index: -15940;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div title="CHI NHÁNH BÌNH DƯƠNG" style="width: 20px; height: 34px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: -4370px; top: -20560px; z-index: -20526;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div title="CHI NHÁNH VŨNG TÀU" style="width: 20px; height: 34px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: 36059px; top: 40755px; z-index: 40789;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div title="VĂN PHÒNG ĐĂNG KÝ DU LỊCH BÀ RỊA" style="width: 20px; height: 34px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: 44254px; top: 27295px; z-index: 27329;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div title="CHI NHÁNH CẦN THƠ" style="width: 20px; height: 34px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: -84912px; top: 69686px; z-index: 69720;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div title="TRUNG TÂM NGUỒN NHÂN LỰC VIỆT NAM (VIMAC)" style="width: 20px; height: 34px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: -615px; top: -778px; z-index: -744;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div title="TRUNG TÂM DẠY NGHỀ VIETRAVEL" style="width: 20px; height: 34px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: -615px; top: -778px; z-index: -744;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div title="TRUNG TÂM DU LỊCH GOLF NGÔI SAO VIỆT NAM" style="width: 20px; height: 34px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: -10px; top: -28px; z-index: 6;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div title="CÔNG TY TNHH MTV DỊCH VỤ VẬN CHUYỂN THẾ GIỚI" style="width: 20px; height: 34px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: -728px; top: 417px; z-index: 451;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div title="XÍ NGHIỆP VẬN CHUYỂN XUYÊN Á" style="width: 20px; height: 34px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: -2930px; top: -2534px; z-index: -2500;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div title="XN XD CÔNG TRÌNH DÂN DỤNG NGÔI SAO" style="width: 20px; height: 34px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: -2930px; top: -2534px; z-index: -2500;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div title="PHÒNG QUAN HỆ VÀ DỊCH VỤ KHÁCH HÀNG" style="width: 20px; height: 34px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: -615px; top: -778px; z-index: -744;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div title="TRUNG TÂM TƯ VẤN DU HỌC VIETRAVEL" style="width: 20px; height: 34px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: -615px; top: -778px; z-index: -744;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div title="PHÒNG ĐĂNG KÝ DU LỊCH QUẬN 8" style="width: 20px; height: 34px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: -3550px; top: 4289px; z-index: 4323;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div title="PHÒNG ĐĂNG KÝ DU LỊCH QUẬN 1" style="width: 20px; height: 34px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: 174px; top: -22px; z-index: 12;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div title="CHI NHÁNH LONG AN" style="width: 20px; height: 34px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: -26656px; top: 23323px; z-index: 23357;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div title="CHI NHÁNH ĐỒNG THÁP" style="width: 20px; height: 34px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: -98753px; top: 30889px; z-index: 30923;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div title="TRUNG TÂM DỊCH VỤ DU LỊCH TRIP U (TRIP U)" style="width: 20px; height: 34px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: -10px; top: -28px; z-index: 6;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div title="CHI NHÁNH VĨNH LONG" style="width: 20px; height: 34px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: -66942px; top: 50601px; z-index: 50635;"><img alt="" src="https://travel.com.vn/Images/markerV.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 20px; height: 34px; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"><div style="cursor: default; position: absolute; top: 0px; left: 0px; z-index: -39;"><div class="gm-style-iw-a" style="position: absolute; left: 0px; top: 6px;"><div class="gm-style-iw-t" style="right: 0px; bottom: 45px;"><div class="gm-style-iw gm-style-iw-c" style="padding-right: 0px; padding-bottom: 0px; max-width: 0px; max-height: 0px;"><div class="gm-style-iw-d" style="overflow: scroll;"><div><div class="noscrollbar">VĂN PHÒNG CHÍNH<br>190 Pasteur, Quận 3, Tp. Hồ Chí Minh, Việt Nam<br>Tel : (84-28) 3822 8898<br>Fax : (84-28) 3829 9142<br>E-mail : info@vietravel.com</div></div></div><button draggable="false" title="Close" aria-label="Close" type="button" class="gm-ui-hover-effect" style="background: none; display: block; border: 0px; margin: 0px; padding: 0px; position: absolute; cursor: pointer; user-select: none; top: -6px; right: -6px; width: 30px; height: 30px;"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224px%22%20height%3D%2224px%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M19%206.41L17.59%205%2012%2010.59%206.41%205%205%206.41%2010.59%2012%205%2017.59%206.41%2019%2012%2013.41%2017.59%2019%2019%2017.59%2013.41%2012z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%2F%3E%0A%3C%2Fsvg%3E%0A" style="pointer-events: none; display: block; width: 14px; height: 14px; margin: 8px;"></button></div></div></div></div></div></div></div></div><iframe aria-hidden="true" frameborder="0" src="about:blank" style="z-index: -1; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; border: none;"></iframe></div></div></div>
+                                        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?language=en&amp;key=AIzaSyBo2xUGsxDURZ9dzCzd2ZeHt7JJ8Mi-QNI"></script>
+                                        <style type="text/css">
+                                            #map-canvas {
+                                                margin: 0;
+                                                padding: 0;
+                                                width: 100%;
+                                                height: 500px;
+                                            }
+
+                                            #panel {
+                                                position: absolute;
+                                                top: 300px;
+                                                right: 50px;
+                                                margin-left: -180px;
+                                                z-index: 5;
+                                                background-color: #fff;
+                                                padding: 5px;
+                                                border: 1px solid #999;
+                                            }
+
+                                            .noscrollbar {
+                                                line-height: 1.35;
+                                                overflow: hidden;
+                                                white-space: nowrap;
+                                                font-weight: bold;
+                                            }
+
+                                            .fullscreen {
+                                                cursor: pointer;
+                                            }
+
+                                                .fullscreen:hover {
+                                                    font-weight: bold;
+                                                    text-decoration: none;
+                                                }
+                                        </style>
+                                        <script type="text/javascript">
+                                            var langId = '2';
+                                            var fileXML = "data_vtv.xml";
+                                            if (langId == '1') {
+                                                fileXML = "data_vtv-en.xml";
+                                            }
+                                            var map;
+                                            var marker;
+                                            var markers = [];
+                                            var actionwindow = null;
+                                            var markeraction;
+                                            var timeout_map;
+
+                                            var MY_MAPTYPE_ID = 'Vietravel';
+
+                                            function initialize() {
+                                                var featureOpts = [
+                                                    {
+                                                        stylers: [
+                                                            { hue: '#09a5e5' },
+                                                            { visibility: 'simplified' },
+                                                            { gamma: 0.5 },
+                                                            { weight: 0.5 }
+                                                        ]
+                                                    },
+                                                    {
+                                                        elementType: 'labels',
+                                                        stylers: [
+                                                            { visibility: 'on' }
+                                                        ]
+                                                    },
+                                                    {
+                                                        featureType: 'water',
+                                                        stylers: [
+                                                            { color: '#09a5e5' }
+                                                        ]
+                                                    }
+                                                ];
+                                                var mapOptions = {
+                                                    //zoom: 17,
+                                                    //center: new google.maps.LatLng(16.082412, 107.578125),
+                                                    //mapTypeId: google.maps.MapTypeId.ROADMAP
+                                                    mapTypeControlOptions: {
+                                                        mapTypeIds: [MY_MAPTYPE_ID]
+                                                    },
+                                                    mapTypeId: MY_MAPTYPE_ID
+                                                };
+                                                map = new google.maps.Map(document.getElementById('map-canvas'),
+                                                    mapOptions);
+
+                                                var styledMapOptions = {
+                                                    name: 'Vietravel'
+                                                };
+
+                                                var customMapType = new google.maps.StyledMapType(featureOpts, styledMapOptions);
+
+                                                map.mapTypes.set(MY_MAPTYPE_ID, customMapType);
+                                                //jQuery.get("/data_vtv.xml?currTime=" + getTimeForURL(), {}, function (data) {
+                                                jQuery.get("/" + fileXML + "?currTime=" + getTimeForURL(), {}, function (data) {
+                                                    jQuery(data).find("marker").each(function (_index) {
+                                                        var item_xml = jQuery(this);
+                                                        var myLatLng = new google.maps.LatLng(parseFloat(item_xml.attr("lat")),
+                                                            parseFloat(item_xml.attr("lng")));
+                                                        marker = new google.maps.Marker({
+                                                            map: map,
+                                                            animation: google.maps.Animation.DROP,
+                                                            position: myLatLng,
+                                                            icon: 'https://travel.com.vn/Images/markerV.png',
+                                                            title: item_xml.attr("name")
+                                                        });
+                                                        markers[_index] = marker;
+                                                        var infowindow = new google.maps.InfoWindow({
+                                                            content: fnGetTempleteInfoBranch(item_xml.attr("imageurl"), item_xml.attr("name"), item_xml.attr("address"), item_xml.attr("tel"), item_xml.attr("fax"), item_xml.attr("email")/*, item_xml.attr("hotline")*/)
+                                                        });
+                                                        google.maps.event.addListener(markers[_index], 'click', function () {
+                                                            if (actionwindow != null) actionwindow.close();
+                                                            infowindow.open(map, markers[_index]);
+                                                            actionwindow = infowindow;
+                                                        });
+                                                    });
+                                                    //                var latlngbounds = new google.maps.LatLngBounds();
+                                                    //                for (var i = 0; i < markers.length; i++) {
+                                                    //                    latlngbounds.extend(markers[i].getPosition());
+                                                    //                }
+                                                    //                map.fitBounds(latlngbounds);
+                                                    showInfoBranch(0);
+                                                    google.maps.event.addListener(map, 'tilesloaded', function (evt) {
+                                                        timeout_map = setTimeout(function () { chagelink() }, 200);
+                                                    });
+                                                });
+                                            }
+                                            function chagelink() {
+                                                $("#map-canvas a")
+                                                    .each(function () {
+                                                        if ($(this).attr('title').indexOf("Google") > 0) {
+                                                            $(this).attr('href', '#');
+                                                            $(this).attr('target', '_self');
+                                                            clearTimeout(timeout_map);
+                                                        }
+                                                    });
+                                            }
+                                            function getTimeForURL() {
+                                                var dt = new Date();
+                                                var strOutput = "";
+                                                strOutput = dt.getHours() + "_" + dt.getMinutes() + "_" + dt.getSeconds() + "_" + dt.getMilliseconds();
+                                                return strOutput;
+                                            }
+                                            function fnGetTempleteInfoBranch(imageurl, name, address, tel, fax, email, hotline) {
+                                                //            var strimg = '';
+                                                //            if (imageurl != '') {
+                                                //                strimg = "<img src='" + imageurl + "' width='120px' height='80px'>";
+                                                //            }
+                                                //            return "<table cellpadding='2'><tr><td>" + strimg + "</td><td><b>" + name + "<br>" + address + "<br>Tel : " + tel + "<br>Fax : " + fax + "<br>E-mail : " + email + "</b></td></tr></table>"
+                                                if (hotline != undefined) {
+                                                    return "<div class=\"noscrollbar\">" + name + "<br>" + address + "<br>Hotline : " + hotline + "<br>Tel : " + tel + "<br>Fax : " + fax + "<br>E-mail : " + email + "</div>";
+                                                }
+                                                else {
+                                                    return "<div class=\"noscrollbar\">" + name + "<br>" + address + "<br>Tel : " + tel + "<br>Fax : " + fax + "<br>E-mail : " + email + "</div>";
+                                                }
+                                            }
+                                            function showInfoBranch(_value) {
+                                                google.maps.event.trigger(markers[_value], 'click');
+                                                map.setCenter(markers[_value].getPosition());
+                                                map.setZoom(17);
+                                            }
+                                            google.maps.event.addDomListener(window, 'load', initialize);
+                                            function fnShowFullSreenMap() {
+                                                if ($(document).fullScreen() == null) {
+                                                    alert('Browse không hỗ trợ.');
+                                                }
+                                                else {
+                                                    $('#map-canvas').fullScreen(true);
+                                                }
+                                            }
+                                            $(function () {
+                                                $(document).bind("fullscreenchange", function (e) {
+                                                    //                if ($(document).fullScreen()) {
+                                                    //                }
+                                                    //                else {
+                                                    //                }
+                                                    var latlngbounds = new google.maps.LatLngBounds();
+                                                    for (var i = 0; i < markers.length; i++) {
+                                                        latlngbounds.extend(markers[i].getPosition());
+                                                    }
+                                                    map.fitBounds(latlngbounds);
+                                                });
+
+                                                $(document).bind("fullscreenerror", function (e) {
+                                                    alert('Browse không hỗ trợ.');
+                                                });
+
+                                            });
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tenmien">
+                <img src="~/Assets/img/i-des.png" />&nbsp;&nbsp;<h2>Khu Vực Miền Trung</h2>
+            </div>
+            <div class="mb-4">
+                <ul class="row list-vp">
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="41" data-toggle="modal" data-target="#myModal">Chi Nhánh Nha Trang</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="44" data-toggle="modal" data-target="#myModal">Chi Nhánh Vinh</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="45" data-toggle="modal" data-target="#myModal">Chi Nhánh Quy Nhơn</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="46" data-toggle="modal" data-target="#myModal">Chi Nhánh Huế</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="47" data-toggle="modal" data-target="#myModal">Chi Nhánh Quảng Ngãi</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="49" data-toggle="modal" data-target="#myModal">Chi Nhánh Đà Lạt</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="77" data-toggle="modal" data-target="#myModal">Văn Phòng Giao Dịch Bảo Lộc</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="50" data-toggle="modal" data-target="#myModal">Chi Nhánh Buôn Ma Thuột</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="34" data-toggle="modal" data-target="#myModal">Chi nhánh Thanh Hóa</a></li>
+                </ul>
+            </div>
+            <div class="tenmien">
+<img src="~/Assets/img/i-des.png" />&nbsp;&nbsp;<h2>Khu Vực Miền Bắc</h2></div>
+            <div class="mb-4">
+                <ul class="row list-vp">
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="30" data-toggle="modal" data-target="#myModal">VP Đăng Ký Du Lịch Số 1 - Hà Nội</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="31" data-toggle="modal" data-target="#myModal">VP Đăng Ký Du Lịch Số 2 - Hà Nội</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="32" data-toggle="modal" data-target="#myModal">VP Đăng Ký Du Lịch Số 3 - Hà Nội</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="33" data-toggle="modal" data-target="#myModal">VP Đăng Ký Du Lịch Số 4 - Hà Nội</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="71" data-toggle="modal" data-target="#myModal">VP Đăng Ký Du Lịch Số 5 - Hà Nội</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="72" data-toggle="modal" data-target="#myModal">VP Đăng Ký Du Lịch Số 6 - Hà Nội</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="81" data-toggle="modal" data-target="#myModal">VP Đăng Ký Du Lịch Số 7 - Hà Nội</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="35" data-toggle="modal" data-target="#myModal">Chi Nhánh Hải Phòng</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="37" data-toggle="modal" data-target="#myModal">Chi Nhánh Quảng Ninh</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="78" data-toggle="modal" data-target="#myModal">Chi Nhánh Thái Nguyên</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="83" data-toggle="modal" data-target="#myModal">Chi Nhánh Hải Dương</a></li>
+                </ul>
+            </div>
+            <div class="tenmien">
+                <img src="~/Assets/img/i-des.png" />&nbsp;&nbsp;<h2>Nước ngoài</h2>
+            </div>
+            <div class="mb-4">
+                <ul class="row list-vp">
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="51" data-toggle="modal" data-target="#myModal">Vietravel tại Mỹ</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="70" data-toggle="modal" data-target="#myModal">Vietravel tại Singapore</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="63" data-toggle="modal" data-target="#myModal">Vietravel tại Úc - Melbourne</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="79" data-toggle="modal" data-target="#myModal">Vietravel tại Úc - Sydney</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="64" data-toggle="modal" data-target="#myModal">Vietravel tại Pháp</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="53" data-toggle="modal" data-target="#myModal">Vietravel tại Campuchia - Indochina Heritage Travel</a></li>
+                </ul>
+            </div>
+            <div class="tenmien">
+                <img src="~/Assets/img/i-des.png" />&nbsp;&nbsp;<h2>Khác</h2>
+            </div>
+            <div class="mb-4">
+                <ul class="row list-vp">
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="54" data-toggle="modal" data-target="#myModal">TT nguồn nhân lực Việt Nam (VIMAC)</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="55" data-toggle="modal" data-target="#myModal">VP TT nguồn nhân lực Việt Nam tại Hà Nội</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="56" data-toggle="modal" data-target="#myModal">VP TT nguồn nhân lực Việt Nam tại Tokyo</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="59" data-toggle="modal" data-target="#myModal">TT vé và DV hành khách thế giới</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="75" data-toggle="modal" data-target="#myModal">TT vé và DV hành khách thế giới - Chi Nhánh Hà Nội</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="60" data-toggle="modal" data-target="#myModal">Xí nghiệp vận chuyển Xuyên Á</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="62" data-toggle="modal" data-target="#myModal">Phòng quan hệ và dịch vụ khách hàng</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="65" data-toggle="modal" data-target="#myModal">TT tư vấn du học Vietravel</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="57" data-toggle="modal" data-target="#myModal">TT dạy nghề Vietravel</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="76" data-toggle="modal" data-target="#myModal">TT DV Du Lịch Trip U</a></li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-12"><a href="#" data-id="80" data-toggle="modal" data-target="#myModal">Công Ty TNHH Hàng Không Lữ Hành Việt Nam</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+

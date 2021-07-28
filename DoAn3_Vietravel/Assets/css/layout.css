@@ -1,0 +1,434 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+footer {
+    font-size: 15px;
+}
+
+a {
+    color: black;
+}
+
+    a:hover {
+        color: #ff0000;
+        text-decoration: none;
+    }
+
+.header {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.header-top {
+    width: 100%;
+    background-color: #F1F1F1;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.hotline {
+    padding-top: 5px;
+}
+
+.seach {
+    position: relative;
+    padding-right: 15px;
+    padding-top: 3px;
+}
+
+.text-input {
+    font-size: 14px;
+    padding-left: 5px;
+    width: 193px;
+    padding-right: 31px;
+}
+
+.btn-seach {
+    border: none;
+    background: initial;
+    position: absolute;
+    height: 100%;
+    right: 15px;
+    top: 0;
+}
+
+.cart {
+    padding: 0px 20px;
+    padding-top: 5px;
+}
+
+.fa-shopping-cart {
+    font-size: 25px;
+    color: #5C5C5C;
+}
+
+.user {
+    padding: 0px 20px;
+    padding-top: 5px;
+    position: relative;
+}
+
+.user-menu {
+    position: absolute;
+    left: inherit !important;
+    right: 0;
+    margin-top: 6px;
+    font-size: 14px;
+}
+
+    .user-menu li {
+        padding-right: 20px;
+        padding-top: 8px !important;
+        padding-left: 20px;
+        padding-bottom: 8px !important;
+    }
+
+        .user-menu li:hover {
+            color: black;
+            background-color: #F1F1F1;
+        }
+
+.user .dropdown-menu {
+    padding: 0rem !important;
+}
+
+.user .fa-user-circle {
+    font-size: 25px;
+    color: #5C5C5C;
+}
+
+.language {
+    padding-left: 20px;
+    padding-top: 5px;
+    position: relative;
+}
+
+    .language .dropdown-menu {
+        padding: 0rem !important;
+    }
+
+.lang-menu {
+    position: absolute;
+    left: inherit !important;
+    right: 0;
+    margin-top: 6px;
+    font-size: 14px;
+}
+
+    .lang-menu li {
+        padding-right: 20px;
+        padding-top: 8px !important;
+        padding-left: 20px;
+        padding-bottom: 8px !important;
+    }
+
+        .lang-menu li:hover {
+            color: black;
+            background-color: #F1F1F1;
+        }
+
+.menu-header {
+    margin-top: 15px;
+    float: right;
+}
+
+.nav-link {
+    color: #000000;
+}
+
+.dropbtn {
+    position: relative;
+}
+
+.sub-menu {
+    display: none;
+    list-style: none;
+    padding: 6px
+}
+
+    .sub-menu li {
+        padding: 6px 15px;
+        width: 205px;
+        z-index: 1000;
+        background-color: #fff;
+        border: 1px solid #f1f1f1;
+        border-bottom: 1px dashed #f1f1f1;
+    }
+
+.dropbtn:hover .sub-menu {
+    display: block;
+    position: absolute;
+    right: inherit !important;
+    top: 100%;
+    z-index: 1000;
+}
+
+.content {
+    margin-bottom: 40px;
+}
+
+.footer {
+    position: relative;
+}
+
+.frame-orther {
+    background-color: #F4F4F4;
+    height: 100%;
+    position: relative;
+}
+
+.orther-name {
+    padding: 15px;
+    color: #ff0000;
+    font-size: 18px;
+    margin: 0px;
+}
+
+.list-location {
+    padding: 0px 15px 15px 15px;
+}
+
+    .list-location ul {
+        padding: 0px 0px 0px 15px;
+    }
+
+        .list-location ul li {
+            list-style: none;
+            font-size: 15px;
+        }
+
+.list-tour-type ul {
+    padding-left: 15px;
+    margin: 0;
+}
+
+    .list-tour-type ul li {
+        list-style: none;
+    }
+
+.fa-star {
+    color: gold;
+}
+
+.icon-store a i {
+    font-size: 20px;
+    padding: 15px 40px;
+    color: white;
+    background-color: black;
+}
+
+.clear {
+    clear: both;
+}
+
+.qr-code {
+    background-color: #F4F4F4;
+}
+
+.bg-app {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.hr-bot {
+    width: 50%;
+}
+
+.ft-bot {
+    font-weight: 500;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+.list-info {
+    padding-left: 0px;
+}
+
+    .list-info li {
+        list-style: none;
+    }
+
+.ft-input {
+    position: relative;
+}
+
+    .ft-input input {
+        border-radius: 0;
+        padding-right: 43px;
+    }
+
+.btn-mail {
+    top: 0;
+    right: 0;
+    position: absolute;
+}
+
+.bg-btn {
+    padding: 8px 10px 7px 10px;
+    background-color: #FF4400;
+}
+
+.fa-search {
+    color: #5C5C5C;
+    font-size: 19px;
+}
+
+.fa-facebook {
+    font-size: 31px;
+}
+
+.fa-instagram {
+    font-size: 31px;
+}
+
+.fa-twitter {
+    font-size: 31px;
+}
+
+.fa-youtube {
+    font-size: 31px;
+}
+
+.fa-phone-volume {
+    font-size: 43px;
+}
+
+.hl-num {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.hl-hour {
+    font-size: 13px;
+}
+
+.info p{
+    font-size: 13px!important;
+    margin: 40px 0px 5px 0px;
+    padding-bottom:40px;
+}
+
+.bg-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+}
+
+.fade {
+    -webkit-transition: opacity .15s linear;
+    -o-transition: opacity .15s linear;
+    transition: opacity .15s linear;
+}
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 600px;
+        margin: 1.75rem auto;
+    }
+}
+
+.modal.fade .modal-dialog {
+    transition: transform .3s ease-out;
+}
+
+.modal-dialog {
+    position: relative;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #999;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 6px;
+    outline: 0;
+    box-shadow: 0 3px 9px rgba(0,0,0,.5);
+}
+
+.modal-header {
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.close {
+    float: right;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: .2;
+}
+
+.modal-dialog .modal-title {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fc3400;
+    font-size: 15px;
+}
+
+.modal-body {
+    position: relative;
+    padding: 15px;
+}
+
+.modal-dialog .input-container {
+    display: flex;
+    width: 100%;
+    background: #f2f2f2;
+    height: 40px;
+}
+
+.modal-dialog input {
+    outline: 0;
+    background-color: #e8f0fe;
+    width: 100%;
+    border: 0;
+    box-sizing: border-box;
+}
+
+.modal-dialog .icon {
+    padding: 13px;
+    color: #717171;
+    max-height: 40px;
+    text-align: center;
+}
+
+.modal-dialog .modal-body a {
+    color: #fc3400;
+    cursor: pointer;
+}
+
+.modal-footer {
+    padding: 15px;
+    text-align: right;
+    border-top: 1px solid #e5e5e5;
+}
+
+.modal-dialog .btn-default {
+    background: linear-gradient(to right,#ff3400,#f60);
+    color: #fff;
+    border: initial !important;
+    font-weight: bold;
+    font-size:14px;
+}

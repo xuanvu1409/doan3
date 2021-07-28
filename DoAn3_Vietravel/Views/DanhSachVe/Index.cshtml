@@ -1,0 +1,359 @@
+﻿@model IEnumerable<DoAn3_Vietravel.Areas.Admin.Models.Ve>
+@{
+    ViewBag.Title = "DuLichTrongNuoc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Assets/css/dulichtrongnuoc.css" rel="stylesheet" />
+
+@Html.Partial("~/Views/Partials/HomePartial.cshtml")
+
+<div class="breadcrumb-title">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb">
+                    <span>
+                        <a href="~/Views/Home/Index.cshtml">
+                            Du lịch
+                        </a>
+                    </span>&nbsp;»&nbsp;
+                    <span>
+                        <a href="#">@ViewBag.TieuDe</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mb-4 container">
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-12 mb-4">
+            <form method="post" action="/Home/TimKiem" class="mb-4">
+                <div class="search-sidebar">
+                    <div class="title">Tìm kiếm</div>
+                    <div class="frame-search">
+                        <div class="noikhoihanh">
+                            <label>Nơi khởi hành</label>
+                            <select class="form-control">
+                                <option>Nơi khởi hành</option>
+                                <option> Hồ Chí Minh</option>
+                                <option>Bạc Liêu</option>
+                                <option>Bảo Lộc</option>
+                                <option>Bình Dương</option>
+                                <option>Buôn Ma Thuột</option>
+                                <option>Cà Mau</option>
+                                <option>Cần Thơ</option>
+                                <option>Đà Lạt</option>
+                                <option>Đà Nẵng</option>
+                                <option>Đồng Nai</option>
+                                <option>Đồng Tháp</option>
+                                <option>Hà Nội</option>
+                                <option>Hải Phòng</option>
+                                <option>Hồ Chí Minh - VSCC</option>
+                                <option>Huế</option>
+                                <option>Long An</option>
+                                <option>Long Xuyên</option>
+                                <option>Nha Trang</option>
+                                <option>Phú Quốc</option>
+                                <option>Quảng Bình</option>
+                                <option>Quảng Ngãi</option>
+                                <option>Quảng Ninh</option>
+                                <option>Quy Nhơn</option>
+                                <option>Rạch Giá</option>
+                                <option>Sóc Trăng</option>
+                                <option>Thái Nguyên</option>
+                                <option>Thanh Hóa</option>
+                                <option>TripU</option>
+                                <option>Vinh</option>
+                                <option>Vũng Tàu</option>
+                            </select>
+                        </div>
+                        <div class="loaitour">
+                            <label>Loại tour</label>
+                            <select class="form-control">
+                                <option>Trong nước</option>
+                                <option>Nước ngoài</option>
+                            </select>
+                        </div>
+                        <div class="noiden">
+                            <label>Nơi đến</label>
+                            <select class="form-control">
+                                <option>Nơi đến</option>
+                                <option>An Giang</option>
+                                <option>Bắc Giang</option>
+                                <option>Bắc Kạn</option>
+                                <option>Bạc Liêu</option>
+                                <option>Bắc Ninh</option>
+                                <option>Bảo Lộc</option>
+                                <option>Bến Tre</option>
+                                <option>Bình Định</option>
+                                <option>Bình Liêu</option>
+                                <option>Bình Thuận</option>
+                                <option>Buôn Ma Thuột</option>
+                                <option>Cà Mau</option>
+                                <option>Cam Ranh</option>
+                                <option>Cần Giờ</option>
+                                <option>Cần Thơ</option>
+                                <option>Cao Bằng</option>
+                                <option>Côn Đảo</option>
+                                <option>Đà Lạt</option>
+                                <option>Đà Nẵng</option>
+                                <option>Đắk Nông</option>
+                                <option>Điện Biên</option>
+                                <option>Đông Bắc</option>
+                                <option>Đồng Nai</option>
+                                <option>Đồng Nai</option>
+                                <option>Đồng Tháp</option>
+                                <option>Nghệ An</option>
+                                <option>Hà Giang</option>
+                                <option>Hạ Long</option>
+                                <option>Hà Nam</option>
+                                <option>Hà Nội</option>
+                                <option>Hà Tây</option>
+                                <option>Hà Tiên</option>
+                                <option>Hà Tĩnh</option>
+                                <option>Hải Phòng</option>
+                                <option>Hồ Chí Minh</option>
+                                <option>Hòa Bình</option>
+                                <option>Huế</option>
+                                <option>Kiên Giang</option>
+                                <option>Kon Tum</option>
+                                <option>Lạng Sơn</option>
+                                <option>Lào Cai</option>
+                                <option>Long An</option>
+                                <option>Móng Cái</option>
+                                <option>Nam Định</option>
+                                <option>Nha Trang</option>
+                                <option>Ninh Bình</option>
+                                <option>Ninh Thuận</option>
+                                <option>Pleiku</option>
+                                <option>Phan Thiết</option>
+                                <option>Phú Quốc</option>
+                                <option>Phú Thọ</option>
+                                <option>Phú Yên</option>
+                                <option>Quảng Bình</option>
+                                <option>Quảng Ngãi</option>
+                                <option>Quảng Nam</option>
+                                <option>Quảng Ninh</option>
+                                <option>Quảng Trị</option>
+                                <option>Quy Nhơn</option>
+                                <option>Sóc Trăng</option>
+                                <option>Sơn La</option>
+                                <option>Tây Bắc</option>
+                                <option>Tây Nguyên</option>
+                                <option>Tây Ninh</option>
+                                <option>Tiền Giang</option>
+                                <option>Trà Vinh</option>
+                                <option>Thái Bình</option>
+                                <option>Thái Nguyên</option>
+                                <option>Thanh Hóa</option>
+                                <option>Vinh</option>
+                                <option>Vĩnh Long</option>
+                                <option>Vĩnh Phúc</option>
+                                <option>Vũng Tàu</option>
+                                <option>Yên Bái</option>
+                            </select>
+                        </div>
+                        <div class="ngaykhoihanh">
+                            <label>Ngày khởi hành</label>
+                            <div class="position-relative">
+                                <input type="text" class="form-control" value="16/10/2019" placeholder="Ngày khởi hành">
+                                <span class="i-calendar-2">
+                                    <i class="far fa-calendar-alt fa-lg"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="gia">
+                            <label>Giá</label>
+                            <select class="form-control" name="lc">
+                                <option>Giá</option>
+                                <option value="1">Dưới 1 Triệu</option>
+                                <option value="2">  1- 2  Triệu</option>
+                                <option value="3">  2-4 Triệu</option>
+                                <option value="4">  4-6 Triệu</option>
+                                <option value="5">  6-10 Triệu</option>
+                                <option value="6">Trên 10 Triệu</option>
+                            </select>
+                        </div>
+                        <div class="btn-seach-3">
+                            <button type="submit" class="btn btn-search">Tìm kiếm</button>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+            <div class="filter-sidebar">
+                <div class="title">
+                    Bộ lọc tìm kiếm
+                </div>
+                <div class="frame-filter">
+                    <div class="theogia">
+                        Theo giá: <input type="number" class="txt-input" min="500000" max="99,000000" maxlength="8" step="100000" value="500000" />
+                    </div>
+                    <div class="songay">
+                        Số ngày: <input type="number" class="txt-input" min="1" max="12" maxlength="2" step="1" value="1" />
+                    </div>
+                    <div class="vanchuyen">
+                        <label>
+                            <i class="fas fa-subway"></i>
+                            &nbsp;&nbsp;Thông tin vận chuyển:
+                        </label>
+                        <div class="mb-2">
+                            <input type="checkbox" class="custom-checkbox float-left" style="margin-top:1px;" name="vanchuyen" />
+                            &nbsp;&nbsp;<div class="float-left ml-3">Máy bay</div>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="custom-checkbox float-left" style="margin-top:1px;" name="vanchuyen" />
+                            &nbsp;&nbsp;<div class="float-left ml-3">Ô tô</div>
+                        </div>
+                    </div>
+                    <div class="tinhtrang">
+                        <label>
+                            <i class="fas fa-suitcase"></i>
+                            &nbsp;&nbsp;Tình trạng:
+                        </label>
+                        <div class="mb-2">
+                            <input type="checkbox" class="custom-checkbox float-left" style="margin-top:1px;" name="tinhtrang" />
+                            &nbsp;&nbsp;<div class="float-left ml-3">Còn chỗ</div>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="custom-checkbox float-left" style="margin-top:1px;" name="tinhtrang" />
+                            &nbsp;&nbsp;<div class="float-left ml-3">Hết chỗ</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-12">
+            <div class="list-tour">
+                <div class="des-tour">
+                    <h1 class="des-title">
+                        @ViewBag.TieuDe
+                    </h1>
+                    <div class="des-content">
+                        <div class="mb-2">
+                            <div class="mb-2">
+                                @ViewBag.MoTa
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="title-list" style="font-size:20px; text-transform:uppercase; font-weight:700;">
+                                <a href="#">
+                                    Danh sách tour
+                                </a>
+                            </h2>
+                        </div>
+                        @foreach (var item in Model)
+                        {
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="item mb-4">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="tour-name-2">
+                                                <a href="/ChiTietVe/Index/@item.IDVe">
+                                                    <h3>
+                                                        @item.TenVe
+                                                    </h3>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3">
+                                            <div class="position-relative">
+                                                <div class="badge-promo">
+                                                    <div class="badge-promo-content">
+                                                        <div>
+                                                            <i class="fas fa-spinner"></i>&nbsp;&nbsp;@item.KieuVe
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a href="#">
+                                                    <img src="~/Assets/images/Tour/@item.HinhAnh" class="d-block w-100" style="height:115px;" />
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-9 col-md-9 col-sm-9">
+                                            <div class="frame-info">
+                                                <div class="row">
+                                                    <div class="col-md-7 col-sm-7 mb-2">
+                                                        <div class="float-left">
+                                                            <i class="fas fa-barcode"></i>
+                                                        </div>
+                                                        <div class="float-left ml-2">
+                                                            Mã tour: @item.IDVe
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-5 col-sm-5 mb-2">
+                                                        <div class="float-left">
+                                                            <i class="fas fa-couch"></i>
+                                                        </div>
+                                                        <div class="float-left ml-2">
+                                                            Số chỗ còn nhận: <span class="font-weight-bold">@item.SoCho</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-7 col-sm-7 mb-2">
+                                                        <div class="float-left">
+                                                            <i class="fas fa-calendar-alt"></i>
+                                                        </div>
+                                                        <div class="float-left ml-2">
+                                                            Ngày đi: <span>@item.NgayKhoiHanh</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-5 col-sm-5 mb-2">
+                                                        <div class="float-left">
+                                                            <i class="fas fa-wallet" aria-hidden="true"></i>
+                                                        </div>
+                                                        <div class="float-left ml-2">
+                                                            Giá: <span class="price-n">@(string.Format("{0:#,##0}", item.Gia))</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-7 col-sm-7 mb-2">
+                                                        <div class="float-left">
+                                                            <i class="fas fa-map-marker-alt"></i>
+                                                        </div>
+                                                        <div class="float-left ml-2">
+                                                            Nơi khởi hành: <span class="font-weight-bold">@item.NoiTapTrung</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-5 col-sm-5 mb-2">
+                                                        <div class="float-left">
+                                                            <i class="fas fa-stopwatch"></i>
+                                                        </div>
+                                                        <div class="float-left ml-2">
+                                                            Số ngày: <span class="font-weight-bold">@item.ThoiGian</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-7 col-sm-7 mb-2">
+                                                        <div class="float-left">
+                                                            <i class="fas fa-car"></i>
+                                                        </div>
+                                                        <div class="float-left ml-2">
+                                                            Vận chuyển: <span class="font-weight-bold">@item.HinhThucVanChuyen</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-5 col-sm-5 mb-2">
+                                                        <div class="float-left">
+                                                            <i class="far fa-star text-dark"></i>
+                                                        </div>
+                                                        <div class="float-left ml-2">
+                                                            Kiểu vé: <span class="font-weight-bold">@item.KieuVe</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

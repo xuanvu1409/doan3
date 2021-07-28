@@ -1,0 +1,538 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@Html.Partial("~/Views/Partials/HomePartial.cshtml")
+
+<link href="~/Assets/css/Style.css" rel="stylesheet" />
+
+<div class="last-hour container">
+    <div class="row">
+        <div class="title-tour-h2 col-xs-12 mb-4 ">
+            <h2 style="font-weight:700; font-size:27px;">
+                <img src="~/Assets/img/ih-left.png"><a href="#">Tour giờ chót</a>
+                <img src="~/Assets/img/ih-right.png">
+            </h2>
+            <p>Tour giờ chót với giá tốt</p>
+        </div>
+        <div class="list-tour">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 mb-5">
+                    <a href="#">
+                        <div class="position-relative">
+                            <img src="~/Assets/images/Tour/lm_190927022644_098189.jpeg" class="d-block w-100" style="height:195px; object-fit:cover;" />
+                            <div class="frame-pay-online">
+                                <i class="fas fa-map-marker-alt text-white float-left"></i>
+                                <div class="text-white float-left ml-2">Nơi khởi hành: <span class="text-warning">Hồ Chí Minh</span></div>
+                            </div>
+                            <div class="time-tour" id="countdown">
+                                <span class="text-dark titles"></span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="tour-info">
+                        <a href="#">
+                            <div class="title-tour mb-2">Bangkok - Pattaya (Khách sạn 4* & 3*, Tặng… </div>
+                        </a>
+                        <div class="bd-bot"></div>
+                        <div class="fram-info">
+                            <div class="date mb-1">
+                                <i class="fas fa-calendar-alt text-dark"></i>
+                                <span class="text-dark ml-2">29/09/2019</span> - <span class="text-dark">5 ngày</span>
+                            </div>
+                            <div class="mb-1">
+                                <i class="fas fa-couch text-dark"></i>
+                                <span class="ml-1 text-dark">3 chỗ</span>
+                            </div>
+                            <div class="price">
+                                <div class="text-dark">
+                                    <i class="fas fa-wallet"></i>
+                                    <span class="ml-2 price-o">
+                                        9,690,000 ₫
+                                    </span>
+                                    <span class="price-n float-right">
+                                        8,690,000 ₫
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 mb-5">
+                    <a href="#">
+                        <div class="position-relative">
+                            <img src="~/Assets/images/Tour/lm_190924100123_728970.jpg" class="d-block w-100" style="height:195px; object-fit:cover;" />
+                            <div class="frame-pay-online">
+                                <i class="fas fa-map-marker-alt text-white float-left"></i>
+                                <div class="text-white float-left ml-2">Nơi khởi hành: <span class="text-warning">Hồ Chí Minh</span></div>
+                            </div>
+                            <div class="time-tour" id="countdown">
+                                <span class="text-dark titles"></span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="tour-info">
+                        <a href="#">
+                            <div class="title-tour mb-2">Siem Reap - Phnom Penh (Khách sạn 4*, Tour… </div>
+                        </a>
+                        <div class="bd-bot"></div>
+                        <div class="fram-info">
+                            <div class="date mb-1">
+                                <i class="fas fa-calendar-alt text-dark"></i>
+                                <span class="text-dark ml-2">30/09/2019</span> - <span class="text-dark">4 ngày</span>
+                            </div>
+                            <div class="mb-1">
+                                <i class="fas fa-couch text-dark"></i>
+                                <span class="ml-1 text-dark">5 chỗ</span>
+                            </div>
+                            <div class="price">
+                                <div class="text-dark">
+                                    <i class="fas fa-wallet"></i>
+                                    <span class="ml-2 price-o">
+                                        9,690,000 ₫
+                                    </span>
+                                    <span class="price-n float-right">
+                                        8,990,000 ₫
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 mb-5">
+                    <a href="#">
+                        <div class="position-relative">
+                            <img src="~/Assets/images/Tour/lm_190919110354_001372.jpg" class="d-block w-100" style="height:195px; object-fit:cover;" />
+                            <div class="frame-pay-online">
+                                <i class="fas fa-map-marker-alt text-white float-left"></i>
+                                <div class="text-white float-left ml-2">Nơi khởi hành: <span class="text-warning">Hồ Chí Minh</span></div>
+                            </div>
+                            <div class="time-tour" id="countdown">
+                                <span class="text-dark titles"></span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="tour-info">
+                        <a href="#">
+                            <div class="title-tour mb-2">Khám phá Trung Đông huyền bí: Dubai - Abu… </div>
+                        </a>
+                        <div class="bd-bot"></div>
+                        <div class="fram-info">
+                            <div class="date mb-1">
+                                <i class="fas fa-calendar-alt text-dark"></i>
+                                <span class="text-dark ml-2">01/10/2019</span> - <span class="text-dark">6 ngày</span>
+                            </div>
+                            <div class="mb-1">
+                                <i class="fas fa-couch text-dark"></i>
+                                <span class="ml-1 text-dark">9 chỗ</span>
+                            </div>
+                            <div class="price">
+                                <div class="text-dark">
+                                    <i class="fas fa-wallet"></i>
+                                    <span class="ml-2 price-o">
+                                        4,990,000 ₫
+                                    </span>
+                                    <span class="price-n float-right">
+                                        4,490,000 ₫
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 frame mb-5">
+            <a href="/DanhSachVe/Index/68" class="btn-xt">Xem Thêm</a>
+        </div>
+    </div>
+</div>
+
+<div class="pay-online container">
+    <div class="row">
+        <div class="title-tour-h2 col-xs-12 mb-4">
+            <h2 style="font-weight:700; font-size:27px;">
+                <img src="~/Assets/img/ih-left.png">
+                <a href="#">Ưu đãi thanh toán trực tuyến</a>
+                <img src="~/Assets/img/ih-right.png">
+            </h2>
+            <p style="font-size:17px;">
+                Mua tour và thanh toán trực tuyến với giá ưu đãi
+            </p>
+        </div>
+        <div class="frame-pay row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-4">
+                <a href="#">
+                    <div class="position-relative">
+                        <img src="~/Assets/images/Tour/tf_180110044009_909799.jpg" class="d-block w-100" style="height:350px;" />
+                        <div class="frame-pay-online">
+                            <div class="title-pay">Phú Quốc - Ngắm Hoàng Hôn Tại Sunset Sanato - Bãi  ...</div>
+                            <div class="text-warning">
+                                <span class="text-warning">21/09/2019</span>  |
+                                <span class="text-warning">5 ngày</span>  |
+                                <span class="text-warning">6 chỗ</span>
+                            </div>
+                            <div class="text-white">Nơi khởi hành: <span class="text-warning">Hồ Chí Minh</span></div>
+                            <div class="price-o text-dark float-left">
+                                <span>3,790,000 ₫</span>
+                            </div>
+                            <div class="price-n float-left ml-3">
+                                <span>3,490,000 ₫</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 mb-4">
+                <a href="#">
+                    <div class="position-relative">
+                        <img src="~/Assets/images/Tour/tf_190322101808_907467.jpg" class="d-block w-100" style="height:195px;" />
+                        <div class="frame-pay-online">
+                            <i class="fas fa-map-marker-alt text-white float-left"></i>
+                            <div class="text-white float-left ml-2">Nơi khởi hành: <span class="text-warning">Hồ Chí Minh</span></div>
+                        </div>
+                    </div>
+                </a>
+                <div class="tour-info">
+                    <a href="#">
+                        <div class="title-tour mb-2">Bangkok - Pattaya (Khách sạn 4 ...</div>
+                    </a>
+                    <div class="bd-bot"></div>
+                    <div class="fram-info">
+                        <div class="date mb-1">
+                            <i class="fas fa-calendar-alt text-dark"></i>
+                            <span class="text-dark ml-2">29/09/2019</span> - <span class="text-dark">5 ngày</span>
+                        </div>
+                        <div class="mb-1">
+                            <i class="fas fa-couch text-dark"></i>
+                            <span class="ml-1 text-dark">3 chỗ</span>
+                        </div>
+                        <div class="price">
+                            <div class="text-dark">
+                                <i class="fas fa-wallet"></i>
+                                <span class="ml-2 price-o">
+                                    9,690,000 ₫
+                                </span>
+                                <span class="price-n float-right">
+                                    8,990,000 ₫
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 mb-4">
+                <a href="#">
+                    <div class="position-relative">
+                        <img src="~/Assets/images/Tour/tf_160107_angkor-wat.jpg" class="d-block w-100" style="height:195px;" />
+                        <div class="frame-pay-online">
+                            <i class="fas fa-map-marker-alt text-white float-left"></i>
+                            <div class="text-white float-left ml-2">Nơi khởi hành: <span class="text-warning">Hồ Chí Minh</span></div>
+                        </div>
+                    </div>
+                </a>
+                <div class="tour-info">
+                    <a href="#">
+                        <div class="title-tour mb-2">Bangkok - Pattaya (Khách sạn 4 ...</div>
+                    </a>
+                    <div class="bd-bot"></div>
+                    <div class="fram-info">
+                        <div class="date mb-1">
+                            <i class="fas fa-calendar-alt text-dark"></i>
+                            <span class="text-dark ml-2">29/09/2019</span> - <span class="text-dark">4 ngày</span>
+                        </div>
+                        <div class="mb-1">
+                            <i class="fas fa-couch text-dark"></i>
+                            <span class="ml-1 text-dark">5 chỗ</span>
+                        </div>
+                        <div class="price">
+                            <div class="text-dark">
+                                <i class="fas fa-wallet"></i>
+                                <span class="ml-2 price-o">
+                                    4,990,000 ₫
+                                </span>
+                                <span class="price-n float-right">
+                                    4,490,000 ₫
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-xs-12 frame mb-5">
+            <a href="/DanhSachVe/Index/69" class="btn-xt">Xem Thêm</a>
+        </div>
+    </div>
+</div>
+
+<div class="favourite container">
+    <div class="row">
+        <div class="title-tour-h2 col-xs-12 mb-4">
+            <h2 style="font-weight:700; font-size:27px;">
+                <img src="~/Assets/img/ih-left.png">
+                <a href="#">Điểm đến yêu thích</a>
+                <img src="~/Assets/img/ih-right.png">
+            </h2>
+            <p style="font-size:17px;">
+                Các điểm đến du lịch trong nước và nước ngoài
+            </p>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 mb-4">
+            <div class="position-relative hover-to-bottom">
+                <a href="#">
+                    <img src="~/Assets/images/Tour/dd1.jpg" class="d-block w-100 dd-img" />
+                </a>
+                <div class="frame-favourite">
+                    <div class="favourite-name">Vịnh Hạ Long</div>
+                    <div class="text-white">Đã có <span class="text-warning">1,600<sup>+</sup></span> lượt khách</div>
+                </div>
+                <div class="overlay"></div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 mb-4">
+            <div class="position-relative hover-to-bottom">
+                <a href="#">
+                    <img src="~/Assets/images/Tour/dd2.jpg" class="d-block w-100 dd-img" />
+                </a>
+                <div class="frame-favourite position-absolute">
+                    <div class="favourite-name">Sapa</div>
+                    <div class="text-white">Đã có <span class="text-warning">1,200<sup>+</sup></span> lượt khách</div>
+                </div>
+                <div class="overlay"></div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 mb-4">
+            <div class="position-relative hover-to-bottom">
+                <a href="#">
+                    <img src="~/Assets/images/Tour/dd3.jpg" class="d-block w-100 dd-img" />
+                </a>
+                <div class="frame-favourite position-absolute">
+                    <div class="favourite-name">Đà Nẵng</div>
+                    <div class="text-white">Đã có <span class="text-warning">1,100<sup>+</sup></span> lượt khách</div>
+                </div>
+                <div class="overlay"></div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 mb-4">
+            <div class="position-relative hover-to-bottom">
+                <a href="#">
+                    <img src="~/Assets/images/Tour/dd4.jpg" class="d-block w-100 dd-img" />
+                </a>
+                <div class="frame-favourite position-absolute">
+                    <div class="favourite-name">Qui Nhơn</div>
+                    <div class="text-white">Đã có <span class="text-warning">1,900<sup>+</sup></span> lượt khách</div>
+                </div>
+                <div class="overlay"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <div style="border-top: 1px dashed #ccc;padding-bottom: 30px; padding-top:0;"></div>
+    </div>
+    <div class="nation">
+        <div class="row">
+            <div class="w-20 col-xs-12 mb-4">
+                <div class="position-relative hover-to-right">
+                    <a href="#">
+                        <img src="~/Assets/images/Tour/qg1.jpg" class="d-block w-100" />
+                    </a>
+                    <div class="frame-nation position-absolute">
+                        <div class="nation-name">Châu Âu</div>
+                        <div class="float-left text-warning">Khám phá ngay</div>
+                        <i class="fas fa-arrow-circle-right float-left text-warning mt-1 ml-1"></i>
+                    </div>
+                    <div class="overlay-right"></div>
+                </div>
+            </div>
+            <div class="w-20 col-xs-12 mb-4">
+                <div class="position-relative hover-to-right">
+                    <a href="#">
+                        <img src="~/Assets/images/Tour/qg2.jpg" class="d-block w-100" />
+                    </a>
+                    <div class="frame-nation position-absolute">
+                        <div class="nation-name">Châu Á</div>
+                        <div class="float-left text-warning">Khám phá ngay</div>
+                        <i class="fas fa-arrow-circle-right float-left text-warning mt-1 ml-1"></i>
+                    </div>
+                    <div class="overlay-right"></div>
+                </div>
+            </div>
+            <div class="w-20 col-xs-12 mb-4">
+                <div class="position-relative hover-to-right">
+                    <a href="#">
+                        <img src="~/Assets/images/Tour/qg3.jpg" class="d-block w-100" />
+                    </a>
+                    <div class="frame-nation position-absolute">
+                        <div class="nation-name">Châu Úc</div>
+                        <div class="float-left text-warning">Khám phá ngay</div>
+                        <i class="fas fa-arrow-circle-right float-left text-warning mt-1 ml-1"></i>
+                    </div>
+                    <div class="overlay-right"></div>
+                </div>
+            </div>
+            <div class="w-20 col-xs-12 mb-4">
+                <div class="position-relative hover-to-right">
+                    <a href="#">
+                        <img src="~/Assets/images/Tour/qg4.jpg" class="d-block w-100" />
+                    </a>
+                    <div class="frame-nation position-absolute">
+                        <div class="nation-name">Châu Mỹ</div>
+                        <div class="float-left text-warning">Khám phá ngay</div>
+                        <i class="fas fa-arrow-circle-right float-left text-warning mt-1 ml-1"></i>
+                    </div>
+                    <div class="overlay-right"></div>
+                </div>
+            </div>
+            <div class="w-20 col-xs-12 mb-4">
+                <div class="position-relative hover-to-right">
+                    <a href="#">
+                        <img src="~/Assets/images/Tour/qg5.jpg" class="d-block w-100" />
+                    </a>
+                    <div class="frame-nation position-absolute">
+                        <div class="nation-name">Châu Phi</div>
+                        <div class="float-left text-warning">Khám phá ngay</div>
+                        <i class="fas fa-arrow-circle-right float-left text-warning mt-1 ml-1"></i>
+                    </div>
+                    <div class="overlay-right"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="why-vietravel">
+    <div class="frame-why">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-3 col-sm-4">
+                    <div class="bg-why">
+                        <img src="~/Assets/img/bg-why.png" class="img-why" />
+                    </div>
+                    <div class="title-why">
+                        <h2>
+                            <span class="why">Vì sao chọn</span>
+                            <span class="why-vtv">Vietravel.com.vn?</span>
+                        </h2>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-9 col-sm-8 col-xs-12">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 col-xs-12 mb-3">
+                            <div class="item" style="height:130px;">
+                                <div class="item-num">1.</div>
+                                <div class="item-name" style="text-transform: uppercase;">Mạng bán tour</div>
+                                <div class="item-line">---------------------------</div>
+                                <div class="item-des">
+                                    <p class="mg-bot5">Số 1 tại Việt Nam</p>
+                                    <p>Ứng dụng công nghệ mới nhất</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12 mb-3">
+                            <div class="item" style="height:130px;">
+                                <div class="item-num">2.</div>
+                                <div class="item-name" style="text-transform: uppercase;">Thanh toán</div>
+                                <div class="item-line">---------------------------</div>
+                                <div class="item-des">
+                                    <p class="mg-bot5">An toàn và linh hoạt</p>
+                                    <p>Liên kết với các tổ chức tài chính</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12 mb-3">
+                            <div class="item" style="height:130px;">
+                                <div class="item-num">3.</div>
+                                <div class="item-name" style="text-transform: uppercase;">Giá cả</div>
+                                <div class="item-line">---------------------------</div>
+                                <div class="item-des">
+                                    <p class="mg-bot5">Luôn có mức giá tốt nhất</p>
+                                    <p>Bảo đảm giá tốt</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12 mb-3">
+                            <div class="item" style="height:130px;">
+                                <div class="item-num">4.</div>
+                                <div class="item-name" style="text-transform: uppercase;">Sản phẩm</div>
+                                <div class="item-line">---------------------------</div>
+                                <div class="item-des">
+                                    <p class="mg-bot5">Đa dạng, chất lượng</p>
+                                    <p>Đạt chất lượng tốt nhất</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12 mb-3">
+                            <div class="item" style="height:130px;">
+                                <div class="item-num">5.</div>
+                                <div class="item-name" style="text-transform: uppercase;">Đặt tour</div>
+                                <div class="item-line">---------------------------</div>
+                                <div class="item-des">
+                                    <p class="mg-bot5">Dễ dàng và nhanh chóng</p>
+                                    <p>Đặt tour chỉ với 3 bước</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12 mb-3">
+                            <div class="item" style="height:130px;">
+                                <div class="item-num">6.</div>
+                                <div class="item-name" style="text-transform: uppercase;">Hỗ trợ</div>
+                                <div class="item-line">---------------------------</div>
+                                <div class="item-des">
+                                    <p class="mg-bot5">Từ 08h00 - 23h00</p>
+                                    <p>Hotline và hỗ trợ trực tuyến</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    var titles = $(".titles");
+
+    var inp_hours = new Array(100, 200, 300);
+    var target_date = new Array();
+    var days = new Array();
+    var hours = new Array();
+    var minutes = new Array();
+    var seconds = new Array();
+
+    for (var i = 0; i < titles.length; i++) {
+        target_date.push(new Date().getTime() + (1000 * 3600 * inp_hours[i]));
+
+        days[i] = hours[i] = minutes[i] = seconds[i] = 0;
+    }
+
+    getCountdown();
+
+    setInterval(function () { getCountdown(); }, 1000);
+
+    function getCountdown() {
+        for (var i = 0; i < titles.length; i++) {
+            var current_date = new Date().getTime();
+            var seconds_left = (target_date[i] - current_date) / 1000;
+
+            days[i] = pad(parseInt(seconds_left / 86400));
+            seconds_left = seconds_left % 86400;
+
+            hours[i] = pad(parseInt(seconds_left / 3600));
+            seconds_left = seconds_left % 3600;
+
+            minutes[i] = pad(parseInt(seconds_left / 60));
+            seconds[i] = pad(parseInt(seconds_left % 60));
+
+            // format countdown string + set tag value
+            $(titles[i]).html("Còn <span>" + days[i] + "</span> ngày <span>" + hours[i] + "</span>:<span>" + minutes[i] + "</span>:<span>" + seconds[i] + "</span>");
+        }
+    }
+
+    function pad(n) {
+        return (n < 10 ? '0' : '') + n;
+    }
+</script>

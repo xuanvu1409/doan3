@@ -1,0 +1,792 @@
+﻿<link href="~/Assets/css/nivo-slider.css" rel="stylesheet" />
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item">
+            <img src="~/Assets/images/Carousel/Capture.PNG" class="d-block w-100" alt="imgage1" />
+        </div>
+        <div class="carousel-item">
+            <img src="~/Assets/images/Carousel/Capture2.PNG" class="d-block w-100" alt="imgage2" />
+        </div>
+        <div class="carousel-item">
+            <img src="~/Assets/images/Carousel/Capture3.PNG" class="d-block w-100" alt="image3" />
+        </div>
+        <div class="carousel-item">
+            <img src="~/Assets/images/Carousel/Capture4.PNG" class="d-block w-100" alt="image4" />
+        </div>
+        <div class="carousel-item">
+            <img src="~/Assets/images/Carousel/Capture5.PNG" class="d-block w-100" alt="image5" />
+        </div>
+        <div class="carousel-item">
+            <img src="~/Assets/images/Carousel/Capture6.PNG" class="d-block w-100" alt="image6" />
+        </div>
+        <div class="carousel-item active">
+            <img src="~/Assets/images/Carousel/Capture7.PNG" class="d-block w-100" alt="image7" />
+        </div>
+        <div class="carousel-item">
+            <img src="~/Assets/images/Carousel/Capture8.jpg" class="d-block w-100" alt="image8" />
+        </div>
+        <div class="carousel-item">
+            <img src="~/Assets/images/Carousel/Capture9.jpg" class="d-block w-100" alt="image9" />
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<div class="form-seach" style="z-index: 9999;">
+    <div class="container">
+        <div class="row">
+            <div class="frame-seach col-xs-12">
+                <div class="o-dl dltn">
+                    <img src="~/Assets/img/dltn.png" />
+                    <p class="text1">Tìm tour</p>
+                    <p class="text2 text-dltn">Trong nước</p>
+                </div>
+                <div class="o-dl dlnn">
+                    <img src="~/Assets/img/dlnn.png" />
+                    <p class="text1">Tìm tour</p>
+                    <p class="text2 text-dlnn">Nước ngoài</p>
+                </div>
+                <div class="o-dl dltc">
+                    <img src="~/Assets/img/dltc.png" />
+                    <p class="text1">Du lịch</p>
+                    <p class="text2 text-dltc">Tự chọn</p>
+                </div>
+                <div class="o-dl dlbk">
+                    <img src="~/Assets/img/dlbk.png" />
+                    <p class="text1">Tìm kiếm</p>
+                    <p class="text2 text-dlbk">Booking</p>
+                </div>
+                <div class="o-dl dlhv">
+                    <img src="~/Assets/img/dlhv.png" />
+                    <p class="text1">Hội viên</p>
+                    <p class="text2 text-dlhv">Thân thiết</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-seach-bg bg-dltn" style="display:none;">
+        <form method="post">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 w-100">
+                        <div class="form-seach-1">
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+                                    <div class="form-group">
+                                        <label class="title-dltn">Nơi khởi hành:</label>
+                                        <select class="form-control input-md" style="padding-left:5px !important;">
+                                            <option>Nơi khởi hành</option>
+                                            <option> Hồ Chí Minh</option>
+                                            <option>Hà Nội</option>
+                                            <option>Đà Nẵng</option>
+                                            <option>Cần Thơ</option>
+                                            <option>Hải Phòng</option>
+                                            <option>Bình Dương</option>
+                                            <option>Nha Trang</option>
+                                            <option>Huế</option>
+                                            <option>Quy Nhơn</option>
+                                            <option>Đồng Nai</option>
+                                            <option>Phú Quốc</option>
+                                            <option>Long Xuyên</option>
+                                            <option>Quảng Ngãi</option>
+                                            <option>Vũng Tàu</option>
+                                            <option>Quảng Ninh</option>
+                                            <option>Buôn Ma Thuột</option>
+                                            <option>Vinh</option>
+                                            <option>Cà Mau</option>
+                                            <option>Rạch Giá</option>
+                                            <option>Đà Lạt</option>
+                                            <option>Thanh Hóa</option>
+                                            <option>Quảng Bình</option>
+                                            <option>Hồ Chí Minh - VSCC</option>
+                                            <option>Bạc Liêu</option>
+                                            <option>Bảo Lộc</option>
+                                            <option>Đồng Tháp</option>
+                                            <option>Sóc Trăng</option>
+                                            <option>TripU</option>
+                                            <option>Long An</option>
+                                            <option>Thái Nguyên</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+                                    <div class="form-group">
+                                        <label class="title-dltn">Nơi đến:</label>
+                                        <select class="form-control input-md" id="group_id" name="GroupId" style="padding-left:5px !important;">
+                                            <option>Nơi đến</option>
+                                            <option>An Giang</option>
+                                            <option>Bắc Giang</option>
+                                            <option>Bắc Kạn</option>
+                                            <option>Bạc Liêu</option>
+                                            <option>Bắc Ninh</option>
+                                            <option>Bảo Lộc</option>
+                                            <option>Bến Tre</option>
+                                            <option>Bình Định</option>
+                                            <option>Bình Liêu</option>
+                                            <option>Bình Thuận</option>
+                                            <option>Buôn Ma Thuột</option>
+                                            <option>Cà Mau</option>
+                                            <option>Cam Ranh</option>
+                                            <option>Cần Giờ</option>
+                                            <option>Cần Thơ</option>
+                                            <option>Cao Bằng</option>
+                                            <option>Côn Đảo</option>
+                                            <option>Đà Lạt</option>
+                                            <option>Đà Nẵng</option>
+                                            <option>Đắk Nông</option>
+                                            <option>Điện Biên</option>
+                                            <option>Đông Bắc</option>
+                                            <option>Đồng Nai</option>
+                                            <option>Đồng Nai</option>
+                                            <option>Đồng Tháp</option>
+                                            <option>Nghệ An</option>
+                                            <option>Hà Giang</option>
+                                            <option>Hạ Long</option>
+                                            <option>Hà Nam</option>
+                                            <option>Hà Nội</option>
+                                            <option>Hà Tây</option>
+                                            <option>Hà Tiên</option>
+                                            <option>Hà Tĩnh</option>
+                                            <option>Hải Phòng</option>
+                                            <option>Hồ Chí Minh</option>
+                                            <option>Hòa Bình</option>
+                                            <option>Huế</option>
+                                            <option>Kiên Giang</option>
+                                            <option>Kon Tum</option>
+                                            <option>Lạng Sơn</option>
+                                            <option>Lào Cai</option>
+                                            <option>Long An</option>
+                                            <option>Móng Cái</option>
+                                            <option>Nam Định</option>
+                                            <option>Nha Trang</option>
+                                            <option>Ninh Bình</option>
+                                            <option>Ninh Thuận</option>
+                                            <option>Pleiku</option>
+                                            <option>Phan Thiết</option>
+                                            <option>Phú Quốc</option>
+                                            <option>Phú Thọ</option>
+                                            <option>Phú Yên</option>
+                                            <option>Quảng Bình</option>
+                                            <option>Quảng Ngãi</option>
+                                            <option>Quảng Nam</option>
+                                            <option>Quảng Ninh</option>
+                                            <option>Quảng Trị</option>
+                                            <option>Quy Nhơn</option>
+                                            <option>Sóc Trăng</option>
+                                            <option>Sơn La</option>
+                                            <option>Tây Bắc</option>
+                                            <option>Tây Nguyên</option>
+                                            <option>Tây Ninh</option>
+                                            <option>Tiền Giang</option>
+                                            <option>Trà Vinh</option>
+                                            <option>Thái Bình</option>
+                                            <option>Thái Nguyên</option>
+                                            <option>Thanh Hóa</option>
+                                            <option>Vinh</option>
+                                            <option>Vĩnh Long</option>
+                                            <option>Vĩnh Phúc</option>
+                                            <option>Vũng Tàu</option>
+                                            <option>Yên Bái</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+                                    <div class="form-group">
+                                        <label class="title-dltn">Ngày khởi hành:</label>
+                                        <div class="position-relative">
+                                            <input autocomplete="off" class="form-control input-md" placeholder="30/09/2019" type="text" value="30/09/2019">
+                                            <span class="i-calendar">
+                                                <i class="far fa-calendar-alt fa-lg"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+                                    <div class="form-group">
+                                        <label class="title-dltn">Dòng tour:</label>
+                                        <select class="form-control input-md" id="DongTour" name="DongTour" style="padding-left:5px !important;">
+                                            <option>Tất cả</option>
+                                            <option>Cao cấp</option>
+                                            <option>Tiêu chuẩn</option>
+                                            <option>Tiết kiệm</option>
+                                            <option>Giá Tốt</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+                                    <div class="form-group">
+                                        <label class="title-dltn">Giá:</label>
+                                        <select class="form-control input-md" style="padding-left:5px !important;">
+                                            <option>Giá</option>
+                                            <option>Dưới 1 Triệu</option>
+                                            <option>  1- 2  Triệu</option>
+                                            <option>  2-4 Triệu</option>
+                                            <option>  4-6 Triệu</option>
+                                            <option>  6-10 Triệu</option>
+                                            <option>Trên 10 Triệu</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+                                    <div class="form-group">
+                                        <button type="submit" class="btn-seach-2 btn-dltn">
+                                            <i class="fas fa-search"></i>  Tìm kiếm
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="form-seach-bg bg-dlnn" style="display:none;">
+        <form method="post">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 w-100">
+                        <div class="form-seach-1">
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+                                    <div class="form-group">
+                                        <label class="title-dlnn">Nơi khởi hành:</label>
+                                        <select class="form-control input-md" style="padding-left:5px !important;">
+                                            <option>Nơi khởi hành</option>
+                                            <option> Hồ Chí Minh</option>
+                                            <option>Hà Nội</option>
+                                            <option>Đà Nẵng</option>
+                                            <option>Cần Thơ</option>
+                                            <option>Hải Phòng</option>
+                                            <option>Bình Dương</option>
+                                            <option>Nha Trang</option>
+                                            <option>Huế</option>
+                                            <option>Quy Nhơn</option>
+                                            <option>Đồng Nai</option>
+                                            <option>Phú Quốc</option>
+                                            <option>Long Xuyên</option>
+                                            <option>Quảng Ngãi</option>
+                                            <option>Vũng Tàu</option>
+                                            <option>Quảng Ninh</option>
+                                            <option>Buôn Ma Thuột</option>
+                                            <option>Vinh</option>
+                                            <option>Cà Mau</option>
+                                            <option>Rạch Giá</option>
+                                            <option>Đà Lạt</option>
+                                            <option>Thanh Hóa</option>
+                                            <option>Quảng Bình</option>
+                                            <option>Hồ Chí Minh - VSCC</option>
+                                            <option>Bạc Liêu</option>
+                                            <option>Bảo Lộc</option>
+                                            <option>Đồng Tháp</option>
+                                            <option>Sóc Trăng</option>
+                                            <option>TripU</option>
+                                            <option>Long An</option>
+                                            <option>Thái Nguyên</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+                                    <div class="form-group">
+                                        <label class="title-dlnn">Nơi đến:</label>
+                                        <select class="form-control input-md" id="group_idob" name="GroupId" style="padding-left:5px !important;">
+                                            <option>Nơi đến</option>
+                                            <option>Abu Dhabi</option>
+                                            <option>Ai Cập</option>
+                                            <option>Ajman</option>
+                                            <option>Al Ain</option>
+                                            <option>Albania</option>
+                                            <option>Ấn Độ</option>
+                                            <option>Anh</option>
+                                            <option>Áo</option>
+                                            <option>Argentina</option>
+                                            <option>Azerbaijan</option>
+                                            <option>Ba Lan</option>
+                                            <option>Bhutan</option>
+                                            <option>Bỉ</option>
+                                            <option>Bồ Đào Nha</option>
+                                            <option>Bosnia</option>
+                                            <option>Brazil</option>
+                                            <option>Brunei</option>
+                                            <option>Bulgaria</option>
+                                            <option>Campuchia</option>
+                                            <option>Canada</option>
+                                            <option>Croatia</option>
+                                            <option>Cuba</option>
+                                            <option>Chile</option>
+                                            <option>Đài Loan</option>
+                                            <option>Đan Mạch</option>
+                                            <option>Dubai</option>
+                                            <option>Đức </option>
+                                            <option>Georgia</option>
+                                            <option>Nga</option>
+                                            <option>Hà Lan</option>
+                                            <option>Hàn Quốc</option>
+                                            <option>Hồng Kông &amp; Macau</option>
+                                            <option>Hungary</option>
+                                            <option>Hy Lạp</option>
+                                            <option>Indonesia</option>
+                                            <option>Iran</option>
+                                            <option>ISRAEL</option>
+                                            <option>Jordan</option>
+                                            <option>Kazakhstan</option>
+                                            <option>Kenya</option>
+                                            <option>Lào</option>
+                                            <option>Luxembourg</option>
+                                            <option>Madagascar </option>
+                                            <option>Malaysia</option>
+                                            <option>Maldives</option>
+                                            <option>Malta</option>
+                                            <option>Mauritius</option>
+                                            <option>Mexico</option>
+                                            <option>Mông Cổ</option>
+                                            <option>Monaco</option>
+                                            <option>Montenegro</option>
+                                            <option>Morocco</option>
+                                            <option>Mỹ - Hoa Kỳ</option>
+                                            <option>Myanmar</option>
+                                            <option>Na Uy</option>
+                                            <option>Nam Mỹ</option>
+                                            <option>Nam Phi</option>
+                                            <option>Nepal</option>
+                                            <option>New Zealand</option>
+                                            <option>Nhật Bản</option>
+                                            <option>North Macedonia</option>
+                                            <option>Oman</option>
+                                            <option>Panama</option>
+                                            <option>Peru</option>
+                                            <option>Phần Lan</option>
+                                            <option>Pháp</option>
+                                            <option>Philippines</option>
+                                            <option>Romania</option>
+                                            <option>Scotland</option>
+                                            <option>Séc</option>
+                                            <option>Serbia</option>
+                                            <option>Sharjah</option>
+                                            <option>Singapore</option>
+                                            <option>Slovakia</option>
+                                            <option>Slovenia</option>
+                                            <option>Sri Lanka</option>
+                                            <option>Tasmania</option>
+                                            <option>Tây Ban Nha</option>
+                                            <option>Tây Tạng</option>
+                                            <option>Tour du thuyền</option>
+                                            <option>Triều Tiên</option>
+                                            <option>Trung Đông</option>
+                                            <option>Trung Mỹ</option>
+                                            <option>Trung Quốc</option>
+                                            <option>Thái Lan</option>
+                                            <option>Thổ Nhĩ Kỳ</option>
+                                            <option>Thụy Điển</option>
+                                            <option>Thụy Sĩ</option>
+                                            <option>Úc</option>
+                                            <option>Uzbekistan</option>
+                                            <option>Vatican</option>
+                                            <option>Ý</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+                                    <div class="form-group">
+                                        <label class="title-dlnn">Ngày khởi hành:</label>
+                                        <div class="position-relative">
+                                            <input autocomplete="off" class="form-control input-md" placeholder="30/09/2019" type="text" value="30/09/2019">
+                                            <span class="i-calendar">
+                                                <i class="far fa-calendar-alt fa-lg"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+                                    <div class="form-group">
+                                        <label class="title-dlnn">Dòng tour:</label>
+                                        <select class="form-control input-md" id="DongTour" name="DongTour" style="padding-left:5px !important;">
+                                            <option>Tất cả</option>
+                                            <option>Cao cấp</option>
+                                            <option>Tiêu chuẩn</option>
+                                            <option>Tiết kiệm</option>
+                                            <option>Giá Tốt</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+                                    <div class="form-group">
+                                        <label class="title-dlnn">Giá:</label>
+                                        <select class="form-control input-md" style="padding-left:5px !important;">
+                                            <option>Giá</option>
+                                            <option>Dưới 1 Triệu</option>
+                                            <option>  1- 2  Triệu</option>
+                                            <option>  2-4 Triệu</option>
+                                            <option>  4-6 Triệu</option>
+                                            <option>  6-10 Triệu</option>
+                                            <option>Trên 10 Triệu</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+                                    <div class="form-group">
+                                        <button type="submit" class="btn-seach-2 btn-dlnn">
+                                            <i class="fas fa-search"></i>  Tìm kiếm
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="form-seach-bg bg-dlbk" style="display:none;">
+        <form method="post">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 w-100">
+                        <div class="form-seach-1">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-2 col-sm-1 col-xs-12">
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-8 col-xs-12">
+                                    <div class="form-group">
+                                        <label class="title-dlbk">Số booking:</label>
+                                        <input type="text"class="form-control input-md" placeholder="Số booking">
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                    <div class="form-group">
+                                        <button type="submit" class="btn-seach-2 btn-dlbk">
+                                            <i class="fas fa-search"></i>  Tìm kiếm
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-2 col-sm-1 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="tour-type">
+    <div class="container">
+        <div id="carouselExampleInterval" class="pos-inherit carousel slide" data-ride="carousel" data-trigger="multi" data-interval="0">
+            <div class="pos-inherit carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-4 col-xs-6 mb-2">
+                            <div class="item-tour-type">
+                                <a href="#">
+                                    <img src="~/Assets/img/tourtype/premium.png" />
+                                    <p class="tour-name">Cao Cấp</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-6">
+                            <div class="item-tour-type">
+                                <a href="#">
+                                    <img src="~/Assets/img/tourtype/tieu-chuan.png" />
+                                    <p class="tour-name">Tiêu Chuẩn</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-6">
+                            <div class="item-tour-type">
+                                <a href="#">
+                                    <img src="~/Assets/img/tourtype/tiet-kiem.png" />
+                                    <p class="tour-name">Tiết Kiệm</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-6">
+                            <div class="item-tour-type">
+                                <a href="#">
+                                    <img src="~/Assets/img/tourtype/gia-tot.png" />
+                                    <p class="tour-name">Giá Tốt</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-6">
+                            <div class="item-tour-type">
+                                <a href="#">
+                                    <img src="~/Assets/img/tourtype/batdongsan.png" />
+                                    <p class="tour-name">Tour Bất Động Sản</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-6">
+                            <div class="item-tour-type">
+                                <a href="#">
+                                    <img src="~/Assets/img/tourtype/du-thuyen.png" />
+                                    <p class="tour-name">Du Thuyền</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-4 col-xs-6 mb-2">
+                            <div class="item-tour-type">
+                                <a href="#">
+                                    <img src="~/Assets/img/tourtype/mientrung.png" />
+                                    <p class="tour-name">Tour Di Sản Miền Trung</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-6">
+                            <div class="item-tour-type">
+                                <a href="#">
+                                    <img src="~/Assets/img/tourtype/new.png" />
+                                    <p class="tour-name">Tour Mới</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-6">
+                            <div class="item-tour-type">
+                                <a href="#">
+                                    <img src="~/Assets/img/tourtype/hanh-huong.png" />
+                                    <p class="tour-name">Tour Hành Hương</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-6">
+                            <div class="item-tour-type">
+                                <a href="#">
+                                    <img src="~/Assets/img/tourtype/km-tour-thai.png" />
+                                    <p class="tour-name">Khuyến Mại Tour Thái</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-6">
+                            <div class="item-tour-type">
+                                <a href="#">
+                                    <img src="~/Assets/img/tourtype/tour-chau-au.png" />
+                                    <p class="tour-name">Tour Châu Âu</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-6">
+                            <div class="item-tour-type">
+                                <a href="#">
+                                    <img src="~/Assets/img/tourtype/uu-dai.png" />
+                                    <p class="tour-name">Ưu Đãi Khủng</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-4 col-xs-6 mb-2">
+                            <div class="item-tour-type">
+                                <a href="#">
+                                    <img src="~/Assets/img/tourtype/usa.png" />
+                                    <p class="tour-name">Tour Hoa Kỳ</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-6">
+                            <div class="item-tour-type">
+                                <a href="#">
+                                    <img src="~/Assets/img/tourtype/new.png" />
+                                    <p class="tour-name">Tour Mới</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-6">
+                            <div class="item-tour-type">
+                                <a href="#">
+                                    <img src="~/Assets/img/tourtype/hoi-cho.png" />
+                                    <p class="tour-name">Hội Chợ ITE</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-6">
+                            <div class="item-tour-type">
+                                <a href="#">
+                                    <img src="~/Assets/img/tourtype/muathu.png" />
+                                    <p class="tour-name">Trung Thu 2019</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-6">
+                            <div class="item-tour-type">
+                                <a href="#">
+                                    <img src="~/Assets/img/tourtype/giangsinh.png" />
+                                    <p class="tour-name">Giáng Sinh</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-6">
+                            <div class="item-tour-type">
+                                <a href="#">
+                                    <img src="~/Assets/img/tourtype/nonnuocmienBac.png" />
+                                    <p class="tour-name">Non Nước Miền Bắc</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-4 col-xs-6 mb-2">
+                            <div class="item-tour-type">
+                                <a href="#">
+                                    <img src="~/Assets/img/tourtype/thonhiky.png" />
+                                    <p class="tour-name">Tour Thổ Nhĩ Kỳ</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-6">
+                            <div class="item-tour-type">
+                                <a href="#">
+                                    <img src="~/Assets/img/tourtype/uc.png" />
+                                    <p class="tour-name">Tour Úc - New Zealand</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-6">
+                            <div class="item-tour-type">
+                                <a href="#">
+                                    <img src="~/Assets/img/tourtype/tet.png" />
+                                    <p class="tour-name">Tết Nguyên Đán</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-6">
+                            <div class="item-tour-type">
+                                <a href="#">
+                                    <img src="~/Assets/img/tourtype/dontet.png" />
+                                    <p class="tour-name">Đón Năm Mới 2020</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-6">
+                            <div class="item-tour-type">
+                                <a href="#">
+                                    <img src="~/Assets/img/tourtype/hoaanhdao.png" />
+                                    <p class="tour-name" style="font-size:13px;">Hoa Anh Đào Nghịch Mùa</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-6">
+                            <div class="item-tour-type">
+                                <a href="#">
+                                    <img src="~/Assets/img/tourtype/daoPQ.png" />
+                                    <p class="tour-name">Đảo Ngọc Phú Quốc</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="left carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+                    <img src="~/Assets/img/i-ac-left.png" aria-hidden="true" />
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+                    <img src="~/Assets/img/i-ac-right.png" aria-hidden="true" />
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(".dltn").click(function () {
+        $(".bg-dltn").toggle(1, function () {
+            if ($(this).is(':hidden')) {
+                $(".a").removeClass('bg-black');
+                $(".form-search").css("z-index", "initial");
+                $(".form-search").css("position", "initial");
+                $(".form-search").css("background", "#f1f1f1");
+            }
+            else {
+                $(".a").addClass('bg-black ');
+                $(".form-search").css("z-index", "9999");
+                $(".form-search").css("position", "relative");
+                $(".form-search").css("background", "initial");
+            }
+
+        });
+        if ($(".bg-dlnn").css("display", "none")) {
+
+        } else {
+            $(".bg-dlnn").css("display", "none");
+        }
+
+        if ($(".bg-dlbk").css("display", "none")) {
+
+        } else {
+            $(".bg-dlbk").css("display", "none");
+        }
+        event.stopPropagation();
+    });
+
+    $(".dlnn").click(function () {
+        $(".bg-dlnn").toggle(1, function () {
+            if ($(this).is(':hidden')) {
+                $(".a").removeClass('bg-black');
+                $(".form-search").css("z-index", "initial");
+                $(".form-search").css("position", "initial");
+                $(".form-search").css("background", "#f1f1f1");
+            }
+            else {
+                $(".a").addClass('bg-black ');
+                $(".form-search").css("z-index", "9999");
+                $(".form-search").css("position", "relative");
+                $(".form-search").css("background", "initial");
+            }
+        });
+        if ($(".bg-dltn").css("display", "none")) {
+
+        } else {
+            $(".bg-dltn").css("display", "none");
+        }
+        if ($(".bg-dlbk").css("display", "none")) {
+
+        } else {
+            $(".bg-dlbk").css("display", "none");
+        }
+    });
+
+    $(".dlbk").click(function () {
+        $(".bg-dlbk").toggle(1, function () {
+            if ($(this).is(':hidden')) {
+                $(".a").removeClass('bg-black');
+                $(".form-search").css("z-index", "initial");
+                $(".form-search").css("position", "initial");
+                $(".form-search").css("background", "#f1f1f1");
+            }
+            else {
+                $(".a").addClass('bg-black ');
+                $(".form-search").css("z-index", "9999");
+                $(".form-search").css("position", "relative");
+                $(".form-search").css("background", "initial");
+            }
+        });
+        if ($(".bg-dlnn").css("display", "none")) {
+
+        } else {
+            $(".bg-dlnn").css("display", "none");
+        }
+        if ($(".bg-dltn").css("display", "none")) {
+
+        } else {
+            $(".bg-dltn").css("display", "none");
+        }
+    });
+</script>

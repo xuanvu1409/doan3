@@ -1,0 +1,280 @@
+﻿@model IEnumerable<DoAn3_Vietravel.Areas.Admin.Models.KhachHang>
+@using DoAn3_Vietravel.Areas.Admin.Models;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="breadcrumbs">
+    <div class="col-sm-4">
+        <div class="page-header float-left">
+            <div class="page-title">
+                <h1>Dashboard</h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-8">
+        <div class="page-header float-right">
+            <div class="page-title">
+                <ol class="breadcrumb text-right">
+                    <li><a href="#">Home</a></li>
+                    <li class="active">Khách Hàng</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content mt-3">
+    <div class="animated fadeIn">
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <strong class="card-title">Khách hàng</strong>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-primary float-right bor-rd" onclick="ThemKhachHang()">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div id="bootstrap-data-table-export_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <table id="bootstrap-data-table-export" class="table table-striped table-bordered dataTable no-footer chunho" role="grid" aria-describedby="bootstrap-data-table-export_info">
+                                        <thead>
+                                            <tr role="row">
+                                                <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending">ID</th>
+                                                <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending">Họ tên</th>
+                                                <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending">Ngày sinh</th>
+                                                <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending">Email</th>
+                                                <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending">Số điện thoại</th>
+                                                <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending">Địa chỉ</th>
+                                                <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending">Quốc tịch</th>
+                                                <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending">Thao tác</th>
+
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in Model)
+                                            {
+                                            <tr role="row" class="odd">
+                                                <td class="sorting_1">@item.IDKhachHang</td>
+                                                <td>@item.TenKhachHang</td>
+                                                <td>@item.NgaySinh</td>
+                                                <td>@item.Email</td>
+                                                <td>@item.SoDienThoai</td>
+                                                <td>@item.DiaChi</td>
+                                                <td>@item.QuocTich</td>
+                                                <td>
+                                                    <a class="btn bor-rd btn-primary" onclick="HienThi1KhachHang('@item.IDKhachHang')"><i class="fa fa-eye"></i></a>
+                                                    <button class="btn btn-info bor-rd" onclick="SuaKhachHang('@item.IDKhachHang')"><i class="fa fa-edit"></i></button>
+                                                    <a class="btn btn-danger bor-rd" onclick="return confirm('Bạn có chắc chắn muốn xoá khách hàng này không?')" href="~/Admin/KhachHang/Xoa1KhachHang/@item.IDKhachHang"><i class="fa fa-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- .animated -->
+</div>
+
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <div class="modal-header pt-0">
+            <div class="modal-title"></div>
+            <span class="close" data-dismiss="modal">&times;</span>
+        </div>
+        <form method="post" action="~/Admin/KhachHang/Them1KhachHang" enctype="mutkipart/form-data">
+            <input type="hidden" id="aoe" name="aoe" value="1" />
+            <input type="hidden" id="MKH" name="MKH" />
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-2 mb-3">Họ tên</div>
+                    <div class="col-md-10 mb-3">
+                        <input type="text" name="TKH" id="TKH" class="form-control" placeholder="Nhập tên khách hàng" required />
+                    </div>
+                    <div class="col-md-2 mb-3">Ngày sinh</div>
+                    <div class="col-md-10 mb-3">
+                        <input type="text" name="NS" id="NS" class="form-control" placeholder="Nhập ngày sinh" required />
+                    </div>
+                    <div class="col-md-2 mb-3">Email</div>
+                    <div class="col-md-10 mb-3">
+                        <input type="text" name="EM" id="EM" class="form-control" placeholder="Nhập email" />
+                    </div>
+                    <div class="col-md-2 mb-3">Số điện thoại</div>
+                    <div class="col-md-10 mb-3">
+                        <input type="text" name="SDT" id="SDT" class="form-control" placeholder="Nhập số điện thoại" required />
+                    </div>
+                    <div class="col-md-2 mb-3">Địa chỉ</div>
+                    <div class="col-md-10 mb-3">
+                        <input type="text" name="DC" id="DC" class="form-control" placeholder="Nhập địa chỉ" required />
+                    </div>
+                    <div class="col-md-2 mb-3">Tài khoản</div>
+                    <div class="col-md-10 mb-3">
+                        <input type="text" name="TK" id="TK" class="form-control" placeholder="Nhập tài khoản" />
+                    </div>
+                    <div class="col-md-2 mb-3">Mật khẩu</div>
+                    <div class="col-md-10 mb-3">
+                        <input type="text" name="MK" id="MK" class="form-control" placeholder="Nhập mật khẩu" />
+                    </div>
+                    <div class="col-md-2 mb-3">Quốc tịch</div>
+                    <div class="col-md-10 mb-3">
+                        <select class="form-control" name="QT" id="QT" required>
+                            <option value="Việt Nam" selected>Việt Nam</option>
+                            <option value="Afghanistan">Afghanistan</option>
+                            <option value="Ai Cập">Ai Cập</option>
+                            <option value="Albania">Albania</option>
+                            <option value="Algeria">Algeria</option>
+                            <option value="American Samoa">American Samoa</option>
+                            <option value="Ấn độ">Ấn độ</option>
+                            <option value="Andorra">Andorra</option>
+                            <option value="Angola">Angola</option>
+                            <option value="Anguilla">Anguilla</option>
+                            <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                            <option value="Áo">Áo</option>
+                            <option value="Argentina">Argentina</option>
+                            <option value="Armenia">Armenia</option>
+                            <option value="Aruba">Aruba</option>
+                            <option value="Azerbaijan">Azerbaijan</option>
+                            <option value="Ba Lan">Ba Lan</option>
+                            <option value="Bắc Hàn">Bắc Hàn</option>
+                            <option value="Bahamas">Bahamas</option>
+                            <option value="Bahrain">Bahrain</option>
+                            <option value="Băng La Đét">Băng La Đét</option>
+                            <option value="Bangladesh">Bangladesh</option>
+                            <option value="Barbados">Barbados</option>
+                            <option value="Belarus">Belarus</option>
+                            <option value="Belize">Belize</option>
+                            <option value="Benin">Benin</option>
+                            <option value="Bermuda">Bermuda</option>
+                            <option value="Bhutan">Bhutan</option>
+                            <option value="Bỉ">Bỉ</option>
+                            <option value="Bờ Biển Ngà">Bờ Biển Ngà</option>
+                            <option value="Bồ Đào Nha">Bồ Đào Nha</option>
+                            <option value="Bolivia">Bolivia</option>
+                            <option value="Bosnia and Herzegowina">Bosnia and Herzegowina</option>
+                            <option value="Botswana">Botswana</option>
+                            <option value="Bouvet Island">Bouvet Island</option>
+                            <option value="Brazil">Brazil</option>
+                            <option value="Bristish India Ocean Territory">Bristish India Ocean Territory</option>
+                            <option value="Brunei">Brunei</option>
+                            <option value="Brunei Darussalam">Brunei Darussalam</option>
+                            <option value="Bulgaria">Bulgaria</option>
+                            <option value="Burkina Faso">Burkina Faso</option>
+                            <option value="Burundi">Burundi</option>
+                            <option value="Các Tiểu Vương Quốc Ả Rập">Các Tiểu Vương Quốc Ả Rập</option>
+                            <option value="Cambodia">Cambodia</option>
+                            <option value="Cameroon">Cameroon</option>
+                            <option value="Campuchia">Campuchia</option>
+                            <option value="Canada">Canada</option>
+                            <option value="Cape Verde">Cape Verde</option>
+                            <option value="Cayman Islands">Cayman Islands</option>
+                            <option value="Central Africa Republic">Central Africa Republic</option>
+                            <option value="Chad">Chad</option>
+                            <option value="Chile">Chile</option>
+                            <option value="Christmas Island">Christmas Island</option>
+                            <option value="Cocos Islands">Cocos Islands</option>
+                            <option value="Colombia">Colombia</option>
+                            <option value="Comoros">Comoros</option>
+                            <option value="Cộng Hòa Séc">Cộng Hòa Séc</option>
+                            <option value="Cộng Hòa Tanzania">Cộng Hòa Tanzania</option>
+                            <option value="Congo">Congo</option>
+                            <option value="Congo, The democratic republic of the">Congo, The democratic republic of the</option>
+                            <option value="Cook Island">Cook Island</option>
+                            <option value="Costa Rica">Costa Rica</option>
+                            <option value="Croatia">Croatia</option>
+                            <option value="Cuba">Cuba</option>
+                            <option value="Cyprus">Cyprus</option>
+                            <option value="Đài Loan">Đài Loan</option>
+                            <option value="Đan Mạch">Đan Mạch</option>
+                            <option value="Trung Quốc">Trung Quốc</option>
+                            <option value="Mỹ">Mỹ</option>
+                            <option value="Anh">Anh</option>
+                            <option value="Nga">Nga</option>
+                            <option value="Thái Lan">Thái Lan</option>
+                            <option value="Lào">Lào</option>
+                            <option value="Khác">-- Khác --</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="submit">Lưu</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="modal" id="HienThi">
+    <div class="modal-content">
+        <div class="modal-header pt-0">
+            <div class="modal-title"></div>
+            <span class="close" data-dismiss="modal">&times;</span>
+        </div>
+        <form method="post" action="~/Admin/KhachHang/Them1KhachHang" enctype="mutkipart/form-data">
+            <input type="hidden" id="MKH" name="MKH" />
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-2 mb-3">Tài khoản</div>
+                    <div class="col-md-10 mb-3" id="vTK">
+                    </div>
+                    <div class="col-md-2 mb-3">Mật khẩu</div>
+                    <div class="col-md-10 mb-3" id="vMK">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    function ThemKhachHang() {
+        $("#aoe").val("1");
+        $("#QT").val("Việt Nam");
+        $("#modal").modal("show");
+        $(".modal-title").html("Thêm khách hàng");
+    }
+
+    function SuaKhachHang(id) {
+        $("#aoe").val("0");
+        (jQuery).get("/Admin/KhachHang/Lay1KhachHang", { id: id }, function (data) {
+            $("#MKH").val(data.IDKhachHang);
+            $("#TKH").val(data.TenKhachHang);
+            $("#NS").val(data.NgaySinh);
+            $("#EM").val(data.Email);
+            $("#SDT").val(data.SoDienThoai);
+            $("#DC").val(data.DiaChi);
+            $("#TK").val(data.TaiKhoan);
+            $("#MK").val(data.MatKhau);
+            $("#QT").val(data.QuocTich);
+        });
+        $("#modal").modal("show");
+        $(".modal-title").html("Sửa khách hàng");
+    }
+
+    function HienThi1KhachHang(id) {
+        (jQuery).get("/Admin/KhachHang/Lay1KhachHang", { id: id }, function (data) {
+            $("#vTK").html(data.TaiKhoan);
+            $("#vMK").html(data.MatKhau);
+        });
+        $("#HienThi").modal("show");
+        $(".modal-title").html("Sửa khách hàng");
+    }
+</script>
+
+
+
+
+

@@ -1,0 +1,335 @@
+﻿@using DoAn3_Vietravel.Areas.Admin.Models;
+@{
+    ViewBag.Title = "DatVe";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    KhachHang kh = new KhachHang();
+    if (Session["TaiKhoan"] != null)
+    {
+        kh = (KhachHang)Session["TaiKhoan"];
+    }
+}
+<link href="~/Assets/css/Vietravel.css" rel="stylesheet" />
+<div class="n3-breadcrumb">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 ">
+                <div class="breadcrumb">
+                    <span><a href="/Home/Index"><span itemprop="title">Du lịch</span></a></span> &nbsp;»&nbsp; <span><a href="#" itemprop="url"><span itemprop="title">Đặt tour trong nước</span></a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container n3-book-tour-1 mb-5">
+    <div class="row">
+        <div class="col-12 mb-5">
+            <div class="step-by-step">
+                <ul class="stepper stepper-horizontal">
+                    <li class="active">
+                        <a>
+                            <span class="circle">1</span>
+                            <span class="label">Nhập thông tin</span>
+                        </a>
+                    </li>
+                    <li class="warnning">
+                        <a>
+                            <span class="circle">2</span>
+                            <span class="label">Vietravel xác nhận</span>
+                        </a>
+                    </li>
+                    <li class="warnning">
+                        <a>
+                            <span class="circle">3</span>
+                            <span class="label">&nbsp;&nbsp;Thanh toán</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-12 mb-4">
+            <div class="title">THÔNG TIN TOUR</div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12 col-12">
+            <a href="/ChiTietVe/Index/@Model.IDVe" target="_blank" title="@Model.TenVe">
+                <img src="~/Assets/images/Tour/@Model.HinhAnh" alt="@Model.TenVe" class="img-responsive pic-bt">
+            </a>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-12 col-12">
+            <div class="tour-name">
+                <a href="/ChiTietVe/Index/@Model.IDVe" target="_blank" title="@Model.TenVe" class="dot-dot cut-name" style="overflow-wrap: break-word;">@Model.TenVe</a>
+            </div>
+            <div class="frame-info">
+                <div class="row">
+
+                    <div class="col-lg-6 col-md-4 col-sm-6 col-12 mg-bot10">
+                        <div class="float-left l"><i class="fas fa-barcode" aria-hidden="true"></i></div>
+                        <div class="float-left r">@Model.IDVe</div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="col-lg-6 col-md-4 col-sm-6 col-12 mg-bot10">
+                        <div class="float-left l"><i class="fas fa-couch" aria-hidden="true"></i></div>
+                        <div class="float-left r">Số chỗ còn nhận: <span class="font700">@Model.SoCho</span></div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="col-lg-6 col-md-4 col-sm-6 col-12 mg-bot10">
+                        <div class="float-left l"><i class="fas fa-calendar-alt" aria-hidden="true"></i></div>
+                        <div class="float-left r">Ngày khởi hành: <span class="font700">@Model.NgayKhoiHanh</span></div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="col-lg-6 col-md-4 col-sm-6 col-12 mg-bot10">
+                        <div class="float-left l"><i class="fas fa-calendar-alt" aria-hidden="true"></i></div>
+                        <div class="float-left r"><a href="/danh-sach-tour/NDSGN840/vung-tau-bien-ho-coc-suoi-nuoc-nong-binh-chau-tour-gia-soc-.aspx" target="_blank" class="b">Ngày khác</a></div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="col-lg-6 col-md-4 col-sm-6 col-12 mg-bot10">
+                        <div class="float-left l"><i class="fas fa-stopwatch" aria-hidden="true"></i></div>
+                        <div class="float-left r">Số ngày: <span class="font700">@Model.ThoiGian</span></div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="col-lg-6 col-md-4 col-sm-6 col-12">
+                        <div class="float-left l"><i class="fas fa-wallet" aria-hidden="true"></i></div>
+                        <div class="float-left r">Giá: <span class="font700 price">@(string.Format("{0:#,##0}", Model.Gia))</span></div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 mb-4">
+            <div class="chuy">
+                Khách nữ từ 55 tuổi trở lên, khách nam từ 60 tuổi trở lên đi tour một mình và khách mang thai trên 4 tháng (16 tuần) vui lòng đăng ký tour trực tiếp tại văn phòng của Vietravel. Không áp dụng đăng ký tour online đối với khách từ 70 tuổi trở lên
+            </div>
+        </div>
+        <div class="col-12">
+            <form action="/DonDatVe/DatVe" method="post">
+                <input type="hidden" name="MV" value="@Model.IDVe" />
+                <input type="hidden" name="pt" value="@Model.PhuThu" />
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Tài khoản</th>
+                        <th>Số chỗ</th>
+                        <th>Đơn giá</th>
+                        <th>Phòng đơn</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" value="@kh.TenKhachHang" disabled />
+                        </td>
+                        <td>
+                            <input type="number" class="form-control" name="sc" placeholder="Nhập số chỗ" id="inpSoCho" />
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" value="@Model.Gia" disabled />
+                            <input type="hidden" class="form-control" name="gb" value="@Model.Gia" />
+                        </td>
+                        <td>
+                            <input type="number" class="form-control" placeholder="Nhập số phòng đơn" id="inpSoPhong" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Phụ thu:<span class="float-right">@Model.PhuThu</span></td>
+                        <td>Tổng tiền:<span class="float-right" id="tongTien"></span></td>
+                        <td></td>
+                        <td colspan="3"><button type="submit" class="btn btn-primary float-right mt-1 mb-1" style="padding:5px;">Đặt ngay</button></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    $("#inpSoCho").change(function () {
+        var sc = $(this).val();
+        if (sc > @Model.SoCho) {
+            alert("Không đủ chỗ!");
+            $(this).val('@Model.SoCho');
+            var sc = $(this).val();
+        }
+        var sp = $("#inpSoPhong").val();
+        var tt = sp * @Model.PhuThu + sc * @Model.Gia;
+        $("#tongTien").html(tt);
+
+    });
+
+    //var CaptchaCallback = function () {
+    //    var widgetId1 = grecaptcha.render('RecaptchaFieldOutbound', { 'sitekey': '6LcezicTAAAAAIbBsNL6IS14WAowVVhd_iL0hVNf', 'callback': correctCaptcha_quote });
+    //};
+
+    //var correctCaptcha_quote = function (response) {
+    //    $("#responseCaptchaOutbound").val(response);
+    //};
+
+    CaculatorPrice();
+    function CheckMobile() {
+        var mobilephone = $("#mobilephone").val();
+        $("#mobile0").val(mobilephone);
+    }
+    //$(function () {
+    $("#adult").change(function () {
+        if (this.value < 1) {
+            alert('Dữ liệu nhập vào không hợp lệ');
+            this.focus();
+            this.value = 1;
+            this.select();
+
+            return;
+        }
+        else {
+            callTotal(this);
+        }
+    });
+    $("#children").change(function () {
+        callTotal(this);
+    });
+    $("#small_children").change(function () {
+        callTotal(this);
+    });
+
+    function callTotal(_this) {
+        numNguoiLon = parseInt($("#adult").val());
+        numTreEm = parseInt($("#children").val());
+        numTreNho = parseInt($("#small_children").val());
+        _tour_id = '198b223a-ed30-48c5-bdf1-025cc1a84c76'.toString();
+        _LM = parseInt('1');
+        _TO = parseInt('0');
+
+        total = numNguoiLon + numTreEm + numTreNho;
+
+        if (total > parseInt('5')) {
+            alert('Số chỗ còn nhận cho tour này là ' + 5 + '. Quý khách cần chọn lại số lượng khách')
+            $("#adult").val("1");
+            $("#children").val("0");
+            $("#small_children").val("0");
+
+            total = 1;
+            numNguoiLon = 1;
+            numTreEm = 0;
+            numTreNho = 0;
+        }
+
+        if (total > 0) {
+            $("#guests").val(total);
+
+            // Call Ajax
+            $.ajax({
+                url: "/Booking/_OutboundMembers",
+                data: { Total: total, adult: numNguoiLon, children: numTreEm, small_children: numTreNho, tour_id: _tour_id, LM: _LM, TO: _TO },
+                success: function (response) {
+                    // Hiển thị kết quả tìm kiếm
+                    $("div.list").html(response);
+                }
+            });
+        }
+        else {
+            alert('Dữ liệu nhập vào không hợp lệ');
+            _this.focus();
+            _this.value = 1;
+            _this.select();
+
+            $("#guests").val(1);
+
+            // Call Ajax
+            $.ajax({
+                url: "/Booking/_OutboundMembers",
+                data: { Total: 1, adult: 1, children: 0, small_children: 0, tour_id: _tour_id, LM: _LM, TO: _TO },
+                success: function (response) {
+                    // Hiển thị kết quả tìm kiếm
+                    $("div.list").html(response);
+                }
+            });
+
+            return false;
+        }
+        CaculatorPrice();
+        return true;
+    }
+    //});
+
+    function LoadChuongTrinhTour(page_id) {
+        // Tương tác với server
+        $.ajax({
+            url: "/Tour/_LoadTourProgram",
+            data: { page_id: page_id },
+            success: function (result) {
+                $("#GetDetailTravelImage").html(result);
+            }
+        });
+    }
+
+    function CheckDieuKhoan() {
+        //if ($('#chkDieuKhoan').is(':checked')) {
+        if (document.getElementById("chkDieuKhoan").checked) {
+            var end_date = new Date('2019', parseInt('12') - 1, '15', '21', '30', '0');
+            //var guests = $("#guests").val();
+            var guests = document.getElementById("guests").value;
+
+            var icheck = 0;//Kiểm tra số lượng khách trên 18 tuổi
+
+            //Kiem tra bat buoc khi booking phải là người lớn trên 18 tuổi
+            for (var i = 0; i < guests; i++) {
+                //var personkind = $("#personkind" + i).val();
+                var personkind = document.getElementById("personkind" + i).value;
+                if (personkind == 0) {
+                    //var ldob = $("#dateofbirth" + i).val().split("/");
+                    var ldob = document.getElementById("dateofbirth" + i).value.split("/");
+                    var dobNew = new Date(parseInt(ldob[2]) + 18 + "-" + ldob[1] + "-" + ldob[0]);//Them 18 nam so với chọn ngày sinh
+
+                    if (dobNew > end_date) {
+                        icheck = icheck + 1;//Khách chưa đủ 18 tuổi
+                    }
+                    else {
+                        icheck = icheck - 5;
+                    }
+                }
+            }
+
+            if (icheck > 0) {
+                alert('Booking phải có ít nhất 1 khách trên 18 tuổi');
+                return false;
+            }
+            else {
+                return true;
+            }
+        } else {
+            alert('Quý khách cần chọn Điều khoản đăng ký online');
+            return false;
+        }
+    }
+
+    value = $('.chkListCustomer:checked').val();
+    LoadInfoCustomer(value);
+
+    $('.chkListCustomer').click('change', function () {
+        value = $('.chkListCustomer:checked').val();
+        LoadInfoCustomer(value);
+    });
+    function LoadInfoCustomer(value) {
+        if (value == 1) {
+            $("#DanhSachKhach").show();
+            $("#divTongTien").hide();
+            $("#ThongTinKhach").hide();
+        }
+        else {
+            $("#DanhSachKhach").hide();
+            $("#divTongTien").show();
+            $("#ThongTinKhach").show();
+        }
+    }
+
+    function CaculatorPrice() {
+        var CurrencyName = 'đ';
+        var Rate = '1';
+
+        var adult = $('#adult').val();
+        var children = $('#children').val();
+        var small_children = $('#small_children').val();
+
+        var adult_price = parseFloat('11990000');//Nguoi lon
+        var child_price = parseFloat('10691000');//TreEm
+        var child_price5 = parseFloat('3897000');//TreNho
+
+        var totalPrice = (adult * adult_price) + (children * child_price) + (small_children * child_price5);
+
+        $("#spanTotalPriceBK").text(formatnumber((totalPrice / Rate).toFixed(0)) + ' ' + CurrencyName);
+    }
+</script>

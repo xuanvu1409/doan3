@@ -1,0 +1,635 @@
+﻿.socialBox {
+    display: table;
+}
+
+i.fab.fa-twitter-square {
+    height: 20px;
+    box-sizing: border-box;
+    padding: 3px 0px 0px 3px;
+    background-color: #1b95e0;
+    color: #fff;
+    border-radius: 3px;
+    font-weight: 500;
+    width: 61px;
+}
+
+.name-tw {
+    padding-right: 6px;
+    position: absolute;
+    top: 0;
+    right: 3px;
+    font-size: 12px;
+    color: white;
+}
+
+i.fas.fa-thumbs-up {
+    height: 20px;
+    box-sizing: border-box;
+    padding: 3px 0px 0px 3px;
+    background-color: #4267B2;
+    color: #fff;
+    border-radius: 3px;
+    font-weight: 500;
+    width: 80px;
+}
+
+.name-like {
+    padding-right: 7px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 12px;
+    color: white;
+}
+
+.share {
+    height: 20px;
+    box-sizing: border-box;
+    padding: 4px 3px 0px 3px;
+    background-color: #4267B2;
+    color: #fff;
+    border-radius: 3px;
+    font-weight: 500;
+    color: white !important;
+    font-size: 13px;
+}
+
+i.far.fa-save {
+    height: 20px;
+    box-sizing: border-box;
+    padding: 3px 0px 0px 3px;
+    background-color: #E60023;
+    color: #fff;
+    border-radius: 3px;
+    font-weight: 500;
+    width: 50px;
+}
+
+.name-save {
+    padding-right: 7px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 12px;
+    color: white;
+}
+
+.tour-name-3 {
+    margin-bottom: 10px;
+    line-height: 15px;
+}
+
+    .tour-name-3 a {
+        color: #fc3400;
+        font-weight: 700;
+        font-size: 17.5px !important;
+    }
+
+.tour-code {
+    font-weight: 700;
+}
+
+.frame-func {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.ic {
+    float: left;
+    padding: 10px;
+    background: rgba(0,0,0,.2);
+    color: #fff !important;
+    font-size: initial !important;
+}
+
+.frame-info {
+    background: #f1f1f1;
+    padding: 20px;
+    height: 500px;
+    font-size: 15px;
+}
+
+.sec1 {
+    margin-bottom: 15px;
+    border-bottom: 1px dotted #ccc;
+}
+
+button.btn-diem {
+    border: none;
+    background: inherit;
+    padding: 0;
+}
+
+.hreview-aggregate {
+    margin-top: -5px;
+    float: left;
+}
+
+.sec2 {
+    margin-bottom: 15px;
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 15px;
+}
+
+.sec3 {
+    margin-bottom: 15px;
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 15px;
+}
+
+    .sec3 .price {
+        color: #fc3400;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .sec3 .unit {
+        font-size: 14px;
+    }
+
+    .sec3 .sit {
+        color: #fc3400;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .sec3 .btn-book1 {
+        background: #fc3400;
+        color: #fff;
+        border: 1px solid #fc3400;
+        margin-top: 2px;
+        border-radius: 0;
+        font-size: 14px;
+    }
+
+.btn-s1 {
+    margin-right: 10px;
+    border-right: 1px dotted #ddd;
+    padding-right: 10px;
+}
+
+.bg-phone {
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    width: 365px;
+}
+
+.menu-left .panel {
+    border: none !important;
+    background: #f1f1f1;
+}
+
+.panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
+.menu-left ul, ol {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.menu-left .side-menu li a {
+    padding: 14px 15px;
+    text-decoration: none;
+    display: block;
+    color: #000;
+    font-size: 16px;
+}
+
+    .menu-left .side-menu li a:hover {
+        background: #e1e1e1;
+    }
+
+.tour-detail .services {
+    background: #f1f1f1;
+    margin-bottom: 30px;
+}
+
+.tour-detail .title-lg {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 16px;
+    background: #e1e1e1;
+    padding: 15px;
+}
+
+.tour-detail .services .frame-service {
+    background: #f1f1f1;
+    font-size: 15px;
+    padding: 10px 15px 15px 15px;
+}
+
+    .tour-detail .services .frame-service ul.list-service li {
+        margin: 10px 0 10px 0 !important;
+        display: block;
+        list-style: none;
+        background-image: url('../img/circle.png');
+        background-repeat: no-repeat;
+        padding-left: 20px;
+        font-weight: 400;
+    }
+
+.tour-detail .sec-info {
+    background: #f1f1f1;
+    height: auto;
+}
+
+.tour-detail .title-lg {
+    background: #e1e1e1;
+    padding: 15px;
+}
+
+    .tour-detail .title-lg h2 {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 16px;
+        margin: 0;
+    }
+
+.tour-detail .sec-info .sec-content {
+    padding: 20px;
+}
+
+.tour-detail .sec-info .sec-content {
+    padding: 20px;
+}
+
+.tour-detail .chuongtrinhtour .list {
+    float: left;
+    padding: 1.5em 0;
+    margin-bottom: 3em;
+}
+
+    .tour-detail .chuongtrinhtour .list .list__item {
+        float: left;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+        .tour-detail .chuongtrinhtour .list .list__item .list__time {
+            color: #212121;
+            width: 15%;
+            text-align: left;
+        }
+
+.tour-detail .chuongtrinhtour .num {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fc3400;
+    margin-bottom: 7px;
+}
+
+.day {
+    width: 80px;
+}
+
+.tour-detail .chuongtrinhtour .list .list__item .list__desc {
+    width: 70%;
+    color: #212121;
+    font-size: 15px;
+    line-height: 22px;
+    padding-bottom: 30px;
+    position: relative;
+}
+
+.tour-detail .chuongtrinhtour .name {
+    padding-bottom: 7px;
+    border-bottom: 1px dashed #ccc;
+    margin-bottom: 7px;
+    color: #007ce6;
+}
+
+.font500 {
+    font-weight: 700;
+}
+
+.tour-detail .chuongtrinhtour .detail {
+    text-align: justify;
+    line-height: 22px;
+    margin-bottom: 10px;
+    max-height: 200px;
+    overflow-y: hidden;
+}
+
+.tour-detail .title {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 20px;
+    line-height: 20px;
+}
+
+.tour-detail .chuongtrinhtour img.pic-nd {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+
+.tour-detail .chuongtrinhtour .frame-item {
+    color: #ffbc00;
+    font-weight: 500 !important;
+    font-size: 13px;
+    background: #0a0a0a94;
+    padding: 10px 10px 7px 10px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+    .tour-detail .chuongtrinhtour .frame-item .cut-name {
+        width: 100%;
+        height: 16px;
+    }
+
+.table-bordered {
+    border: 1px solid #ddd;
+}
+
+    .table-bordered td {
+        padding: 8px;
+        line-height: initial;
+    }
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.title {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 20px;
+    line-height: 20px;
+    color: #fc3400;
+    text-shadow: 1px 1px 2px #ffba8a;
+}
+
+.tour-detail .sec-info .sec-content {
+    padding: 20px;
+}
+
+.ui-datepicker-multi-3 .ui-datepicker-group {
+    width: 33.3%;
+}
+
+.ui-datepicker-multi .ui-datepicker-group {
+    float: left;
+}
+
+.ui-datepicker .ui-datepicker-header {
+    position: relative;
+    padding: .2em 0;
+}
+
+.tour-detail .ui-widget-header {
+    border: initial !important;
+}
+
+.ui-widget-header {
+    border: 1px solid #dddddd;
+    background: #e9e9e9;
+    color: #333333;
+    font-weight: bold;
+}
+
+.ui-datepicker .ui-datepicker-title {
+    margin: 0 2.3em;
+    line-height: 1.8em;
+    text-align: center;
+}
+
+.ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled {
+    opacity: .35;
+}
+
+    .ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled i {
+        top: 9px;
+        left: 9px;
+    }
+
+a.ui-datepicker-next.ui-corner-all i {
+    top: 9px;
+    right: 9px;
+}
+
+.ui-datepicker-multi .ui-datepicker-group table {
+    width: 95%;
+    margin: 0 auto .4em;
+}
+
+.ui-datepicker-calendar {
+    background-color: white;
+    padding: 3px;
+}
+
+.tour-detail table thead tr {
+    font-weight: 700;
+}
+
+.ui-datepicker th {
+    padding: .7em .3em;
+    text-align: center;
+    font-weight: bold;
+    border: 0;
+}
+
+.ui-datepicker td {
+    border: 0;
+    padding: 1px;
+    border: initial !important;
+    height: 25px !important;
+    line-height: 20px !important;
+}
+
+    .ui-datepicker td:hover {
+        background-color: #EDEDED;
+    }
+
+.ui-state-default, .ui-widget-content .ui-state-default {
+    background: #f6f6f6;
+    font-weight: normal;
+    color: #454545;
+}
+
+.ui-datepicker td span, .ui-datepicker td a {
+    display: block;
+    padding: .2em;
+    text-align: right;
+    text-decoration: none;
+    text-align: center !important;
+}
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight {
+    background: #fffa90;
+    color: #777620;
+}
+
+.selectDay a {
+    background: none repeat scroll 0% 0% #fd6e57 !important;
+    text-align: center !important;
+    color: #fff !important;
+}
+
+.tour-detail .hasDatepicker {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#datepicker .ui-widget.ui-widget-content {
+    width: 100% !important;
+}
+
+.sec-content {
+    padding: 20px;
+    background-color: #F1F1F1;
+}
+
+.tour-detail .ykien .customer-idea .title {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 22px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #ccc;
+    margin-bottom: 20px;
+}
+
+.tour-detail .btn-detail {
+    background: #fc3400;
+    color: #fff;
+    border: none;
+    border-radius: 0;
+}
+
+.tour-detail .lienhe .cn .list-inline {
+    padding-left: 0;
+    margin-left: -5px;
+    list-style: none;
+    border-top: 1px dashed #ccc;
+    border-bottom: 1px dashed #ccc;
+}
+
+    .tour-detail .lienhe .cn .list-inline li {
+        display: inline-block;
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+
+.tour-detail .lienhe .cn ul.list-mien li.active a {
+    font-weight: bold;
+    color: #fc3400;
+}
+
+.tour-detail .lienhe .cn ul.list-mien li a {
+    margin: 10px 0 10px 0 !important;
+    display: block;
+}
+
+.tour-detail .lienhe .cn .name {
+    color: #0089ff;
+    font-weight: 500;
+    margin-bottom: 10px;
+    line-height: 18px;
+}
+
+.tour-detail .title-ft {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 1px 1px #ccc;
+}
+
+.miennam {
+    padding: 0px 15px 0px 15px;
+}
+
+.tour-detail .line-ct {
+    border-bottom: 1px dashed #ccc;
+    margin-bottom: 40px;
+}
+
+.tour-detail .tour-similar .frame-ttt2 {
+    background: #f1f1f1;
+    padding: 10px;
+}
+
+.tour-detail .tour-similar .ttt-line {
+    border-bottom: 1px dashed #919191;
+    margin-bottom: 10px;
+}
+
+.tour-detail .tour-similar .ttt-info {
+    margin-left: 8px;
+}
+
+.tour-detail .tour-similar .frame-ttt1 {
+    position: absolute;
+    bottom: 0;
+    padding: 40px 10px 10px 10px;
+    background: linear-gradient(to bottom,rgba(0,0,0,.01),#1b1b1b);
+    width: 100%;
+    color: #fff;
+}
+
+.tour-detail .tour-similar img.pic-ttt {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border: 1px solid #f4f4f4;
+}
+
+.tour-detail .tour-similar .ttt-title {
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.tour-detail .tour-similar .frame-ttt1 .yellow {
+    color: #ffc000;
+}
+
+.tour-detail .tour-similar .frame-ttt1 .date {
+    margin-left: 8px;
+    padding-top: 3px;
+}
+
+.tour-detail .tour-similar .ttt-info .price-n {
+    color: #fc3400;
+    font-weight: 500;
+    font-size: 17px;
+    line-height:initial;
+}
+
+.n3-breadcrumb {
+    margin-bottom: 10px;
+}
+
+    .n3-breadcrumb .breadcrumb {
+        padding: 10px 15px;
+        line-height: 22px;
+    }
+
+.breadcrumb {
+    padding: 8px 15px;
+    margin-bottom: 20px;
+    list-style: none;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+}
+

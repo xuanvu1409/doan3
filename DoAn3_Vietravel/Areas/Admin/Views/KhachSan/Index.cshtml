@@ -1,0 +1,152 @@
+﻿@model IEnumerable<DoAn3_Vietravel.Areas.Admin.Models.KhachSan>
+    @{
+        ViewBag.Title = "Index";
+        Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    }
+
+    <div class="breadcrumbs">
+        <div class="col-sm-4">
+            <div class="page-header float-left">
+                <div class="page-title">
+                    <h1>Dashboard</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="page-header float-right">
+                <div class="page-title">
+                    <ol class="breadcrumb text-right">
+                        <li><a href="#">Home</a></li>
+                        <li class="active">Khách sạn</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content mt-3">
+        <div class="animated fadeIn">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <strong class="card-title">Khách sạn</strong>
+                                </div>
+                                <div class="col-md-6">
+                                    <button class="btn btn-primary float-right bor-rd" onclick="ThemKhachSan()">
+                                        <i class="fa fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div id="bootstrap-data-table-export_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <table id="bootstrap-data-table-export" class="table table-striped table-bordered dataTable no-footer chunho" role="grid" aria-describedby="bootstrap-data-table-export_info">
+                                            <thead>
+                                                <tr role="row">
+                                                    <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending">ID</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending">Tên khách sạn</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending">Địa chỉ</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending">Số điện thoại</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending">Website</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending">Thao tác</th>
+
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var item in Model)
+                                                {
+                                                    <tr role="row" class="odd">
+                                                        <td class="sorting_1">@item.IDKhachSan</td>
+                                                        <td>@item.TenKhachSan</td>
+                                                        <td>@item.DiaChi</td>
+                                                        <td>@item.SoDienThoai</td>
+                                                        <td>@item.Website</td>
+                                                        <td>
+                                                            <button class="btn btn-info bor-rd" onclick="SuaKhachSan('@item.IDKhachSan')"><i class="fa fa-edit"></i></button>
+                                                            <a class="btn btn-danger bor-rd" onclick="return confirm('Bạn có chắc chắn muốn xoá khách sạn này không?')" href="~/Admin/KhachSan/Xoa1KhachSan/@item.IDKhachSan"><i class="fa fa-trash"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- .animated -->
+    </div>
+
+    <div class="modal">
+        <div class="modal-content">
+            <div class="modal-header pt-0">
+                <div class="modal-title"></div>
+                <span class="close" data-dismiss="modal">&times;</span>
+            </div>
+            <form method="post" action="~/Admin/KhachSan/Them1KhachSan" enctype="multipart/form-data">
+                <input type="hidden" id="aoe" name="aoe" value="1" />
+                <input type="hidden" id="MKS" name="MKS" />
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-2 mb-3">Tên khách sạn</div>
+                        <div class="col-md-10 mb-3">
+                            <input type="text" name="TKS" id="TKS" class="form-control" placeholder="Nhập tên khách sạn" required />
+                        </div>
+                        <div class="col-md-2 mb-3">Địa chỉ</div>
+                        <div class="col-md-10 mb-3">
+                            <input type="text" name="DC" id="DC" class="form-control" placeholder="Nhập địa chỉ" />
+                        </div>
+                        <div class="col-md-2 mb-3">Số điện thoại</div>
+                        <div class="col-md-10 mb-3">
+                            <input type="text" name="SDT" id="SDT" class="form-control" placeholder="Nhập số điện thoại" />
+                        </div>
+                        <div class="col-md-2 mb-3">Website</div>
+                        <div class="col-md-10 mb-3">
+                            <input type="text" name="WS" id="WS" class="form-control" placeholder="Nhập website" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" type="submit">Lưu</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        function ThemKhachSan() {
+            $("#aoe").val("1");
+            $("#TKS").val("");
+            $("#DC").val("");
+            $("#SDT").val("");
+            $("#WS").val("");
+            $(".modal").modal("show");
+            $(".modal-title").html("Thêm khách sạn");
+        }
+
+        function SuaKhachSan(id) {
+            $("#aoe").val("0");
+            (jQuery).get("/Admin/KhachSan/Lay1KhachSan", { id: id }, function (data) {
+                $("#TKS").val(data.TenKhachSan);
+                $("#DC").val(data.DiaChi);
+                $("#SDT").val(data.SoDienThoai);
+                $("#WS").val(data.Website);
+            });
+            $(".modal").modal("show");
+            $(".modal-title").html("Sửa khách sạn");
+        }
+    </script>
+
+
+
+
+
+
+

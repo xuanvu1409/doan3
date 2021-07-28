@@ -1,0 +1,576 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="container n3-book-tour-2 mg-bot40">
+        <div class="row">
+            <div class="col-xs-12 mg-bot50">
+                <div class="step-by-step">
+                    <ul class="stepper stepper-horizontal">
+                        <li class="active">
+                            <a>
+                                <span class="circle">1</span>
+                                <span class="label">Nhập thông tin</span>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a>
+                                <span class="circle">2</span>
+                                <span class="label">Vietravel xác nhận</span>
+                            </a>
+                        </li>
+                        <li class="warnning">
+                            <a>
+                                <span class="circle">3</span>
+                                <span class="label">Thanh toán</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="divWait" style="display: none;">
+            <div class="col-xs-12 text-center" style="margin: 40px 0 40px 0">
+                <span class="title">Booking chưa được cập nhật</span><br>
+                <img src="/Content/themeHe/img/loading.gif" alt="loading" height="50px;"><br>
+                <p>Đang chuyển thông tin về Vietravel, xin quý khách vui lòng đợi trong giây lát</p>
+            </div>
+        </div>
+        <div class="row" id="divConfirm" style="display: none;">
+            <div class="col-xs-12 text-center" style="margin: 40px 0 40px 0;display:none;">
+                <span class="title">Booking đang được Vietravel xác nhận</span>
+                <p>Cảm ơn quý khách đã đặt tour. Chúng tôi sẽ liên hệ với quý khách trong thời gian sớm nhất</p>
+            </div>
+        </div>
+
+        <div class="row" id="divContent" style="display: block;">
+            <div class="col-xs-12 mg-bot50">
+                <div class="thanks">
+                    <p class="mg-bot5">Cảm ơn quý khách đã sử dụng dịch vụ của chúng tôi</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 mg-bot30">
+                <div class="title">PHIẾU XÁC NHẬN BOOKING</div>
+                <div class="frame-xnbooking">
+                    <div class="row mg-bot10 bor-bot">
+                        <div class="col-lg-3 col-md-2 col-sm-2 col-xs-12 mg-bot">Mã tour:</div>
+                        <div class="col-lg-9 col-md-10 col-sm-10 col-xs-12 font500">NDSGN538-047-101219XE-V-1</div>
+                    </div>
+                    <div class="row mg-bot10 bor-bot">
+                        <div class="col-lg-3 col-md-2 col-sm-2 col-xs-12 mg-bot">Tên tour:</div>
+                        <div class="col-lg-9 col-md-10 col-sm-10 col-xs-12 font500">
+                            <p class="line-h">
+                                Đà Lạt - Langbiang - Cánh Đồng Hoa Cẩm Tú Cầu - Đường Hầm Đất Sét (Khách sạn 3* Cao cấp. Tour Tiết Kiệm)
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row mg-bot10 bor-bot">
+                        <div class="col-lg-3 col-md-2 col-sm-2 col-xs-12 mg-bot">Hành trình:</div>
+                        <div class="col-lg-9 col-md-10 col-sm-10 col-xs-12 font500">
+                            HCM - Da Lat - HCM
+                        </div>
+                    </div>
+                    <div class="row mg-bot10 bor-bot">
+                        <div class="col-lg-3 col-md-2 col-sm-2 col-xs-12 mg-bot">Ngày đi:</div>
+                        <div class="col-lg-9 col-md-10 col-sm-10 col-xs-12 font500">
+                            10/12/2019
+                        </div>
+                    </div>
+                    <div class="row mg-bot10 bor-bot">
+                        <div class="col-lg-3 col-md-2 col-sm-2 col-xs-12 mg-bot">Ngày về:</div>
+                        <div class="col-lg-9 col-md-10 col-sm-10 col-xs-12 font500">
+                            12/12/2019
+                        </div>
+                    </div>
+                    <div class="row bor-bot">
+                        <div class="col-lg-3 col-md-2 col-sm-2 col-xs-12 mg-bot">Nơi khởi hành:</div>
+                        <div class="col-lg-9 col-md-10 col-sm-10 col-xs-12 font500">
+                            Hồ Chí Minh
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 mg-bot30">
+                <div class="title">THÔNG TIN LIÊN LẠC</div>
+                <div class="frame-xnbooking">
+                    <div class="row mg-bot10 bor-bot">
+                        <div class="col-lg-3 col-md-2 col-sm-2 col-xs-12 mg-bot">Họ tên:</div>
+                        <div class="col-lg-9 col-md-10 col-sm-10 col-xs-12 font500">sdsda</div>
+                    </div>
+                    <div class="row mg-bot10 bor-bot">
+                        <div class="col-lg-3 col-md-2 col-sm-2 col-xs-12 mg-bot">Địa chỉ:</div>
+                        <div class="col-lg-9 col-md-10 col-sm-10 col-xs-12 font500">
+                            <p class="line-h">
+                                22
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row mg-bot10 bor-bot">
+                        <div class="col-lg-3 col-md-2 col-sm-2 col-xs-12 mg-bot">Di động:</div>
+                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 font500 mg-bot">
+                            4534534534
+                        </div>
+                        <div class="col-lg-3 col-md-2 col-sm-2 col-xs-12 mg-bot">Điện thoại:</div>
+                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 font500">
+                            4343433444434
+                        </div>
+                    </div>
+                    <div class="row mg-bot10 bor-bot">
+                        <div class="col-lg-3 col-md-2 col-sm-2 col-xs-12 mg-bot">Email:</div>
+                        <div class="col-lg-9 col-md-10 col-sm-10 col-xs-12 font500">
+                            gfgfhfhfhfh@gmail.com
+                        </div>
+                    </div>
+                    <div class="row mg-bot10 bor-bot">
+                        <div class="col-lg-3 col-md-2 col-sm-2 col-xs-12 mg-bot">Số khách:</div>
+                        <div class="col-lg-9 col-md-10 col-sm-10 col-xs-12 font500 line-h">
+                            1 (Người lớn: 1&nbsp;&nbsp;Trẻ em: 0&nbsp;&nbsp;Trẻ nhỏ: 0&nbsp;&nbsp;Em bé: 0)
+                        </div>
+                    </div>
+                    <div class="row bor-bot">
+                        <div class="col-lg-3 col-md-2 col-sm-2 col-xs-12 mg-bot">Ghi chú:</div>
+                        <div class="col-lg-9 col-md-10 col-sm-10 col-xs-12 font500 line-h">
+                            Booking từ travel.com.vn. Thời hạn thanh toán 09/12/2019 11:25:47.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 mg-bot30">
+                <div class="txt-rig title">CHI TIẾT BOOKING</div>
+                <div class="frame-chitiet">
+                    <div class="row mg-bot10 bor-bot">
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 mg-bot">Số booking:</div>
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 font500 line-h"><span class="font500">191209269268</span> (Quý khách vui lòng nhớ số booking (Booking No) để thuận tiện cho các giao dịch sau này)</div>
+                    </div>
+                    <div class="row mg-bot10 bor-bot">
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 mg-bot">Trị giá booking:</div>
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 font500"><span class="font500">3,590,000 đ</span></div>
+                    </div>
+                    <div class="row mg-bot10 bor-bot">
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 mg-bot">Ngày đăng ký:</div>
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 font500 line-h"><span class="font500">09/12/2019 10:25:47 (Theo giờ Việt Nam)</span></div>
+                    </div>
+                    <div class="row mg-bot10 bor-bot">
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 mg-bot"><span class="hidden-md hidden-sm">Hình thức thanh toán:</span><span class="hidden-lg hidden-xs">Hình thức thanh toán:</span></div>
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 font500 line-h"><span class="font500">Tiền mặt</span></div>
+                    </div>
+                    <div class="row mg-bot10 bor-bot">
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 mg-bot">Tình trạng:</div>
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 font500 line-h">
+                            <span class="font500">
+                                Booking của quý khách đã được chúng tôi xác nhận thành công
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row mg-bot10 bor-bot">
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 mg-bot"><span class="hidden-md hidden-sm">Thời hạn thanh toán:</span><span class="hidden-lg hidden-xs">Thời hạn thanh toán:</span></div>
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 font500 line-h"><span class="font500">09/12/2019 11:25:47 (Theo giờ Việt Nam)</span> (Nếu quá thời hạn trên mà quý khách chưa thanh toán. Vietravel sẽ hủy booking này)</div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-xs-12 mg-bot30">
+                <div class="txt-rig title">DANH SÁCH KHÁCH HÀNG ĐI TOUR</div>
+                <div class="tb-sdk">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr class="font500">
+                                <td>Họ tên</td>
+                                <td>Giảm giá?</td>
+                                <td>Ngày sinh</td>
+                                <td>Giới tính</td>
+                                <td>Địa chỉ</td>
+                                <td>Độ tuổi</td>
+                                <td>Phòng đơn</td>
+                                <td>Trị giá</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-title="Họ tên:">
+                                    ádfsfsdfsd
+                                </td>
+                                <td data-title="Giảm giá?:">
+                                    <a class="cDiscount link" data-toggle="modal" data-target="#AddVoucher" data-member_id="a4ff15e3-c350-41d2-b416-b7e5ed4a10cd" data-fullname="ádfsfsdfsd">Voucher VietravelPlus</a>
+                                </td>
+                                <td data-title="Ngày sinh:">
+                                    03/02/1963
+                                </td>
+                                <td data-title="Giới tính:">
+                                    Nữ
+                                </td>
+                                <td data-title="Địa chỉ:">
+                                </td>
+                                <td data-title="Độ tuổi:">
+                                    Người lớn
+                                </td>
+                                <td data-title="Phòng đơn:">
+                                    Có
+                                </td>
+                                <td data-title="Trị giá:" align="right">
+                                    <span class="price">
+                                        3,590,000 đ
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="11" align="right">
+                                    <span>Tổng cộng:</span>
+                                    <span class="price">3,590,000 đ</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="12" align="right">
+                                    <a class="btn btn-sm btn-primary" href="#" data-toggle="modal" data-target="#idCheckDiscount">Mã giảm giá</a>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+
+            <input type="hidden" id="TourCode" value="NDSGN538-047-101219XE-V-1">
+            <input type="hidden" id="GiaTour" value="2590000">
+            <input type="hidden" id="tourtypeID" value="1">
+
+            <div id="AddVoucher" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">×</button>
+                            <h4 class="modal-title">Giảm giá thẻ thành viên</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <div class="row mg-bot5">
+                                    <div class="col-md-3" style="font-weight: bold;margin-top:10px;">Họ tên</div>
+                                    <div class="col-md-6">
+                                        <input type="hidden" id="hidbooking_id">
+                                        <input type="hidden" id="hidmember_id">
+                                        <input type="hidden" id="hidTourTypeId">
+                                        <span id="Fullname"></span>
+                                    </div>
+                                </div>
+                                <div class="row mg-bot5">
+                                    <div class="col-md-3" style="font-weight: bold;margin-top:10px;">Mã voucher</div>
+                                    <div class="col-md-6">
+                                        <input class="form-control" id="vouchercode" name="vouchercode" required="required" type="text" value="">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a style="color:#fff;" onclick="CheckDiscountByVoucher()" class="btn btn-default">Kiểm tra</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                            <div style="padding: 10px; border: 1px dotted #ccc; margin-top: 10px; margin-bottom: 10px" id="divResultCustomer">
+                                <div class="row mg-bot10">
+                                    <div class="col-md-3 col-sm-3 col-xs-5" style="font-weight: bold">Mã khách hàng</div>
+                                    <div class="col-md-9 col-sm-9 col-xs-7"><span id="spanMemberCode"></span></div>
+                                    <input type="hidden" id="hidMemberCode">
+                                    <input type="hidden" id="hidVoucherCode">
+                                </div>
+                                <div class="row mg-bot10">
+                                    <div class="col-md-3 col-sm-3 col-xs-5" style="font-weight: bold">Họ tên</div>
+                                    <div class="col-md-9 col-sm-9 col-xs-7"><span id="spanMemberName"></span></div>
+                                </div>
+                                <div class="row mg-bot10">
+                                    <div class="col-md-3 col-sm-3 col-xs-5" style="font-weight: bold">Mã voucher</div>
+                                    <div class="col-md-9 col-sm-9 col-xs-7"><span id="spanVoucherCode"></span></div>
+                                </div>
+                                <div class="row mg-bot10">
+                                    <div class="col-md-3 col-sm-3 col-xs-5" style="font-weight: bold">Tên quà tặng</div>
+                                    <div class="col-md-9 col-sm-9 col-xs-7"><span id="spanGiftName"></span></div>
+                                </div>
+                                <div class="row mg-bot10">
+                                    <div class="col-md-3 col-sm-3 col-xs-5" style="font-weight: bold">Ngày phát hành</div>
+                                    <div class="col-md-9 col-sm-9 col-xs-7"><span id="spanIssueDate"></span></div>
+                                </div>
+                                <div class="row mg-bot10">
+                                    <div class="col-md-3 col-sm-3 col-xs-5" style="font-weight: bold">Ngày hết hạn</div>
+                                    <div class="col-md-9 col-sm-9 col-xs-7"><span id="spanExpiredDate"></span></div>
+                                </div>
+                                <div class="row mg-bot10">
+                                    <div class="col-md-3 col-sm-3 col-xs-5" style="font-weight: bold">Tình trạng</div>
+                                    <div class="col-md-9 col-sm-9 col-xs-7"><span id="spanVoucherStatus"></span></div>
+                                </div>
+                                <div class="row mg-bot10">
+                                    <div class="col-md-3 col-sm-3 col-xs-5" style="font-weight: bold">Trị giá</div>
+                                    <div class="col-md-9 col-sm-9 col-xs-7"><span id="spanDiscount"></span></div>
+                                </div>
+                                <div class="row mg-bot10" style="text-align: center">
+                                    <a style="color:#fff;" id="btnDiscountCustomerCard" class="btn btn-default" onclick="ConfirmDiscountByVoucher()">Xác nhận</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+
+    function CheckDiscountByVoucher() {
+        vouchercode = $("#vouchercode").val();
+
+        if (vouchercode != '') {
+            $.ajax({
+                url: "/Booking/CheckDiscountByVoucher",
+                data: { vouchercode: vouchercode },
+                beforeSend: function (xhr) {
+                    $(".divLoading").addClass("loading");
+                },
+                success: function (result) {
+                    $(".divLoading").removeClass("loading");
+                    if (result.voucherstatus == 'Inprocess') {
+
+                        $("#divResultCustomer").show();
+                        $("#hidMemberCode").val(result.membercode);
+                        $("#hidVoucherCode").val(result.vouchercode);
+
+                        $("#spanMemberName").text(result.membername);
+                        $("#spanGiftName").text(result.giftname);
+                        $("#spanVoucherCode").text(result.vouchercode);
+                        $("#spanDiscount").text(result.vouchervalue);
+                        $("#spanMemberCode").text(result.membercode);
+
+                        var d1 = new Date(parseInt(result.issuedate.slice(6, -2)));
+                        var issuedate = d1.getDate() + '/' + (1 + d1.getMonth()) + '/' + d1.getFullYear().toString();
+                        $("#spanIssueDate").text(issuedate);
+
+                        var d = new Date(parseInt(result.expireddate.slice(6, -2)));
+                        var expireddate = d.getDate() + '/' + (1 + d.getMonth()) + '/' + d.getFullYear().toString();
+                        $("#spanExpiredDate").text(expireddate);
+
+                        $("#spanVoucherStatus").text('Chưa sử dụng');
+
+                        $("#btnDiscountCustomerCard").show();
+
+                    }
+                    else {
+                        $("#divResultCustomer").hide();
+                        $("#hidMemberCode").val('');
+                        $("#hidVoucherCode").val('');
+
+                        $("#spanMemberName").text('');
+                        $("#spanGiftName").text('');
+                        $("#spanVoucherCode").text('');
+                        $("#spanDiscount").text('0');
+                        $("#spanMemberCode").text('');
+                        $("#spanIssueDate").text('');
+                        $("#spanExpiredDate").text('');
+                        $("#spanVoucherStatus").text('');
+                        $("#btnDiscountCustomerCard").hide();
+                        alert('Mã khách hàng này chưa đúng. Vui lòng kiểm tra lại hoặc liên hệ 1900.1839 để được hỗ trợ');
+                    }
+                },
+                failure: function (message) {
+                    $(".divLoading").removeClass("loading");
+                }
+            });
+        }
+        else {
+            alert('Quý khách vui lòng nhập Mã voucher');
+        }
+    }
+
+    function ConfirmDiscountByVoucher()
+    {
+        $('#btnDiscountCustomerCard').attr('style', 'display:none');
+
+        var memberCode = $("#hidMemberCode").val();
+        var voucherCode = $("#hidVoucherCode").val();
+        var memberId = $("#hidmember_id").val();
+        var tourType = $("#hidTourTypeId").val();
+        var booking_id = $("#hidbooking_id").val();
+
+        $.ajax({
+            url: "/Booking/ConfirmDiscountByVoucher",
+            data: { memberCode: memberCode, voucherCode: voucherCode, memberId: memberId, tourType: tourType },
+            beforeSend: function (xhr) {
+                $(".divLoading").addClass("loading");
+
+                $('#btnDiscountCustomerCard').attr('style', 'display:none');
+            },
+            success: function (result) {
+                $(".divLoading").removeClass("loading");
+
+                if (result.status == 1) {
+                    alert('Giảm giá voucher thành công');
+
+                    if (tourType == 1) {
+                        window.location = "/Booking/SearchBookingIB?pin_code=" + booking_id;
+                    }
+                    else {
+                        window.location = "/Booking/SearchBookingOB?pin_code=" + booking_id;
+                    }
+                }
+                else {
+                    $('#btnDiscountCustomerCard').attr('style', '');
+
+                    alert('Giảm giá voucher không thành công. Vui lòng liên hệ 1900 1839 để được hỗ trợ');
+                }
+            },
+            failure: function (message) {
+                $(".divLoading").removeClass("loading");
+
+                $('#btnDiscountCustomerCard').attr('style', '');
+            }
+        });
+    }
+
+            </script>
+
+            <div id="idCheckDiscount" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">×</button>
+                            <h4 class="modal-title">NHẬP MÃ GIẢM GIÁ</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <div class="row mg-bot5">
+                                    <div class="col-md-4" style="font-weight: bold;margin-top:10px;">Mã giảm giá(*)</div>
+                                    <div class="col-md-8">
+                                        <input class="form-control" id="DiscountCode" name="DiscountCode" required="required" type="text" value="">
+                                        <input type="hidden" id="hidBooking_id" value="6f88b3cb-d921-481c-a38d-c53043d9dd65">
+                                    </div>
+                                </div>
+                                <div class="row mg-bot5">
+                                    <div class="col-md-4" style="font-weight: bold;margin-top:10px;">&nbsp;</div>
+                                    <div class="col-md-8">
+                                        <a style="color:#fff;" onclick="CheckDiscount()" class="btn btn-default">Kiểm tra</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                            <div style="padding: 10px; border: 1px dotted #ccc; margin-top: 10px; margin-bottom: 10px; display:none;" id="divResultDiscount">
+                                <div class="row mg-bot10">
+                                    <div class="col-md-4" style="font-weight: bold">Mã: </div>
+                                    <input type="hidden" id="hidPromotionId">
+                                    <div class="col-md-8"><span id="spanPromotionCode"></span></div>
+                                </div>
+                                <div class="row mg-bot10">
+                                    <div class="col-md-4" style="font-weight: bold">Giảm giá: </div>
+                                    <div class="col-md-8"><span id="spanVDiscount"></span> đ</div>
+                                </div>
+                                <div class="row mg-bot10">
+                                    <div class="col-md-4" style="font-weight: bold;margin-top:10px;">&nbsp;</div>
+                                    <div class="col-md-8">
+                                        <a style="color:#fff;" class="btn btn-default" onclick="ConfirmDiscount()">Xác nhận</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+    function CheckDiscount()
+    {
+        DiscountCode = $("#DiscountCode").val();
+        booking_id = $("#hidBooking_id").val();
+
+
+        if (DiscountCode != '') {
+            $.ajax({
+                url: "/Coupon/CheckDiscount",
+                data: { DiscountCode: DiscountCode, booking_id: booking_id },
+                success: function (result) {
+                    if (result.PromotionId > 0) {
+                        $("#divResultDiscount").show();
+
+                        $("#hidPromotionId").val(result.PromotionId);
+                        $("#spanPromotionCode").text(result.PromotionCode);
+                        $("#spanVDiscount").text(result.Discount);
+                    }
+                    else {
+                        $("#divResultDiscount").hide();
+
+                        $("#hidPromotionId").val('');
+                        $("#spanPromotionCode").text('');
+                        $("#spanVDiscount").text('');
+
+                        alert('Mã giảm giá này chưa đúng hoặc đã sử dụng. Vui lòng kiểm tra lại hoặc liên hệ 1900.1839 để được hỗ trợ');
+                    }
+                }
+            });
+        }
+        else {
+            alert('Quý khách vui lòng nhập mã giảm giá');
+        }
+    }
+
+    function ConfirmDiscount()
+    {
+        var booking_id = '6f88b3cb-d921-481c-a38d-c53043d9dd65';
+        var PromotionCode = $("#spanPromotionCode").text();
+        var TourType = '1';
+
+        $.ajax({
+            url: "/Coupon/ConfirmDiscount",
+            data: { PromotionCode: PromotionCode, booking_id: booking_id},
+            success: function (result) {
+                if (result == 1) {
+                    alert('Giảm giá thành công');
+                    if (TourType == '1') {
+                        window.location = "/Booking/SearchBookingIB?pin_code=" + booking_id;
+                    }
+                    else {
+                        window.location = "/Booking/SearchBookingOB?pin_code=" + booking_id;
+                    }
+                }
+                if (result == 0) {
+                    alert('Giảm giá không thành công. Vui lòng liên hệ 1900 1839 để được hỗ trợ');
+                }
+            }
+        });
+    }
+            </script>
+
+            <script>
+    $('.cDiscount').click(function () {
+
+        var member_id = $(this).attr('data-member_id');
+        var fullname = $(this).attr('data-fullname');
+
+        $("#hidbooking_id").val('6f88b3cb-d921-481c-a38d-c53043d9dd65');
+        $("#hidmember_id").val(member_id);
+        $("#hidTourTypeId").val('1');
+        $("#Fullname").text(fullname);
+
+        $("#divResultCustomer").hide();
+        $("#customer_no").val('');
+        $("#hidCustomer_id").val('');
+        $("#spanFullname").text('');
+        $("#spanBirthday").text('');
+        $("#spanGender").text('');
+        $("#spanAddress").text('');
+        $("#spanTelephone").text('');
+        $("#spanMobile").text('');
+        $("#spanDiscount").text('0');
+    });
+
+    $('.cEVoucher').click(function () {
+        $("#hidVbooking_id").val('6f88b3cb-d921-481c-a38d-c53043d9dd65');
+        $("#hidVTourTypeId").val('1');
+    });
+            </script>
+
+            <div class="col-xs-12 mg-bot30">
+                <div class="frame-cong">
+                    <p class="mg-bot5">Chúc quý khách 1 chuyến du lịch thật vui vẻ và bổ ích</p>
+                    <p>Quý khách vui lòng kiểm tra email để nhận phiếu xác nhận đặt tour thành công từ Vietravel</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
